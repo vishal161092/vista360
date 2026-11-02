@@ -1,0 +1,115 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:einstein" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Recommendations</span>
+            </div>
+            <span class="ai-chip">
+                <span class="ai-dot"></span>
+                AI-POWERED
+            </span>
+        </div>
+
+        <div class="body">
+
+            <!-- ── HERO UPSELL ── -->
+            <template if:true={hasHero}>
+                <div class="hero-card">
+                    <div class="hero-top">
+                        <div class="hero-left">
+                            <div class="hero-eyebrow">
+                                <lightning-icon icon-name="utility:trending" size="xx-small" class="eyebrow-icon"></lightning-icon>
+                                Top Upsell Opportunity
+                            </div>
+                            <div class="hero-title">{heroRec.name}</div>
+                        </div>
+                        <div class="hero-thumb">
+                            <template if:true={heroRec.hasImage}>
+                                <img src={heroRec.image} alt={heroRec.name} />
+                            </template>
+                            <template if:false={heroRec.hasImage}>
+                                <lightning-icon icon-name="utility:products" size="small" class="hthumb-icon"></lightning-icon>
+                            </template>
+                        </div>
+                    </div>
+
+                    <div class="hero-reason">{heroRec.reason}</div>
+
+                    <div class="hero-pills">
+                        <span class="conf-pill conf-pill--primary">
+                            <lightning-icon icon-name="utility:check" size="xx-small" class="pill-icon"></lightning-icon>
+                            {heroRec.matchLabel}
+                        </span>
+                        <span class="conf-pill price-pill">₹{heroRec.priceLabel}</span>
+                        <span class="conf-pill conf-pill--muted">Gold Member Eligible</span>
+                        <template if:true={isOmnichannel}>
+                            <span class="conf-pill conf-pill--muted">
+                                <lightning-icon icon-name="utility:agent_session" size="xx-small" class="pill-icon-muted"></lightning-icon>
+                                Service Lead
+                            </span>
+                        </template>
+                    </div>
+
+                    <button class="hero-cta" onclick={handleHeroSend}>
+                        <lightning-icon icon-name="utility:send" size="xx-small" class="cta-icon"></lightning-icon>
+                        <span class="cta-label">{ctaLabel}</span>
+                    </button>
+                </div>
+            </template>
+
+            <!-- ── MORE RECOMMENDATIONS ── -->
+            <template if:true={hasMore}>
+                <div class="sec-label">More recommendations</div>
+                <div class="rec-list">
+                    <template for:each={moreRecs} for:item="r">
+                        <div key={r.id} class="rec-card">
+                            <div class="score-ring">
+                                <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="22" cy="22" r="17" stroke="#eceef1" stroke-width="4" fill="none" />
+                                    <circle cx="22" cy="22" r="17" stroke={r.ringColor} stroke-width="4" fill="none"
+                                        stroke-linecap="round" style={r.ringStyle} />
+                                </svg>
+                                <div class="score-num">{r.scoreLabel}</div>
+                            </div>
+
+                            <div class="rec-thumb">
+                                <template if:true={r.hasImage}>
+                                    <img src={r.image} alt={r.name} />
+                                </template>
+                                <template if:false={r.hasImage}>
+                                    <lightning-icon icon-name="utility:products" size="small"></lightning-icon>
+                                </template>
+                            </div>
+
+                            <div class="rec-info">
+                                <div class="rec-tags">
+                                    <span class={r.tagClass}>{r.tagLabel}</span>
+                                </div>
+                                <div class="rec-name">{r.name}</div>
+                                <div class="rec-footer">
+                                    <span class="rec-price"><span class="cur">₹</span>{r.priceLabel}</span>
+                                    <button class="btn-suggest" onclick={handleSuggest}>
+                                        <lightning-icon icon-name="utility:send" size="xx-small" class="sg-icon"></lightning-icon>
+                                        <span class="sg-label">Suggest</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template if:false={hasContent}>
+                <div class="empty-state">
+                    <lightning-icon icon-name="utility:einstein" size="small" class="empty-icon"></lightning-icon>
+                    <span>No recommendations yet</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

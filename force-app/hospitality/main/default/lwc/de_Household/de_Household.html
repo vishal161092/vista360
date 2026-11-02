@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Household" icon-name="standard:household">
+        <div class="household-container">
+            <template for:each={members} for:item="member">
+                <div key={member.id} class="member-card">
+                    <div class="member-left">
+                        <div class="member-avatar">
+                            <span class="avatar-initial">{member.initial}</span>
+                        </div>
+                    </div>
+                    <div class="member-details">
+                        <div class="member-top">
+                            <span class="member-name">{member.name}</span>
+                            <span class="member-badge">{member.relation}</span>
+                        </div>
+                        <div class="member-meta">
+                            <span class="meta-item">
+                                <lightning-icon icon-name="utility:date_input" size="xx-small" class="meta-icon"></lightning-icon>
+                                Age {member.age}
+                            </span>
+                            <span class="meta-item">
+                                <lightning-icon icon-name="utility:favorite" size="xx-small" class="meta-icon"></lightning-icon>
+                                {member.preference}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <div class="stats-container">
+        <!-- Stats Pills -->
+        <div class="stats-pills">
+            <template for:each={stats} for:item="stat">
+                <div key={stat.id} class="stat-pill">
+                    <lightning-icon icon-name={stat.icon} size="x-small" class="stat-icon"></lightning-icon>
+                    <div class="stat-content">
+                        <span class="stat-label">{stat.label}</span>
+                        <span class="stat-value">{stat.value}</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Consent Management -->
+        <div class="consent-section">
+            <h3 class="consent-title">Content Management</h3>
+            <div class="consent-toggles">
+                <template for:each={tabs} for:item="tab">
+                    <div key={tab.id} class="consent-item">
+                        <span class="consent-label">{tab.label}</span>
+                        <lightning-input type="toggle" checked message-toggle-active="Yes" message-toggle-inactive="No" class="consent-toggle"></lightning-input>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

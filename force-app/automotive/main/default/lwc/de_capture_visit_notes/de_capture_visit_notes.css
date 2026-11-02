@@ -1,0 +1,175 @@
+.cvn-card {
+    /* border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: var(--lwc-colorBackgroundAlt, #f3f3f3);
+    --cvn-blue: #0176d3;
+    --cvn-ink: #080707;
+    --cvn-muted: #706e6b; */
+}
+
+.cvn-header {
+    /* background: linear-gradient(135deg, #0176d3 0%, #0d9dda 100%);
+    color: white;
+    padding: 1rem 1.25rem; */
+}
+
+.cvn-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cvn-title-icon {
+    --slds-c-icon-color-foreground-default: white;
+}
+
+.cvn-body {
+    /* padding: 1.5rem 1.25rem; */
+}
+
+.cvn-icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #e8f4fc 0%, #d8edfa 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cvn-icon-wrap lightning-icon {
+    --slds-c-icon-color-foreground-default: #0176d3;
+}
+
+.cvn-hint {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+    color: var(--lwc-colorTextDefault, #181818);
+    text-align: center;
+}
+
+/* Voice row — aligned with de_key_tasks_Opp completion notes pattern (cvn-* prefix, scoped to this component) */
+.cvn-notes-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.cvn-notes-label-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.cvn-notes-field-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--cvn-ink);
+    line-height: 1.25;
+}
+
+.cvn-notes-label-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+}
+
+.cvn-notes-voice-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    margin: 0;
+    border: none;
+    border-radius: 0.25rem;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+    --slds-c-icon-color-foreground-default: var(--cvn-muted);
+}
+
+.cvn-notes-voice-control--recording {
+    --slds-c-icon-color-foreground-default: #ba0517;
+}
+
+.cvn-notes-voice-control:not(.cvn-notes-voice-control--disabled):hover {
+    background: #f3f3f3;
+}
+
+.cvn-notes-voice-control:not(.cvn-notes-voice-control--disabled):focus-visible {
+    background: #f3f3f3;
+    outline: 2px solid var(--cvn-blue);
+    outline-offset: 1px;
+}
+
+.cvn-notes-voice-control--disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.cvn-recording-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ba0517;
+}
+
+.cvn-transcribing-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cvn-blue);
+}
+
+.cvn-textarea {
+    margin-bottom: 0.5rem;
+}
+
+.cvn-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 0.75rem;
+}
+
+.cvn-save-btn {
+    cursor: pointer;
+}
+
+.cvn-warning {
+    font-size: 0.8125rem;
+    color: #c23934;
+    margin: 1rem 0 0;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .cvn-title {
+        font-size: 1rem;
+    }
+
+    .cvn-body {
+        padding: 1rem;
+    }
+
+    .cvn-icon-wrap {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .cvn-actions .cvn-save-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+<template>
+    <div class="panel">
+        <div class="hdr">
+            <lightning-icon icon-name="utility:einstein" size="small" class="ai-ico"></lightning-icon>
+            <div class="hdr-txt">
+                <span class="eyebrow">Next Best Action</span>
+                <h2 class="headline">{headline}</h2>
+            </div>
+        </div>
+
+        <div class="conf-row">
+            <span class="conf-badge">{confidenceLabel}</span>
+        </div>
+
+        <div class="propensity">
+            <div class="prop-labels">
+                <span>Propensity to Buy (180d)</span>
+                <span class="prop-num">{propensity}</span>
+            </div>
+            <div class="bar"><div class="fill" style={propensityStyle}></div></div>
+        </div>
+
+        <div class="rec">
+            <lightning-icon icon-name="utility:success" size="x-small" class="rec-ico"></lightning-icon>
+            <div>
+                <span class="rec-title">{recommendation}</span>
+                <span class="rec-why">{rationale}</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-brand" onclick={handleSend}>{sendLabel}</button>
+            <button class="btn-neutral">Add to Campaign</button>
+        </div>
+    </div>
+</template>

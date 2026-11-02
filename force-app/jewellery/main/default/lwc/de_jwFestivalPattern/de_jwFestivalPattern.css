@@ -1,0 +1,105 @@
+.panel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+}
+
+.panel-title h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: #16325c;
+}
+
+.insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background: #fdf6ec;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.82rem;
+    color: #8a5a12;
+    line-height: 1.35;
+}
+
+.i-ico {
+    --slds-c-icon-color-foreground-default: #e8a13c;
+    margin-top: 2px;
+    flex: 0 0 auto;
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+    height: 150px;
+}
+
+.col-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 0.25rem;
+}
+
+.col-track {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.col {
+    width: 60%;
+    max-width: 34px;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(180deg, #cdd1d6 0%, #aab0b8 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 8px;
+}
+
+.col.active {
+    background: linear-gradient(180deg, #f5c26b 0%, #e0a02c 100%);
+}
+
+.col-pct {
+    position: absolute;
+    top: -16px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #706e6b;
+}
+
+.col.active .col-pct {
+    color: #b5751a;
+}
+
+.col-name {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #16325c;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.col-month {
+    font-size: 0.6rem;
+    color: #a0a0a0;
+}

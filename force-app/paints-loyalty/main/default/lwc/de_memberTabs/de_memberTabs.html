@@ -1,0 +1,18 @@
+<template>
+    <div class="content-wrapper">
+        <div class="slds-grid slds-gutters">
+            <!-- Left: Enrollment & Eligibility -->
+            <div class="slds-col slds-size_1-of-2" style="width: 60%;">
+                <div class="grid-item">
+                    <c-de_enrollment-eligibility record-id={recordId}></c-de_enrollment-eligibility>
+                </div>
+            </div>
+            <!-- Right: Predictive Insights -->
+            <div class="slds-col slds-size_1-of-2" style="width: 40%;">
+                <div class="grid-item">
+                    <c-de_predictive-insights></c-de_predictive-insights>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

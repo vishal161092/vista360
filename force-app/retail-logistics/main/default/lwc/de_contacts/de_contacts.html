@@ -1,0 +1,35 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+            <h2 class="de-title">Contacts ({contacts.length})</h2>
+        </div>
+
+        <ul class="de-contacts">
+            <template for:each={contacts} for:item="c">
+                <li key={c.key} class="de-contact">
+                    <div class="de-avatar">{c.initials}</div>
+                    <div class="de-contact-body">
+                        <div class="de-name-row">
+                            <span class="de-name">{c.name}</span>
+                            <template if:true={c.primary}>
+                                <span class="de-primary">Primary</span>
+                            </template>
+                        </div>
+                        <span class="de-role">{c.role}</span>
+                        <div class="de-meta">
+                            <span class="de-meta-item">
+                                <lightning-icon icon-name="utility:call" size="xx-small" class="de-meta-icon"></lightning-icon>
+                                {c.phone}
+                            </span>
+                            <span class="de-meta-item">
+                                <lightning-icon icon-name="utility:email" size="xx-small" class="de-meta-icon"></lightning-icon>
+                                {c.email}
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

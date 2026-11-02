@@ -1,0 +1,66 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:metrics" size="small"></lightning-icon>
+            <h2 class="de-title">Analytics Snapshot</h2>
+        </div>
+        <p class="de-subhead">{heading}</p>
+
+        <div class="de-metrics">
+            <template for:each={metrics} for:item="m">
+                <div key={m.key} class="de-metric">
+                    <span class="de-metric-label">{m.label}</span>
+                    <span class="de-metric-value">{m.value}</span>
+                    <span class={m.deltaClass}>{m.delta}</span>
+                </div>
+            </template>
+        </div>
+
+        <h3 class="de-section-title">{tableTitle}</h3>
+        <table class="de-table">
+            <thead>
+                <tr>
+                    <th>{tableHeaders.col1}</th>
+                    <th>{tableHeaders.col2}</th>
+                    <th>{tableHeaders.col3}</th>
+                    <th>{tableHeaders.col4}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={corridors} for:item="c">
+                    <tr key={c.key}>
+                        <td class="de-route">{c.route}</td>
+                        <td>{c.volume}</td>
+                        <td>{c.service}</td>
+                        <td>{c.sla}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+        <h3 class="de-section-title">{mixTitle}</h3>
+        <div class="de-mix">
+            <template for:each={serviceMix} for:item="s">
+                <div key={s.key} class="de-mix-row">
+                    <div class="de-mix-head">
+                        <span class="de-mix-label">{s.label}</span>
+                        <span class="de-mix-value">{s.value}</span>
+                    </div>
+                    <div class="de-bar-track">
+                        <div class="de-bar-fill" style={s.style}></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <h3 class="de-section-title">Recommendations</h3>
+        <ul class="de-recs">
+            <template for:each={recommendations} for:item="rec">
+                <li key={rec.key} class="de-rec">
+                    <lightning-icon icon-name="utility:success" size="xx-small" class="de-rec-icon"></lightning-icon>
+                    <span>{rec.text}</span>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

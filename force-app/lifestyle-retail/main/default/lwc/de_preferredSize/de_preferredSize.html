@@ -1,0 +1,34 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:slider"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                Preferred Size (Based on Last Purchases)
+            </span>
+            <!-- <a class="edit-link" onclick={handleViewGuide}>View Size Guide</a> -->
+        </div>
+
+        <div class="size-grid">
+            <div class="size-box">
+                <p class="size-label">{apparel.label}</p>
+                <div class="size-value-row">
+                    <span class="size-value">{apparel.value}</span>
+                    <span class="rec-tag">Recommended</span>
+                </div>
+                <p class="size-note">{apparel.note}</p>
+            </div>
+            <div class="size-box">
+                <p class="size-label">{footwear.label}</p>
+                <div class="size-value-row">
+                    <span class="size-value">{footwear.value}</span>
+                    <span class="rec-tag">Recommended</span>
+                </div>
+                <p class="size-note">{footwear.note}</p>
+            </div>
+        </div>
+    </div>
+</template>

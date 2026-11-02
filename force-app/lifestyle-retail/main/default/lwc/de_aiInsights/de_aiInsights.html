@@ -1,0 +1,28 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:einstein"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                AI Insights
+            </span>
+            <span class="einstein-tag">
+                <lightning-icon
+                    icon-name="utility:einstein"
+                    size="xx-small"
+                    class="tag-icon"
+                ></lightning-icon>
+                Einstein
+            </span>
+        </div>
+
+        <ul class="insight-list">
+            <template for:each={insights} for:item="i">
+                <li key={i.key} class="insight-item">{i.text}</li>
+            </template>
+        </ul>
+    </div>
+</template>

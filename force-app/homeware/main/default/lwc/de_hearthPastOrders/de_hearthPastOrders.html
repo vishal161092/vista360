@@ -1,0 +1,120 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:cart" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Past Orders</span>
+            </div>
+            <template if:true={hasItems}>
+                <span class="count-badge">{count}</span>
+            </template>
+        </div>
+
+        <div class="body">
+            <template if:true={hasItems}>
+
+                <!-- ORDER ROWS -->
+                <template for:each={items} for:item="o">
+                    <div key={o.id} class={o.rowClass}>
+                        <div class="thumb">
+                            <template if:true={o.isLatest}>
+                                <span class="latest-dot"></span>
+                            </template>
+                            <template if:true={o.hasImage}>
+                                <img src={o.image} alt={o.name} />
+                            </template>
+                            <template if:false={o.hasImage}>
+                                <lightning-icon icon-name="utility:products" size="small"></lightning-icon>
+                            </template>
+                        </div>
+
+                        <div class="order-info">
+                            <div class="order-meta">
+                                <span class="cat-chip">{o.category}</span>
+                                <span class="status-chip">
+                                    <lightning-icon icon-name="utility:check" size="xx-small" class="status-icon"></lightning-icon>
+                                    Delivered
+                                </span>
+                                <template if:true={o.hasWarranty}>
+                                    <span class={o.warrantyClass}>
+                                        <lightning-icon icon-name={o.warrantyIcon} size="xx-small" class="warranty-icon"></lightning-icon>
+                                        Warranty {o.warrantyStatus}
+                                    </span>
+                                </template>
+                                <span class="order-id">{o.orderId}</span>
+                            </div>
+
+                            <div class="product-name">{o.name}</div>
+
+                            <template if:true={o.hasWarranty}>
+                                <div class="warranty-line">
+                                    <lightning-icon icon-name="utility:events" size="xx-small" class="wl-icon"></lightning-icon>
+                                    Purchased {o.date} · Warranty from {o.warrantyStart}
+                                </div>
+                            </template>
+
+                            <div class="order-footer">
+                                <div class="price-date">
+                                    <span class="price"><span class="cur">₹</span>{o.priceLabel}</span>
+                                    <template if:true={o.date}>
+                                        <span class="order-date">{o.date}</span>
+                                    </template>
+                                </div>
+                                <div class="actions">
+                                    <button class="btn-action btn-reorder" data-id={o.id} onclick={handleReorder}>
+                                        <lightning-icon icon-name="utility:refresh" size="xx-small" class="ba-icon"></lightning-icon>
+                                        <span class="btn-label">Reorder</span>
+                                    </button>
+                                    <button class="btn-action btn-review">
+                                        <lightning-icon icon-name="utility:favorite" size="xx-small" class="ba-icon"></lightning-icon>
+                                        Review
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- FOOTER SUMMARY -->
+                <div class="footer-bar">
+                    <div class="footer-stat">
+                        <div class="footer-stat-val">{count}</div>
+                        <div class="footer-stat-label">Orders</div>
+                    </div>
+                    <div class="footer-divider"></div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-val sm">₹{totalSpent}</div>
+                        <div class="footer-stat-label">Total Spent</div>
+                    </div>
+                    <div class="footer-divider"></div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-val">{topBrand}</div>
+                        <div class="footer-stat-label">Top Brand</div>
+                    </div>
+                    <div class="footer-divider"></div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-val">{topCategory}</div>
+                        <div class="footer-stat-label">Top Category</div>
+                    </div>
+                    <div class="footer-divider"></div>
+                    <div class="footer-stat">
+                        <div class="footer-stat-val sm">₹{avgOrder}</div>
+                        <div class="footer-stat-label">Avg Order</div>
+                    </div>
+                </div>
+
+            </template>
+
+            <template if:false={hasItems}>
+                <div class="empty-state">
+                    <lightning-icon icon-name="utility:cart" size="small" class="empty-icon"></lightning-icon>
+                    <span>No past orders</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

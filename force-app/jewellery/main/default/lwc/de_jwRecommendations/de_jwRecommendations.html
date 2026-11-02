@@ -1,0 +1,23 @@
+<template>
+    <div class="panel">
+        <div class="panel-title">
+            <lightning-icon icon-name="utility:sparkles" size="small"></lightning-icon>
+            <h2>Recommendations</h2>
+        </div>
+
+        <div class="grid">
+            <template for:each={recommendations} for:item="r">
+                <div key={r.id} class="rec-card">
+                    <div class="img-wrap">
+                        <img src={r.image} alt={r.name} class="rec-img" />
+                        <span class="tag">{r.tag}</span>
+                    </div>
+                    <div class="rec-body">
+                        <span class="rec-name">{r.name}</span>
+                        <span class="rec-price">{r.price}</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

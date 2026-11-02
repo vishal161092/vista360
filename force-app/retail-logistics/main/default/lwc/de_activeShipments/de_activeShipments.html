@@ -1,0 +1,33 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:shipment" size="small"></lightning-icon>
+            <h2 class="de-title">Shipments ({shipments.length})</h2>
+        </div>
+
+        <ul class="de-shipments">
+            <template for:each={shipments} for:item="s">
+                <li key={s.key} class="de-shipment">
+                    <div class="de-ship-top">
+                        <span class="de-ship-id">{s.id}</span>
+                        <span class="de-amount">{s.amount}</span>
+                    </div>
+                    <div class="de-ship-meta">
+                        <span><strong>Route:</strong> {s.route}</span>
+                        <span><strong>Service:</strong> {s.service}</span>
+                    </div>
+                    <div class={s.statusClass}>
+                        <span class={s.dotClass}></span>
+                        {s.status}
+                    </div>
+                </li>
+            </template>
+        </ul>
+
+        <template if:false={shipments.length}>
+            <p class="de-empty">No active shipments found.</p>
+        </template>
+
+        <a href="#" class="de-view-all">View All Shipments</a>
+    </div>
+</template>

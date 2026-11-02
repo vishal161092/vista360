@@ -1,0 +1,65 @@
+<template>
+    <div class="booked-vehicle-card">
+        <div class="card-header">
+            <div class="header-left">
+                <lightning-icon icon-name="utility:checkin" size="x-small" class="header-icon"></lightning-icon>
+                <div>
+                    <h2>Booked Vehicle</h2>
+                    <p class="sub-title">Confirmation Details</p>
+                </div>
+            </div>
+            <span class="status-pill">Booked</span>
+        </div>
+
+        <div class="intro-block"> 
+            <p class="booking-text">
+                <span class="emphasis">Velo VX 7X</span> has been Booked.
+            </p>
+            <div class="booking-ref-strip">
+                <span class="strip-label">Booking Reference Number</span>
+                <span class="strip-divider"></span>
+                <span class="strip-value">#8295</span>
+            </div>
+
+            <div class="vehicle-pill-row">
+                <span class="vehicle-pill">Customer: Rahul Kannan</span>
+                <span class="vehicle-pill">Model: Velo VX 7X</span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="vehicle-hero">
+                <div class="verified-pill">Booking Confirmed</div>
+                <div class="car-image-wrap">
+                    <img src={carImageUrl} alt="Velo VX 7X booked vehicle" class="car-image" />
+                </div>
+                <div class="vehicle-pill-row hero-pills">
+                    <span class="vehicle-pill">Variant: 7XO</span>
+                    <span class="vehicle-pill green-pill">Delivery Priority: High</span>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <h3>Accessories Included</h3>
+                    <div class="chip-grid">
+                        <span class="detail-chip">17" Alloy Wheels</span>
+                        <span class="detail-chip">Body Side Cladding</span>
+                        <span class="detail-chip">Roof Rails</span>
+                        <span class="detail-chip">Premium ORVM Finish</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li><span class="feature-dot">●</span>Bold front grille with signature styling</li>
+                        <li><span class="feature-dot">●</span>LED projector headlamp setup</li>
+                        <li><span class="feature-dot">●</span>High ground-clearance SUV stance</li>
+                        <li><span class="feature-dot">●</span>Dual-tone sporty exterior finish</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

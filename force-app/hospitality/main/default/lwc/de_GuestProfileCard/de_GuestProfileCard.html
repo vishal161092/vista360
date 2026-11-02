@@ -1,0 +1,93 @@
+<template>
+    <div class="profile-card">
+        <!-- Avatar & Name -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="/_slds/images/themes/lightning_lite/lightning_lite_profile_avatar_160.png" class="avatar" alt="Guest Avatar"/>
+            </div>
+            <div class="profile-name">
+                <h2 class="guest-name">{contactName}</h2>
+                <p class="guest-location">{contactLocation}</p>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="section-divider">
+            <div class="info-row">
+                <lightning-icon icon-name="utility:user" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Customer ID</span>
+                <span class="info-value">{customerId}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:email" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Email</span>
+                <span class="info-value">{contactEmail}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:call" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Phone</span>
+                <span class="info-value">{contactPhone}</span>
+            </div>
+        </div>
+
+        <!-- Metrics -->
+        <div class="section-divider">
+            <div class="info-row">
+                <lightning-icon icon-name="utility:favorite" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Loyalty Program</span>
+                <span class="info-value">{loyaltyTier}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:priority" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Support Level</span>
+                <span class="info-value">{supportLevel}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:routing_offline" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Preferred Channel</span>
+                <span class="info-value">{preferredChannel}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:package" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Existing Product</span>
+                <span class="info-value">{existingProduct}</span>
+            </div>
+        </div>
+
+        <!-- Scores -->
+        <div class="section-divider">
+            <div class="info-row">
+                <lightning-icon icon-name="utility:trending" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Propensity to Buy</span>
+                <span class="info-value">{propensityToBuy}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:warning" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">Churn Risk</span>
+                <span class="info-value score-low">{churnRisk}</span>
+            </div>
+            <div class="info-row">
+                <lightning-icon icon-name="utility:sentiment_positive" size="x-small" class="info-icon"></lightning-icon>
+                <span class="info-label">NPS</span>
+                <span class="info-value score-high">{npsScore}</span>
+            </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="tags-section">
+            <template for:each={tags} for:item="tag">
+                <span key={tag.id} class={tag.class}>{tag.label}</span>
+            </template>
+        </div>
+
+        <!-- Affinities -->
+        <div class="affinities-section">
+            <h3 class="section-heading">Affinities</h3>
+            <div class="affinities-list">
+                <template for:each={affinities} for:item="aff">
+                    <span key={aff.id} class="affinity-chip">{aff.label}</span>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

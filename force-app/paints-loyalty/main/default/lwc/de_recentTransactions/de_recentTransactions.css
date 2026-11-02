@@ -1,0 +1,118 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.transactions-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #181818;
+    margin: 0;
+}
+
+.view-all-link {
+    font-size: 0.75rem;
+    color: #0176d3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+}
+
+.transactions-table thead {
+    background-color: #f8f8f8;
+}
+
+.transactions-table thead th {
+    padding: 0.5rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #706e6b;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid #e5e5e5;
+    white-space: nowrap;
+}
+
+.transactions-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.transactions-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.transactions-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.transactions-table tbody td {
+    padding: 0.5rem 0.5rem;
+    color: #181818;
+    vertical-align: middle;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.invoice-link {
+    color: #0176d3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.invoice-link:hover {
+    text-decoration: underline;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.view-all-transactions-link {
+    font-size: 0.8rem;
+    color: #0176d3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-all-transactions-link:hover {
+    text-decoration: underline;
+}
+
+.error-msg {
+    color: #d84315;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+}

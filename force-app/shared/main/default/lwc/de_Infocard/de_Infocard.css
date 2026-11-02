@@ -1,0 +1,46 @@
+.info-container {
+    padding: 4px 16px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.info-item {
+    background: #f8fdfb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid #e8f4f4;
+}
+
+.item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.item-icon {
+    --slds-c-icon-color-foreground-default: #2B7A7F;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-label {
+    font-size: 10px;
+    color: #9ca3af;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.item-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 3px 0 0;
+}

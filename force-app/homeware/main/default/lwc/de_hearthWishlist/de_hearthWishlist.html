@@ -1,0 +1,80 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:like" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Wishlist</span>
+            </div>
+            <template if:true={hasItems}>
+                <span class="count-badge">{count}</span>
+            </template>
+        </div>
+
+        <div class="body">
+            <template if:true={hasItems}>
+                <template for:each={items} for:item="p">
+                    <div key={p.id} class="wish-item">
+
+                        <!-- PRODUCT ROW -->
+                        <div class="product-row">
+                            <div class="thumb">
+                                <template if:true={p.hasImage}>
+                                    <img src={p.image} alt={p.name} />
+                                </template>
+                                <template if:false={p.hasImage}>
+                                    <lightning-icon icon-name="utility:products" size="small"></lightning-icon>
+                                </template>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">{p.name}</div>
+                                <div class="product-meta">
+                                    <span class="price"><span class="cur">₹</span>{p.priceLabel}</span>
+                                    <template if:true={p.hasDiscount}>
+                                        <span class="price-original">₹{p.originalLabel}</span>
+                                        <span class="save-chip">{p.saveLabel}</span>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INTENT SIGNAL -->
+                        <div class="intent-row">
+                            <span class="intent-date">{p.daysLabel}</span>
+                            <div class="intent-track">
+                                <div class="intent-fill" style={p.intentStyle}></div>
+                            </div>
+                            <span class={p.intentClass}>
+                                <lightning-icon icon-name="utility:clock" size="xx-small" class="intent-icon"></lightning-icon>
+                                {p.intentLabel}
+                            </span>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="cta-row">
+                            <button class="btn-primary" data-id={p.id} onclick={handleNudge}>
+                                <lightning-icon icon-name="utility:chat" size="xx-small" class="bp-icon"></lightning-icon>
+                                <span class="bp-label">Send WhatsApp Nudge</span>
+                            </button>
+                            <button class="btn-sec" data-id={p.id} onclick={handleAlert}>
+                                <lightning-icon icon-name="utility:notification" size="xx-small" class="bs-icon"></lightning-icon>
+                                <span class="bs-label">Price Alert</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </template>
+            </template>
+
+            <template if:false={hasItems}>
+                <div class="empty-state">
+                    <lightning-icon icon-name="utility:like" size="small" class="empty-icon"></lightning-icon>
+                    <span>No wishlist items</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

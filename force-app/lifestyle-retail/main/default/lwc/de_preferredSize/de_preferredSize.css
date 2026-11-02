@@ -1,0 +1,84 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.title-icon {
+    --slds-c-icon-color-foreground-default: #4b4ded;
+}
+
+.edit-link {
+    color: #4b4ded;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.size-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.size-box {
+    border: 1px solid #e5e5ee;
+    border-radius: 10px;
+    padding: 0.85rem;
+    background: #fafafd;
+}
+
+.size-label {
+    color: #6b6d82;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.size-value-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.size-value {
+    background: #eef0ff;
+    color: #16172b;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+}
+
+.rec-tag {
+    background: #e3f6ec;
+    color: #1e7a45;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.size-note {
+    color: #9a9cb0;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+}

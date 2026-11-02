@@ -1,0 +1,127 @@
+:host {
+    --de-accent: #0176d3;
+    --de-border: #e5e5e5;
+    --de-text: #181818;
+    --de-text-muted: #5c5c5c;
+    --de-surface-soft: #f4f6f9;
+    display: block;
+}
+
+.de-card {
+    background: #ffffff;
+    border: 1px solid var(--de-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: var(--de-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.de-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.95rem;
+}
+
+.de-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.de-tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+}
+
+.de-tile {
+    border-radius: 0.6rem;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    color: #ffffff;
+}
+
+.de-tile-danger {
+    background: linear-gradient(135deg, #ea4d4d 0%, #ba0517 100%);
+}
+
+.de-tile-success {
+    background: linear-gradient(135deg, #2bb673 0%, #15734a 100%);
+}
+
+.de-tile-icon {
+    --slds-c-icon-color-foreground-default: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.15rem;
+}
+
+.de-tile-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+}
+
+.de-tile-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.de-tile-sub {
+    font-size: 0.66rem;
+    opacity: 0.9;
+}
+
+.de-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.de-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.5rem;
+    background: var(--de-surface-soft);
+}
+
+.de-row-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    flex-shrink: 0;
+    --slds-c-icon-color-foreground-default: var(--de-accent);
+}
+
+.de-row-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
+.de-label {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--de-text-muted);
+}
+
+.de-value {
+    font-size: 0.84rem;
+    font-weight: 600;
+}

@@ -1,0 +1,24 @@
+<template>
+    <div class="header-card">
+        <template lwc:if={customer}>
+            <span class="member-badge">
+                <lightning-icon
+                    icon-name="utility:favorite"
+                    size="xx-small"
+                    class="badge-icon"
+                ></lightning-icon>
+                Gold Member
+            </span>
+            <span class="meta">{metaLine}</span>
+            <span class="divider">|</span>
+            <div class="status-item">
+                <span class="dot active"></span>
+                <span>Active Customer</span>
+            </div>
+        </template>
+
+        <template lwc:if={error}>
+            <div class="error">Unable to load customer.</div>
+        </template>
+    </div>
+</template>

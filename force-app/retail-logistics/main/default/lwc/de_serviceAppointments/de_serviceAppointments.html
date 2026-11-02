@@ -1,0 +1,33 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:service_appointment" size="small"></lightning-icon>
+            <h2 class="de-title">Service Appointments ({appointments.length})</h2>
+        </div>
+
+        <ul class="de-shipments">
+            <template for:each={appointments} for:item="s">
+                <li key={s.key} class="de-shipment">
+                    <div class="de-ship-top">
+                        <span class="de-ship-id">{s.id}</span>
+                        <span class="de-amount">{s.amount}</span>
+                    </div>
+                    <div class="de-ship-meta">
+                        <span><strong>Subject:</strong> {s.route}</span>
+                        <span><strong>Type:</strong> {s.service}</span>
+                    </div>
+                    <div class={s.statusClass}>
+                        <span class={s.dotClass}></span>
+                        {s.status}
+                    </div>
+                </li>
+            </template>
+        </ul>
+
+        <template if:false={appointments.length}>
+            <p class="de-empty">No upcoming service appointments.</p>
+        </template>
+
+        <a href="#" class="de-view-all">View All Appointments</a>
+    </div>
+</template>

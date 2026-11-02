@@ -1,0 +1,54 @@
+<template>
+    <div class="enrollment-container">
+        <!-- Section 1: Enrollment & Eligibility -->
+        <h2 class="card-title">Enrollment &amp; Eligibility</h2>
+        <div class="field-row">
+            <div class="field-item">
+                <div class="field-label">Loyalty Program</div>
+                <div class="field-value">
+                    <a class="value-link" onclick={handleProgramClick}>{programName}</a>
+                </div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Enrollment Date</div>
+                <div class="field-value">12 Mar 2024</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Enrollment Source</div>
+                <div class="field-value">Brightwall Paints App</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Member ID</div>
+                <div class="field-value">NDP-PNT-00090456</div>
+            </div>
+        </div>
+
+        <!-- Section 2: Tier Eligibility -->
+        <div class="section-divider"></div>
+        <h3 class="section-title">Tier Eligibility</h3>
+        <div class="field-row">
+            <div class="field-item">
+                <div class="field-label">Current Tier</div>
+                <div class="field-value tier-platinum">PLATINUM</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Tier Achieved On</div>
+                <div class="field-value">01 Jan 2026</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Next Tier</div>
+                <div class="field-value tier-diamond">&#x1F48E; DIAMOND</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Points Needed</div>
+                <div class="field-value">21,600 Pts</div>
+            </div>
+            <div class="field-item">
+                <div class="field-label">Tier Validity</div>
+                <div class="field-value">31 Mar 2027
+                    <div class="field-subtext">(265 days left)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

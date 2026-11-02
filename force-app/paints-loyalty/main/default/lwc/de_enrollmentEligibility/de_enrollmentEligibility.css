@@ -1,0 +1,93 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.enrollment-container {
+    padding: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 1rem;
+}
+
+/* Field row layout */
+.field-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.field-item {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Field label styling */
+.field-label {
+    font-size: 0.7rem;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+/* Field value styling */
+.field-value {
+    font-size: 0.875rem;
+    color: #181818;
+    font-weight: 500;
+}
+
+/* Links */
+.value-link {
+    color: #0176d3;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.value-link:hover {
+    text-decoration: underline;
+}
+
+/* Section divider */
+.section-divider {
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 1rem 0;
+}
+
+/* Section title */
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 1rem;
+}
+
+/* Tier styling - Platinum */
+.tier-platinum {
+    color: #5b47d6;
+    font-weight: 700;
+    font-size: 0.9375rem;
+}
+
+/* Tier styling - Diamond */
+.tier-diamond {
+    color: #06a59a;
+    font-weight: 700;
+    font-size: 0.9375rem;
+}
+
+/* Field subtext */
+.field-subtext {
+    font-size: 0.7rem;
+    color: #706e6b;
+    font-weight: 400;
+    margin-top: 0.15rem;
+}

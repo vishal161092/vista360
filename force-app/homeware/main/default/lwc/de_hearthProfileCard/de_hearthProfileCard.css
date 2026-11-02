@@ -1,0 +1,320 @@
+:host {
+    --ink: #000000;
+    --text-2: #3f3f46;
+    --muted: #6b7280;
+    --surf: #fafafb;
+    --border: #eceef1;
+    display: block;
+}
+
+.card {
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: -12px;
+}
+
+/* ── HEADER ── */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 18px 20px;
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 40%, rgba(255, 255, 255, 0.35) 60%, transparent);
+}
+
+.header-left {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.header-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hicon {
+    --slds-c-icon-color-foreground-default: #fff;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.id-chip {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 4px 11px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+.id-chip:hover {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.id-copy-icon {
+    --slds-c-icon-color-foreground-default: rgba(255, 255, 255, 0.75);
+}
+
+/* ── BODY ── */
+.body {
+    padding: 10px 0 10px;
+}
+
+.section {
+    padding: 10px 20px 2px;
+}
+
+.section-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+    padding-left: 2px;
+}
+
+/* ── ROW ── */
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.row + .row {
+    border-top: 1px solid var(--border);
+}
+
+/* sliding accent bar on hover */
+.row::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #CB2228;
+    border-radius: 0 2px 2px 0;
+    transform: scaleY(0);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.row:hover::before {
+    transform: scaleY(1);
+}
+
+/* icon pill */
+.row-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: #f4f4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.ricon {
+    --slds-c-icon-color-foreground-default: #000000;
+}
+
+.row:hover .row-icon {
+    background: #000000;
+    transform: scale(1.06);
+}
+
+.row:hover .ricon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+.row-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.row-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+
+.row-value {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: right;
+    min-width: 0;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+/* value group (chip/copy + value) */
+.value-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+/* copy button */
+.copy-btn {
+    opacity: 0;
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #000000;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: opacity 0.15s, background 0.15s;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+.row:hover .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    background: #CB2228;
+    border-color: #CB2228;
+    color: #ffffff;
+}
+
+.copy-btn.copied {
+    color: #ffffff;
+    background: #CB2228;
+    border-color: #CB2228;
+    opacity: 1;
+}
+
+/* address */
+.address-row {
+    align-items: flex-start;
+}
+
+.address-row .row-icon {
+    margin-top: 2px;
+}
+
+.address-row .row-content {
+    align-items: flex-start;
+}
+
+.address-row .row-label {
+    padding-top: 2px;
+}
+
+.address-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: right;
+    line-height: 1.5;
+}
+
+.address-sub {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* age chip */
+.age-chip {
+    background: #f4f4f5;
+    border: 1px solid var(--border);
+    color: #000000;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+/* generic chip (device / status) */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 11px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: capitalize;
+}
+
+.chip-icon {
+    --slds-c-icon-color-foreground-default: #000000;
+}

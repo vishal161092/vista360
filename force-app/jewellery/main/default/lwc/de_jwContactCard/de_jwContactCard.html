@@ -1,0 +1,97 @@
+<template>
+    <div class="card">
+        <!-- Header: avatar + name -->
+        <div class="hdr">
+            <div class="avatar">
+                <img src={personaImage} alt={name} class="avatar-img" />
+            </div>
+            <div class="hdr-txt">
+                <span class="eyebrow">Contact</span>
+                <h2 class="name">{name}</h2>
+            </div>
+        </div>
+
+        <!-- DYNAMIC: contact details -->
+        <div class="rows">
+            <div class="row">
+                <lightning-icon icon-name="utility:contact" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body">
+                    <span class="label">Customer ID</span>
+                    <span class="value">{customerId}</span>
+                </div>
+            </div>
+            <div class="row">
+                <lightning-icon icon-name="utility:email" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body">
+                    <span class="label">Email Address</span>
+                    <span class="value">{email}</span>
+                </div>
+            </div>
+            <div class="row">
+                <lightning-icon icon-name="utility:phone_portrait" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body">
+                    <span class="label">Phone Number</span>
+                    <span class="value">{phone}</span>
+                </div>
+            </div>
+            <div class="row">
+                <lightning-icon icon-name="utility:location" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body">
+                    <span class="label">Address</span>
+                    <span class="value">{address}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- STATIC: loyalty + segment -->
+        <div class="rows">
+            <div class="row">
+                <lightning-icon icon-name="utility:favorite" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body inline">
+                    <span class="label">Loyalty Tier</span>
+                    <span class="value strong">{loyaltyTier}</span>
+                </div>
+            </div>
+            <div class="row">
+                <lightning-icon icon-name="utility:refresh" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body inline">
+                    <span class="label">Segment</span>
+                    <span class="value strong">{segment}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- STATIC: metrics -->
+        <div class="rows">
+            <div class="row">
+                <lightning-icon icon-name="utility:cart" size="x-small" class="ico"></lightning-icon>
+                <div class="row-body inline">
+                    <span class="label">Lifetime Value</span>
+                    <span class="value strong">{lifetimeValue}</span>
+                </div>
+            </div>
+
+            <div class="metric">
+                <div class="metric-hdr">
+                    <lightning-icon icon-name="utility:high_velocity_sales" size="x-small" class="ico"></lightning-icon>
+                    <span class="label">Propensity to Purchase</span>
+                    <span class="value strong metric-num">{propensityScore}</span>
+                </div>
+                <div class="bar"><div class="fill" style={propensityStyle}></div></div>
+            </div>
+
+            <div class="metric">
+                <div class="metric-hdr">
+                    <lightning-icon icon-name="utility:socialshare" size="x-small" class="ico"></lightning-icon>
+                    <span class="label">Engagement Score</span>
+                    <span class="value strong metric-num">{engagementScore}%</span>
+                </div>
+                <div class="bar"><div class="fill" style={engagementStyle}></div></div>
+            </div>
+        </div>
+    </div>
+</template>

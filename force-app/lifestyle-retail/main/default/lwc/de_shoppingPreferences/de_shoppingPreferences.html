@@ -1,0 +1,36 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:favorite"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                Shopping Preferences
+            </span>
+            <a class="edit-link" onclick={handleEdit}>Edit</a>
+        </div>
+
+        <p class="group-label">Favourite Brands:</p>
+        <div class="chip-row">
+            <template for:each={brands} for:item="b">
+                <span key={b} class="chip">{b}</span>
+            </template>
+        </div>
+
+        <p class="group-label">Categories:</p>
+        <div class="chip-row">
+            <template for:each={categories} for:item="c">
+                <span key={c} class="chip">{c}</span>
+            </template>
+        </div>
+
+        <p class="group-label">Preferred Payment:</p>
+        <div class="chip-row">
+            <template for:each={payments} for:item="p">
+                <span key={p} class="chip">{p}</span>
+            </template>
+        </div>
+    </div>
+</template>

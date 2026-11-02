@@ -1,0 +1,165 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+}
+
+.card-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem 1.5rem;
+}
+
+.detail-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.field-label {
+    font-size: 0.65rem;
+    color: #706e6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.field-value {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #181818;
+}
+
+.field-unit {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #706e6b;
+}
+
+.field-subtext {
+    font-size: 0.72rem;
+    color: #706e6b;
+}
+
+/* Room Tags */
+.rooms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.room-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    background: #f0f4ff;
+    color: #3b5998;
+    font-weight: 500;
+}
+
+/* Condition Tags */
+.condition-tag {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-right: 0.35rem;
+}
+
+.condition-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.condition-info {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* Finish Tags */
+.finish-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    background: #f3e8ff;
+    color: #6b21a8;
+    font-weight: 500;
+    margin-right: 0.3rem;
+}
+
+/* Product Tags */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.product-tag {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 10px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+/* Color Chips */
+.color-chip {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}
+
+.color-sep {
+    margin: 0 0.5rem;
+    color: #ccc;
+}
+
+/* Painter */
+.painter-value {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.painter-name {
+    font-weight: 700;
+    color: #181818;
+    font-size: 0.9rem;
+}
+
+.painter-rating {
+    font-size: 0.8rem;
+    color: #f5a623;
+    font-weight: 700;
+}
+
+.painter-tier {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #b8d4e3, #8ec5fc);
+    color: #1a3a5c;
+    font-weight: 700;
+    text-transform: uppercase;
+}

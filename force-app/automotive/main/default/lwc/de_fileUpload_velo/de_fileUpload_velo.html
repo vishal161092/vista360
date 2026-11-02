@@ -1,0 +1,83 @@
+<template>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="title">Upload Documents</h1>
+                <template lwc:if={caseNumber}>
+                    <p class="subtitle">Case #{caseNumber}</p>
+                </template>
+            </div>
+
+            <template lwc:if={errorMessage}>
+                <div class="alert alert-error">
+                    <span class="alert-icon">&#9888;</span>
+                    <span>{errorMessage}</span>
+                </div>
+            </template>
+
+            <template lwc:if={uploadComplete}>
+                <div class="alert alert-success">
+                    <span class="alert-icon">&#10004;</span>
+                    <span>{successMessage}</span>
+                </div>
+            </template>
+
+            <template lwc:if={showFileInput}>
+                <div class="upload-section">
+                    <p class="info-text">
+                        Upload up to 4 files (max 5MB each). Accepted: JPG, PNG, PDF, DOC, DOCX.
+                    </p>
+
+                    <template lwc:if={canAddMore}>
+                        <div class="file-input-wrapper">
+                            <label class="file-label" for="fileInput">
+                                <span class="upload-icon">&#128206;</span>
+                                <span>Choose Files ({filesRemaining} remaining)</span>
+                            </label>
+                            <input
+                                type="file"
+                                id="fileInput"
+                                class="file-input"
+                                accept={acceptedFormats}
+                                multiple
+                                onchange={handleFileChange}
+                            />
+                        </div>
+                    </template>
+
+                    <template lwc:if={hasFiles}>
+                        <ul class="file-list">
+                            <template for:each={files} for:item="fileItem">
+                                <li key={fileItem.id} class="file-item">
+                                    <div class="file-info">
+                                        <span class="file-name">{fileItem.name}</span>
+                                        <span class="file-size">{fileItem.size}</span>
+                                    </div>
+                                    <button
+                                        class="btn-remove"
+                                        data-id={fileItem.id}
+                                        onclick={handleRemoveFile}
+                                        title="Remove file"
+                                    >&times;</button>
+                                </li>
+                            </template>
+                        </ul>
+
+                        <button
+                            class="btn-upload"
+                            onclick={handleUpload}
+                            disabled={uploadDisabled}
+                        >
+                            <template lwc:if={isUploading}>
+                                <span class="spinner"></span> Uploading...
+                            </template>
+                            <template lwc:else>
+                                Upload Files
+                            </template>
+                        </button>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

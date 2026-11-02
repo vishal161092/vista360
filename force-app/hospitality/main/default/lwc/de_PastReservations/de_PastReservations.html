@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Past Reservations" icon-name="standard:visit_templates">
+        <div class="reservations-container">
+            <table class="reservations-table">
+                <thead>
+                    <tr>
+                        <th>Check-in Date</th>
+                        <th>Channel</th>
+                        <th>Hotel</th>
+                        <th>City</th>
+                        <th>Booking ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={formattedReservations} for:item="res">
+                        <tr key={res.id}>
+                            <td>
+                                <lightning-formatted-date-time value={res.checkinDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                            </td>
+                            <td><span class={res.channelClass}>{res.channel}</span></td>
+                            <td class="hotel-name">{res.hotel}</td>
+                            <td>{res.city}</td>
+                            <td class="booking-id">{res.bookingId}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div class="view-all">
+                <lightning-button label="View All" variant="base"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

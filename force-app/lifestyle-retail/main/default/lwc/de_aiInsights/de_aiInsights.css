@@ -1,0 +1,52 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.title-icon {
+    --slds-c-icon-color-foreground-default: #7a3ff2;
+}
+
+.einstein-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #4b4ded;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-icon {
+    --slds-c-icon-color-foreground-default: #4b4ded;
+}
+
+.insight-list {
+    list-style: disc;
+    margin: 0 0 0 1.1rem;
+    padding: 0;
+}
+
+.insight-item {
+    color: #3a3b50;
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+}

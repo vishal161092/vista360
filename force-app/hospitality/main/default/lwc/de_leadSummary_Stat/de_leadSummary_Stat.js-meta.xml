@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property
+                name="confidence"
+                type="String"
+                label="Confidence Percentage"
+                default="76"
+            />
+            <property
+                name="summary"
+                type="String"
+                label="Executive Summary"
+                default="- Outreach initiated by TASC (Anirudh/TARA) offering staffing, payroll, and compliance support in the UAE.&#10;- Lead (Udt) replied multiple times requesting details on regional experience, SLAs/metrics, and pricing for UAE/GCC operations.&#10;- No budget disclosed and no competitor mentioned.&#10;- Tone is professional and exploratory, with the lead seeking specifics and the seller proposing a meeting."
+            />
+            <property
+                name="latestInteractionDate"
+                type="String"
+                label="Latest Interaction Date"
+                default="1/9/2026"
+            />
+            <property
+                name="latestInteractionDirection"
+                type="String"
+                label="Latest Interaction Direction"
+                default="Outgoing"
+            />
+            <property
+                name="latestInteractionPriority"
+                type="String"
+                label="Latest Interaction Priority"
+                default="Medium"
+            />
+            <property
+                name="latestInteractionSubject"
+                type="String"
+                label="Latest Interaction Subject"
+                default="Streamline Your Workforce Management with TASC Outsourcing"
+            />
+            <property
+                name="latestInteractionTone"
+                type="String"
+                label="Latest Interaction Tone"
+                default="Professional"
+            />
+            <property
+                name="buyerIntentStage"
+                type="String"
+                label="Buyer Intent Stage"
+                default="Evaluation"
+            />
+            <property
+                name="buyerIntentInterest"
+                type="String"
+                label="Buyer Intent Interest Level"
+                default="Medium"
+            />
+            <property
+                name="buyerIntentUrgency"
+                type="String"
+                label="Buyer Intent Urgency"
+                default="Low"
+            />
+            <property
+                name="buyerIntentDecisionMaker"
+                type="String"
+                label="Buyer Intent Decision Maker"
+                default="No"
+            />
+            <property
+                name="painPointsText"
+                type="String"
+                label="Pain Points (One Per Line)"
+                default="Complexity in managing recruitment, payroll, and compliance in the UAE&#10;Need for clarity on SLAs, success metrics, and pricing structure"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

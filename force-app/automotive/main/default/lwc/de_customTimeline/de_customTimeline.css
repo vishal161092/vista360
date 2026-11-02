@@ -1,0 +1,163 @@
+.timeline-shell {
+    background: #ffffff;
+    border: 1px solid #e9edf3;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-icon-wrap {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: #1b96ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-icon-wrap lightning-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+.title-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.subheader-row {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #edf0f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subheader-row p {
+    margin: 0;
+    color: #59626d;
+    font-size: 12px;
+}
+
+.recent-chip {
+    border: 1px solid #ef4f79;
+    color: #ef4f79;
+    border-radius: 14px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.feed {
+    margin-top: 10px;
+    height: var(--heightInPixels, 300px);
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-list li {
+    margin: 0 0 10px;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    background: #f7fbff;
+    border: 1px solid #e6eef8;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.timeline-rail {
+    position: absolute;
+    left: 18px;
+    top: 34px;
+    bottom: -14px;
+    width: 2px;
+    background: #d6d9de;
+}
+
+.timeline-list li:last-child .timeline-rail {
+    display: none;
+}
+
+.item-icon-wrap {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e9f5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.item-top h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.item-top-right {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.status-text {
+    margin: 0;
+    font-size: 12px;
+    color: #1a9cff;
+    font-weight: 700;
+}
+
+.desc-text {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #5c6570;
+    line-height: 1.35;
+}
+
+.toggle-btn {
+    --slds-c-icon-color-foreground-default: #7e8792;
+}

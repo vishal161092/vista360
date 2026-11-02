@@ -1,0 +1,120 @@
+<template>
+
+        <template if:true={showComp}>
+
+        <div class="card-header">
+            <lightning-icon icon-name="custom:custom31"  size="medium"></lightning-icon>
+            <h1 class="slds-text-heading_medium" style="font-size: 16px;">Fleet Attributes</h1>
+        </div>
+        <div class="slds-box slds-theme_default">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:podcast_webinar" size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Fleet Size</p>
+                    <p class="slds-text-body_regular">400</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:stage_collection" size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Fleet Type</p>
+                    <p class="slds-text-body_regular">2W & 3W</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:lead" size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Average Fleet Age (Yrs)</p>
+                    <p class="slds-text-body_regular">1.5</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:trending"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Annual Mileage</p>
+                    <p class="slds-text-body_regular">150000</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:flow"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Preferred Fuel</p>
+                    <p class="slds-text-body_regular">Electric</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:change_record_type"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Operation Range</p>
+                    <p class="slds-text-body_regular">75 Kms</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:location"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Primary Depo Location</p>
+                    <p class="slds-text-body_regular">Hosur</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:report_issue"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Extended Warranty</p>
+                    <p class="slds-text-body_regular">Yes</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small info-item">
+                    <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2" style="width:25%">
+                    <lightning-icon icon-name="utility:money"  size="small" class="icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2" style="width:75%">
+                    <p class="slds-text-title">Avg Load</p>
+                    <p class="slds-text-body_regular">500 Kg</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <lightning-card title="Recommendation" icon-name="standard:tour_check" style="--sds-c-icon-color-background: #1666B7; --sds-c-card-color-background: #FFE2C8;">
+                <div style="padding-left: 18px;font-size: 14px; line-height: 22px; font-weight: 500;"> 
+                    Timing belt replacement at 60K service
+                </div>
+            </lightning-card> -->
+
+        </div>
+        </template>
+</template>

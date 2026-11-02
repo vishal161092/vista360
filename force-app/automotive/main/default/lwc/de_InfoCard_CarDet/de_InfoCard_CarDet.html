@@ -1,0 +1,188 @@
+<template>
+<template if:true={extraPV}>  
+        <div class="vehicle-card">
+        <div class="card-header">
+            <div class="header-title">
+                <lightning-icon icon-name="custom:custom31" size="small" class="header-icon"></lightning-icon>
+                <div>
+                    <h1 class="slds-text-heading_medium">Existing Vehicle</h1>
+                    <p class="sub-title">Complete ownership details</p>
+                </div>
+            </div>
+            <span class="status-pill">Active</span>
+        </div>
+
+        <div class="card-body">
+            <template if:true={showRecentPurchase}>
+                <div class="recent-purchase-panel">
+                    <div class="recent-ribbon">NEW PURCHASE</div>
+                    <div class="service-header">
+                        <h2>Recent Purchase</h2>
+                        <span class="recent-badge">Just Bought</span>
+                    </div>
+                    <div class="recent-purchase-content">
+                        <div class="recent-image-wrap">
+                            <img src={vx7xImageUrl} alt="Recently purchased vehicle" class="recent-vehicle-image"/>
+                        </div>
+                        <div class="recent-meta">
+                            <span class="vehicle-chip">Velo VX 7X</span>
+                            <!-- <span class="vehicle-chip km-chip">Booked Recently</span> -->
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="preview-card">
+                <div class="preview-accent"></div>
+                <!-- <div class="verified-pill">Verified</div> -->
+
+            <template if:false={wteCheck}>
+            <div class="vehicle-image-wrap">
+                <img src={vx700ImageUrl} class="vehicle-image" alt="Vehicle image"/>
+            </div>
+            </template>
+            <template if:true={wteCheck}>
+            <div class="vehicle-image-wrap">
+                <img src={vx700ImageUrl} class="vehicle-image" alt="Vehicle image"/>
+            </div>
+            </template>
+                <div class="vehicle-caption">
+                    <span class="vehicle-chip">VX 700</span>
+                    <span class="vehicle-chip km-chip">14,000 km driven</span>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-head">
+                        <lightning-icon icon-name="utility:podcast_webinar" size="x-small" class="icon"></lightning-icon>
+                        <p class="slds-text-title">Purchased</p>
+                    </div>
+
+                    <template if:true={showComp}>
+                        <p class="metric-value">2021</p>
+                    </template>
+                    <template if:false={showComp}>
+                        <p class="metric-value">2021</p>
+                    </template>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-head">
+                        <lightning-icon icon-name="utility:stage_collection" size="x-small" class="icon"></lightning-icon>
+                        <p class="slds-text-title">Odometer</p>
+                    </div>
+
+                    <template if:true={showComp}>
+                        <p class="metric-value">5 km</p>
+                    </template>
+                    <template if:false={showComp}>
+                        <p class="metric-value">14,000 km</p>
+                    </template>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-head">
+                        <lightning-icon icon-name="utility:lead" size="x-small" class="icon"></lightning-icon>
+                        <p class="slds-text-title">Fuel Type</p>
+                    </div>
+                    
+                    <template if:true={showComp}>
+                        <p class="metric-value">Petrol</p>
+                    </template>
+                    <template if:false={showComp}>
+                        <p class="metric-value">Petrol</p>
+                    </template>
+                </div>
+            </div>
+
+            <div class="service-panel">
+                <div class="service-header">
+                    <h2>Service History</h2>
+                    <span class="up-to-date">Up to Date</span>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <p class="service-label">Last serviced</p>
+                        <template if:true={showComp}>
+                            <p class="service-value">NA</p>
+                        </template>
+                        <template if:false={showComp}>
+                            <p class="service-value">Jan 2025</p>
+                        </template>
+                    </div>
+                    <div class="service-item">
+                        <p class="service-label">Location</p>
+                        <template if:true={showComp}>
+                            <p class="service-value">NA</p>
+                        </template>
+                        <template if:false={showComp}>
+                            <p class="service-value">Andheri</p>
+                        </template>
+                    </div>
+                    <div class="service-item">
+                        <p class="service-label">Major issues</p>
+                        <template if:true={showComp}>
+                            <p class="service-value issue-none">NA</p>
+                        </template>
+                        <template if:false={showComp}>
+                            <p class="service-value issue-none">None</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <template if:true={wteCheck}>
+                <div class="finance-panel">
+                    <div class="finance-title">
+                        <lightning-icon icon-name="custom:custom16" size="x-small"></lightning-icon>
+                        <h2>Finance Details</h2>
+                    </div>
+                    <div class="finance-grid">
+                        <div class="finance-item">
+                            <p class="service-label">Payments</p>
+                            <p class="service-value">3 remaining</p>
+                        </div>
+                        <div class="finance-item">
+                            <p class="service-label">Institution</p>
+                            <p class="service-value">Electra Finance</p>
+                        </div>
+                        <div class="finance-item">
+                            <p class="service-label">Routing</p>
+                            <p class="service-value">#######2525</p>
+                        </div>
+                        <div class="finance-item">
+                            <p class="service-label">Account</p>
+                            <p class="service-value">########5151</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={showComp}>
+            </template>
+            <template if:false={showComp}>
+            <div class="recommendation-card">
+                <div class="maintenance-icon-wrap">
+                    <lightning-icon icon-name="utility:warning" size="small" class="maintenance-icon"></lightning-icon>
+                </div>
+                <div class="maintenance-content">
+                    <div class="recommendation-title">Upcoming Maintenance</div>
+                    <div class="recommendation-desc">Battery check recommended at 20k service</div>
+                    <div class="recommendation-meta">
+                        <span class="remaining-chip">6,000 km remaining</span>
+                        <span class="meta-separator">•</span>
+                        <span style="font-size: 10px;">Estimated 4-6 months</span>
+                    </div>
+                </div>
+            </div>
+            </template>
+
+            <!-- <div class="action-row">
+                <lightning-button variant="brand" label="Schedule Service"></lightning-button>
+                <lightning-button variant="neutral" label="View Full History"></lightning-button>
+            </div>
+            <p class="last-updated">Last updated: 2 hours ago</p> -->
+
+        </div>
+        </div>
+</template>
+</template>

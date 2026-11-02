@@ -1,0 +1,121 @@
+:host {
+    display: block;
+    width: 100%;
+    margin-top: -1px;
+}
+
+.header-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+/* KPI Strip */
+.kpi-strip {
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.kpi-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.85rem 0.75rem;
+    min-width: 100px;
+    transition: background-color 0.15s ease;
+}
+
+.kpi-item:hover {
+    background-color: #f9f9fb;
+}
+
+.kpi-label {
+    font-size: 0.65rem;
+    color: #706e6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.4rem;
+}
+
+.kpi-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #181818;
+}
+
+.kpi-value-row {
+    display: flex;
+    align-items: center;
+}
+
+.kpi-unit {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #706e6b;
+}
+
+.kpi-green {
+    color: #0f7336;
+}
+
+.kpi-value-with-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.badge-high {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #d4edda;
+    color: #0f7336;
+}
+
+/* Tier Badge */
+.tier-badge {
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.tier-gold {
+    background: linear-gradient(135deg, #f5a623, #d4881a);
+    color: #fff;
+}
+
+/* Stage Badge */
+.stage-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 10px;
+}
+
+.stage-completed {
+    background: #d4edda;
+    color: #0f7336;
+}
+
+/* Divider */
+.kpi-divider {
+    width: 1px;
+    background-color: #ebebeb;
+    align-self: stretch;
+    flex-shrink: 0;
+}

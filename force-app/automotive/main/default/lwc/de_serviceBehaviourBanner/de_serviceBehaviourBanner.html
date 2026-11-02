@@ -1,0 +1,143 @@
+<template>
+
+    <template if:true={showComp}>
+    <div class="slds-box slds-theme_default">
+        <div>
+            <img src={behaviourImageUrl}></img>
+        </div>
+
+        <template if:true={showInsight}>
+        <div class="summary-container slds-text-body_small" style="padding-top:10px;">
+        <div class="slds-grid slds-wrap">
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:account" alternative-text="LTV" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Channel Preference</span>
+                </div>
+                <div class="txtClass-new" style="margin-top: -3px;">WhatsApp</div>
+            </div>
+            
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:apps" alternative-text="Total Cases" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Apps Usage</span> 
+                </div>
+
+                <template if:true={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">High</div>
+                </template>
+                <template if:false={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">--</div>
+                </template>
+
+            </div>
+
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:campaign" alternative-text="Total Cases" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Campaign Engagement</span> 
+                </div>
+
+                <template if:true={wteVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">EV NextGen</div>
+                </template>
+                <template if:false={wteVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">Nexus</div>
+                </template>
+
+                
+            </div>
+           
+        </div>
+    </div>
+    </template>
+
+    <template if:true={showCustomer}>
+        <div class="summary-container slds-text-body_small" style="padding-top:10px;">
+        <div class="slds-grid slds-wrap">
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:account" alternative-text="LTV" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Channel Preference</span>
+                </div>
+                <template if:true={addPV}>
+                    <div class="txtClass-new" style="margin-top: -3px;">WhatsApp</div>
+                </template>
+                <template if:false={addPV}>
+                    <div class="txtClass-new" style="margin-top: -3px;">NA</div>
+                </template>
+            </div>
+            
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:apps" alternative-text="Total Cases" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Campaign Engagement</span> 
+                </div>
+             <template if:true={addPV}>
+                <template if:true={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">Class Leading Features</div>
+                </template>
+                <template if:false={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">Game changing Design</div>
+                </template>
+            </template>
+                <template if:false={addPV}>
+                    <div class="txtClass-new" style="margin-top: -3px;">NA</div>
+                </template>
+
+            </div>
+
+            <div class="summary-item slds-col slds-size_1-of-3">
+                <div style="display:flex;">
+                    <lightning-icon icon-name="standard:campaign" alternative-text="Total Cases" size="medium" class="slds-m-bottom_x-small"></lightning-icon>
+                    <span class="slds-text-title" style="margin-top:8px; padding-left: 10px; font-size: 13px; font-weight: 400;">Product Affinity</span> 
+                </div>
+                <template if:true={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">Nexus</div>
+                </template>
+                <template if:false={showVal}>
+                    <div class="txtClass-new" style="margin-top: -3px;">Helmet</div>
+                </template>
+            </div>
+           
+        </div>
+    </div>
+    </template>
+
+    <br/>
+
+    <!-- <div>
+            <img src={bannerImageUrl}></img>
+        </div>
+
+
+        <div class="summary-container slds-m-bottom_medium slds-text-body_small" style="margin-top: 22px;">
+        <div class="slds-grid slds-wrap" style="text-align:center">
+            <div class="summary-item slds-col slds-size_1-of-4">
+                <lightning-icon icon-name="standard:case_change_status" size="small" class="slds-m-bottom_x-small"></lightning-icon>
+                <span class="slds-text-title" style="padding-left: 4px;">Total Tickets</span> <br/>
+                <div class="txtClass">12</div>
+            </div>
+            <div class="summary-item slds-col slds-size_1-of-4">
+                <lightning-icon icon-name="standard:case" size="small" class="slds-m-bottom_x-small"></lightning-icon>
+                <span class="slds-text-title" style="padding-left: 4px;">Ticket Open</span> <br/>
+                <div class="txtClass">1</div>
+            </div>
+            <div class="summary-item slds-col slds-size_1-of-4">
+                <lightning-icon icon-name="standard:problem"  size="small" class="slds-m-bottom_x-small"></lightning-icon>
+                <span class="slds-text-title" style="padding-left: 4px;">Complaints</span> <br/>
+                <div class="txtClass">0</div>
+            </div>
+            <div class="summary-item slds-col slds-size_1-of-4">
+                <lightning-icon icon-name="standard:feedback"  size="small" class="slds-m-bottom_x-small"></lightning-icon>
+                <span class="slds-text-title" style="padding-left: 4px;">Service Rating</span> <br/>
+                <div class="txtClass">3.5</div>
+            </div>
+            
+        </div>
+    </div> -->
+
+
+    </div>
+    </template>
+</template>

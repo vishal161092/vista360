@@ -1,0 +1,20 @@
+<template>
+    <div class="alert-container">
+        <!-- Header Section -->
+        <div class="alert-header">
+            <lightning-icon icon-name="utility:warning" size="small" class="alert-header-icon"></lightning-icon>
+            <span class="header-title">Fleet Alerts</span>
+        </div>
+
+        <!-- Alert Cards -->
+        <template for:each={alerts} for:item="alert">
+            <div key={alert.id} class="alert-card">
+                <lightning-icon icon-name={alert.icon} size="x-small" class="alert-card-icon"></lightning-icon>
+                <div class="alert-content">
+                    <strong class="alert-title">Alert</strong>
+                    <p class="alert-message">{alert.message}</p>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

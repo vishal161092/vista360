@@ -1,0 +1,35 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Customer Details</span>
+            <a class="edit-link" onclick={handleEdit}>Edit</a>
+        </div>
+        <template lwc:if={customer}>
+            <div class="photo-wrap">
+                <img class="customer-photo" src={photoUrl} alt={customer.name} />
+                <div class="photo-meta">
+                    <span class="customer-name">{customer.name}</span>
+                    <span class="customer-sub">{stateCountry}</span>
+                </div>
+            </div>
+            <ul class="detail-list">
+                <template for:each={rows} for:item="row">
+                    <li key={row.key} class="detail-row">
+                        <span class="detail-label">
+                            <lightning-icon
+                                icon-name={row.icon}
+                                size="xx-small"
+                                class="row-icon"
+                            ></lightning-icon>
+                            {row.label}
+                        </span>
+                        <span class="detail-value">{row.value}</span>
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template lwc:if={error}>
+            <div class="error">Unable to load details.</div>
+        </template>
+    </div>
+</template>

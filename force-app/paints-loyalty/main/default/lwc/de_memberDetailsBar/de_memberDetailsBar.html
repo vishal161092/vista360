@@ -1,0 +1,79 @@
+<template>
+    <div class="details-card">
+        <div class="details-grid">
+            <!-- Row 1 -->
+            <div class="detail-field">
+                <div class="field-label">Personal Account (Contact)</div>
+                <div class="field-value">
+                    <a class="value-link" onclick={handleContactClick}>{contactName}</a>
+                    <lightning-icon icon-name="utility:new_window" size="xx-small" class="link-icon"></lightning-icon>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Account (Mapped Dealer)</div>
+                <div class="field-value">
+                    <a class="value-link">Greenfield Paints &amp; Hardware</a>
+                    <lightning-icon icon-name="utility:new_window" size="xx-small" class="link-icon"></lightning-icon>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">ASM</div>
+                <div class="field-value">Venkatesan (Venkat)</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Primary Sales Officer</div>
+                <div class="field-value">Karthik Subramanian</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Secondary Sales Officer</div>
+                <div class="field-value">Venkat Rao</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Phone</div>
+                <div class="field-value field-with-icon">
+                    <lightning-icon icon-name="utility:call" size="xx-small" class="field-icon"></lightning-icon>
+                    <span>98765 43210</span>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Email</div>
+                <div class="field-value field-with-icon">
+                    <lightning-icon icon-name="utility:email" size="xx-small" class="field-icon"></lightning-icon>
+                    <span>member@example.com</span>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Primary Address</div>
+                <div class="field-value field-with-icon">
+                    <lightning-icon icon-name="utility:location" size="xx-small" class="field-icon"></lightning-icon>
+                    <span>Bengaluru, Karnataka</span>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Member Since</div>
+                <div class="field-value field-with-icon">
+                    <lightning-icon icon-name="utility:event" size="xx-small" class="field-icon"></lightning-icon>
+                    <span>12 Mar 2024</span>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Member Status</div>
+                <div class="field-value">
+                    <span class="status-badge status-warning">
+                        <lightning-icon icon-name="utility:warning" size="xx-small" class="warning-icon"></lightning-icon>
+                        Suspicious Activity
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

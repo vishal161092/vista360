@@ -1,0 +1,151 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:broadcast" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Digital Engagement</span>
+            </div>
+            <span class="period-chip">
+                <lightning-icon icon-name="utility:clock" size="xx-small" class="period-icon"></lightning-icon>
+                {windowLabel}
+            </span>
+        </div>
+
+        <template if:true={hasData}>
+            <div class="body">
+
+                <!-- HERO: donut + legend -->
+                <div class="hero-row">
+                    <div class="donut-wrap">
+                        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="48" cy="48" r="38" stroke="#eceef1" stroke-width="9" fill="none" />
+                            <template for:each={donutSegments} for:item="seg">
+                                <circle key={seg.id} cx="48" cy="48" r="38" stroke={seg.color} stroke-width="9"
+                                    fill="none" style={seg.style} />
+                            </template>
+                        </svg>
+                        <div class="donut-center">
+                            <span class="donut-num">{total}</span>
+                            <span class="donut-sub">touch<br />points</span>
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <div class="hero-heading">Channel breakdown</div>
+                        <div class="legend">
+                            <template for:each={channels} for:item="c">
+                                <span key={c.id} class="legend-item">
+                                    <span class="legend-dot" style={c.dotStyle}></span>
+                                    {c.label}
+                                    <span class="legend-pct">{c.pct}</span>
+                                </span>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- TREND CHART -->
+                <div>
+                    <div class="trend-head">
+                        <span class="sec-label sec-label--flush">{trendLabel}</span>
+                        <span class="trend-tag">Illustrative</span>
+                    </div>
+                    <div class="trend-chart">
+                        <svg viewBox={trendChart.viewBox} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <template for:each={trendChart.grid} for:item="g">
+                                <line key={g.id} x1={g.x1} y1={g.y} x2={g.x2} y2={g.y} stroke="#eceef1"
+                                    stroke-width="1" stroke-dasharray={g.dash} />
+                                <text key={g.id} x={g.labelX} y={g.labelY} class="axis-label" text-anchor="end">{g.label}</text>
+                            </template>
+                            <template for:each={trendChart.series} for:item="s">
+                                <path key={s.id} d={s.areaPath} fill={s.color} fill-opacity="0.06" stroke="none" />
+                            </template>
+                            <template for:each={trendChart.series} for:item="s">
+                                <path key={s.id} d={s.linePath} fill="none" stroke={s.color} stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </template>
+                            <template for:each={trendChart.series} for:item="s">
+                                <template for:each={s.dots} for:item="d">
+                                    <circle key={d.id} cx={d.cx} cy={d.cy} r="2.4" fill="#ffffff" stroke={s.color}
+                                        stroke-width="1.6" />
+                                </template>
+                            </template>
+                            <template for:each={trendChart.monthLabels} for:item="m">
+                                <text key={m.id} x={m.x} y={m.y} class="axis-label" text-anchor="middle">{m.label}</text>
+                            </template>
+                        </svg>
+                    </div>
+                    <div class="trend-legend">
+                        <template for:each={channels} for:item="c">
+                            <span key={c.id} class="legend-item">
+                                <span class="legend-dot" style={c.dotStyle}></span>
+                                {c.label}
+                            </span>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- CHANNEL ROWS -->
+                <div>
+                    <div class="sec-label">Touchpoints by channel</div>
+                    <div class="channels">
+                        <template for:each={channels} for:item="c">
+                            <div key={c.id} class="ch-row">
+                                <div class="ch-icon">
+                                    <lightning-icon icon-name={c.icon} size="x-small" class="cicon" style={c.iconStyle}></lightning-icon>
+                                </div>
+                                <div class="ch-info">
+                                    <div class="ch-name-row">
+                                        <span class="ch-name">{c.label}</span>
+                                        <div class="ch-right">
+                                            <span class="ch-pct">{c.pct}</span>
+                                            <span class="ch-count">{c.value}</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style={c.barStyle}></div>
+                                    </div>
+                                </div>
+                                <div class="ch-spark">
+                                    <svg viewBox={c.sparkViewBox} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d={c.sparkArea} fill={c.color} fill-opacity="0.08" stroke="none" />
+                                        <path d={c.sparkLine} fill="none" stroke={c.color} stroke-width="1.6"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx={c.sparkLastX} cy={c.sparkLastY} r="2" fill={c.color} />
+                                    </svg>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- LEADER INSIGHT -->
+                <template if:true={hasLeader}>
+                    <div class="leader-banner">
+                        <div class="leader-icon">
+                            <lightning-icon icon-name="utility:trending" size="x-small" class="licon"></lightning-icon>
+                        </div>
+                        <div class="leader-text">
+                            <strong>{leaderName}</strong> {leaderText}
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </template>
+
+        <template if:false={hasData}>
+            <div class="empty-state">
+                <lightning-icon icon-name="utility:broadcast" size="small" class="empty-icon"></lightning-icon>
+                <span>No engagement recorded</span>
+            </div>
+        </template>
+    </div>
+</template>

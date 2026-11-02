@@ -1,0 +1,146 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.title-icon {
+    --slds-c-icon-color-foreground-default: #7a3ff2;
+}
+
+.edit-link {
+    color: #4b4ded;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.current-box,
+.stores-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e5ee;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    background: #fafafd;
+}
+
+.box-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #9a9cb0;
+    margin-bottom: 0.6rem;
+}
+
+.address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.address-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.addr-label {
+    color: #9a9cb0;
+}
+
+.addr-value {
+    color: #16172b;
+    font-weight: 500;
+    text-align: right;
+}
+
+.area {
+    font-size: 0.85rem;
+    color: #16172b;
+}
+
+.store-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+}
+
+.store-item {
+    position: relative;
+    padding-left: 0.9rem;
+    font-size: 0.85rem;
+    color: #16172b;
+}
+
+.store-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4b4ded;
+}
+
+.map-btn {
+    margin-top: auto;
+}
+
+.map-modal-container {
+    width: 90vw;
+    max-width: 1100px;
+}
+
+.modal-map {
+    height: 440px;
+    width: 100%;
+}
+
+/* Keep the map + store list side-by-side so both are visible in one view */
+.modal-map lightning-map {
+    --sds-c-map-sizing-min-height: 440px;
+}
+
+.map-close {
+    --slds-c-icon-color-foreground-default: #706e6b;
+}

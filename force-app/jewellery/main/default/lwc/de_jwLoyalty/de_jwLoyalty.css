@@ -1,0 +1,156 @@
+.panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.hero {
+    background: linear-gradient(135deg, #9fa4ab 0%, #c8ccd2 45%, #e8eaee 100%);
+    color: #2a2f36;
+    padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.tier-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.tier-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.stars lightning-icon[data-filled='true'] {
+    --slds-c-icon-color-foreground-default: #f5c26b;
+}
+
+.stars lightning-icon[data-filled='false'] {
+    --slds-c-icon-color-foreground-default: rgba(255, 255, 255, 0.6);
+}
+
+.points-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.points-num {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.points-lbl {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+.progress-labels {
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.bar {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.55);
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #f5c26b 0%, #e8a13c 100%);
+}
+
+.meta-rows {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 1.25rem;
+    gap: 1rem;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.m-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #706e6b;
+}
+
+.m-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #16325c;
+}
+
+.coupon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.25rem 1.25rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px dashed #e8a13c;
+    border-radius: 8px;
+    background: #fdf6ec;
+}
+
+.coupon-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.coupon-info > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.coupon-code {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #b5751a;
+    letter-spacing: 0.03em;
+}
+
+.coupon-desc {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.copy-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid #e8d3b0;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background: #f4f6f9;
+}

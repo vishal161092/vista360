@@ -1,0 +1,128 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    padding: 14px;
+    max-width: 430px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f2f5;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: #1b96ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box lightning-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111827;
+}
+
+.collapse-btn {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #8b8f96;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collapse-btn lightning-icon {
+    --slds-c-icon-color-foreground-default: #6f7278;
+}
+
+.content {
+    margin-top: 16px;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #111827;
+}
+
+.never-title {
+    margin-top: 18px;
+}
+
+.link-text {
+    margin: 0 0 2px;
+    color: #1b96ff;
+    font-size: 19px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.sub-text {
+    margin: 0 0 12px;
+    color: #9da3ae;
+    font-size: 10px;
+    line-height: 1.05;
+}
+
+.normal-text {
+    margin: 0 0 6px;
+    color: #3b3f46;
+    font-size: 11px;
+    line-height: 1.05;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-self: center;
+    gap: 12px;
+    width: fit-content;
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 3px solid #ff4e78;
+    color: #ff4e78;
+    background: #ffffff;
+}
+
+.btn-filled {
+    border: none;
+    color: #ffffff;
+    background: #ef154c;
+}

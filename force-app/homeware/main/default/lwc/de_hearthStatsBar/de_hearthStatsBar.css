@@ -1,0 +1,409 @@
+:host {
+    --ink: #000000;
+    --text-2: #3f3f46;
+    --muted: #6b7280;
+    --surf: #fafafb;
+    --border: #eceef1;
+    display: block;
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+}
+
+/* ── HEADER ── */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 22px 24px;
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -30px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 40%, rgba(255, 255, 255, 0.35) 60%, transparent 100%);
+}
+
+.header-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Avatar */
+.avatar-wrap {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+}
+
+.avatar {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.avatar-initials {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Name + meta */
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.meta-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    min-width: 0;
+}
+
+.meta-loc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.meta-icon {
+    --slds-c-icon-color-foreground-default: rgba(255, 255, 255, 0.65);
+}
+
+.meta-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.badge-icon {
+    --slds-c-icon-color-foreground-default: currentColor;
+}
+
+.badge-primary {
+    background: #ffffff;
+    color: #000000;
+}
+
+.badge-outline {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+/* ── BODY ── */
+.body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* CLTV HERO */
+.cltv-hero {
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cltv-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.cltv-amount {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.cltv-currency {
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: super;
+}
+
+.trend-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.trend-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+/* 2-COL GRID */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.metric-card {
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 13px 14px 12px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.m-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 7px;
+}
+
+.m-val-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 9px;
+}
+
+.m-val {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.m-unit {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+/* progress bar */
+.prog-track {
+    height: 5px;
+    background: #e4e4e7;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.prog-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: #000000;
+}
+
+/* RFM pips */
+.pip-row {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.pip {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    background: #000000;
+    opacity: 0.14;
+}
+
+.pip.on {
+    opacity: 1;
+}
+
+/* PROPENSITY signature card */
+.prop-card {
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+    border-radius: 13px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ring-wrap {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+}
+
+.ring-wrap svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-pct {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.ring-pct-sym {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 1px;
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.prop-text {
+    min-width: 0;
+}
+
+.prop-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 5px;
+}
+
+.prop-headline {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
+
+.prop-sub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.4;
+}
+
+/* Order dots */
+.dot-row {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.odot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000000;
+    opacity: 0.14;
+}
+
+.odot.on {
+    opacity: 1;
+}

@@ -1,0 +1,32 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:opportunity" size="small"></lightning-icon>
+            <h2 class="de-title">Sales Snapshot</h2>
+        </div>
+
+        <div class="de-tiles">
+            <template for:each={tiles} for:item="t">
+                <div key={t.key} class={t.tileClass}>
+                    <lightning-icon icon-name={t.icon} size="x-small" class="de-tile-icon"></lightning-icon>
+                    <span class="de-tile-label">{t.label}</span>
+                    <span class="de-tile-value">{t.value}</span>
+                </div>
+            </template>
+        </div>
+
+        <ul class="de-list">
+            <template for:each={rows} for:item="row">
+                <li key={row.key} class="de-row">
+                    <span class="de-row-icon">
+                        <lightning-icon icon-name={row.icon} size="x-small"></lightning-icon>
+                    </span>
+                    <div class="de-row-body">
+                        <span class="de-label">{row.label}</span>
+                        <span class="de-value">{row.value}</span>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,42 @@
+<template>
+    <div class="schemes-wrapper">
+        <div class="card-header">
+            <h2 class="card-title">Enrolled Schemes</h2>
+            <a href="#" class="view-all-link" onclick={handleViewAll}>View All Schemes</a>
+        </div>
+
+        <div class="schemes-container">
+            <div class="schemes-scroll">
+                <template for:each={schemes} for:item="scheme">
+                    <div key={scheme.id} class="scheme-card">
+                        <div class="scheme-banner">
+                            <img src={scheme.bannerImage} alt={scheme.name} class="banner-image">
+                        </div>
+                        <div class="scheme-content">
+                            <div class="scheme-subtext">{scheme.subtext}</div>
+                            <div class="scheme-date">
+                                <lightning-icon icon-name="utility:event" size="xx-small" class="date-icon"></lightning-icon>
+                                {scheme.dateRange}
+                            </div>
+                            <template if:true={scheme.isComingSoon}>
+                                <div class="coming-soon-badge">Coming Soon</div>
+                            </template>
+                            <template if:false={scheme.isComingSoon}>
+                                <div class="points-earned">
+                                    <span class="points-label">Points Earned:</span>
+                                    <span class="points-value">{scheme.points}</span>
+                                </div>
+                                <div class="progress-container">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style={scheme.progressStyle}></div>
+                                    </div>
+                                    <div class="progress-label">{scheme.progressLabel}</div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

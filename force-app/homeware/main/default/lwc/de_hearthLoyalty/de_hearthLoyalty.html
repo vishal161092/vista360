@@ -1,0 +1,128 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-icon">
+                <lightning-icon icon-name="utility:favorite" size="x-small" class="hicon"></lightning-icon>
+            </div>
+            <span class="header-title">Loyalty Details</span>
+        </div>
+
+        <template if:true={hasLoyalty}>
+
+            <!-- TIER HERO -->
+            <div class="hero-wrap">
+                <div class={heroThemeClass}>
+                    <div class="tier-top">
+                        <div class="tier-badge">
+                            <span class="tier-label">Membership Tier</span>
+                            <span class="tier-name">
+                                <lightning-icon icon-name="utility:favorite" size="xx-small" class="tier-name-icon"></lightning-icon>
+                                {tier}
+                            </span>
+                            <div class="tier-stars">
+                                <template for:each={tierStars} for:item="s">
+                                    <span key={s.id} class={s.cls}></span>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="tier-pts-block">
+                            <div class="pts-value">{points}</div>
+                            <div class="pts-label">Member Points</div>
+                        </div>
+                    </div>
+
+                    <!-- progress to next tier -->
+                    <template if:true={hasNextTier}>
+                        <div class="tier-progress">
+                            <div class="tier-progress-meta">
+                                <span class="tier-progress-from">{pointsFromLabel}</span>
+                                <span class="tier-progress-to">{nextTierLabel}</span>
+                            </div>
+                            <div class="tier-track">
+                                <div class="tier-fill" style={progressBarStyle}></div>
+                            </div>
+                            <div class="tier-next-label">
+                                <strong>{pointsToNextLabel} more points</strong> to reach {nextTier}
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- DETAIL ROWS -->
+            <div class="details">
+                <div class="detail-row">
+                    <div class="detail-icon">
+                        <lightning-icon icon-name="utility:identity" size="xx-small" class="dicon"></lightning-icon>
+                    </div>
+                    <span class="detail-label">Member ID</span>
+                    <span class="detail-val">{memberId}</span>
+                </div>
+
+                <template if:true={memberSince}>
+                    <div class="detail-row">
+                        <div class="detail-icon">
+                            <lightning-icon icon-name="utility:event" size="xx-small" class="dicon"></lightning-icon>
+                        </div>
+                        <span class="detail-label">Member Since</span>
+                        <span class="detail-val">{memberSince}</span>
+                    </div>
+                </template>
+
+                <template if:true={hasExpiring}>
+                    <div class="detail-row">
+                        <div class="detail-icon">
+                            <lightning-icon icon-name="utility:clock" size="xx-small" class="dicon"></lightning-icon>
+                        </div>
+                        <span class="detail-label">Points Expiring Soon</span>
+                        <span class="expiry-chip">
+                            <lightning-icon icon-name="utility:warning" size="xx-small" class="expiry-icon"></lightning-icon>
+                            {expiringLabel}
+                        </span>
+                    </div>
+                </template>
+            </div>
+
+            <template if:true={coupon}>
+                <div class="divider"></div>
+            </template>
+
+            <!-- COUPON + PROMO -->
+            <div class="section-group">
+                <template if:true={coupon}>
+                    <div class="coupon-card">
+                        <div class="coupon-icon">
+                            <lightning-icon icon-name="utility:coupon_codes" size="xx-small" class="cicon"></lightning-icon>
+                        </div>
+                        <div class="coupon-eyebrow">Active Coupon</div>
+                        <div class="coupon-row">
+                            <span class="coupon-code">{coupon}</span>
+                            <button class="coupon-copy" data-copy={coupon} data-label="COPY CODE" onclick={handleCopy}>
+                                COPY CODE
+                            </button>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={promos}>
+                    <div class="promo-card">
+                        <div class="promo-icon">
+                            <lightning-icon icon-name="utility:labels" size="xx-small" class="picon"></lightning-icon>
+                        </div>
+                        <div class="promo-eyebrow">Promos Applicable</div>
+                        <div class="promo-text">{promos}</div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={hasLoyalty}>
+            <div class="empty-state">
+                <lightning-icon icon-name="utility:favorite_alt" size="small" class="empty-icon"></lightning-icon>
+                <span>Not a loyalty member yet</span>
+            </div>
+        </template>
+    </div>
+</template>

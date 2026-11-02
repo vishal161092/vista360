@@ -1,0 +1,97 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:location"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                Location Details
+            </span>
+            <a class="edit-link" onclick={handleViewNearby}>View Nearby Stores</a>
+        </div>
+
+        <div class="location-grid">
+            <div class="current-box">
+                <p class="box-label">Current Location</p>
+                <template lwc:if={hasAddress}>
+                    <ul class="address-list">
+                        <template for:each={addressLines} for:item="line">
+                            <li key={line.key} class="address-row">
+                                <span class="addr-label">{line.label}</span>
+                                <span class="addr-value">{line.value}</span>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template lwc:else>
+                    <p class="area">No address on file</p>
+                </template>
+            </div>
+
+            <div class="stores-box">
+                <p class="box-label">Nearest Urbanweave Stores</p>
+                <ul class="store-list">
+                    <template for:each={stores} for:item="s">
+                        <li key={s.key} class="store-item">
+                            {s.name} &ndash; {s.distance}
+                        </li>
+                    </template>
+                </ul>
+                <lightning-button
+                    label=" View on Map"
+                    variant="brand-outline"
+                    onclick={openMap}
+                    disabled={noMarkers}
+                    class="map-btn"
+                ></lightning-button>
+            </div>
+        </div>
+    </div>
+
+    <template lwc:if={showMap}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-modal="true"
+            aria-labelledby="map-modal-heading"
+            class="slds-modal slds-fade-in-open"
+        >
+            <div class="slds-modal__container map-modal-container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        alternative-text="Close"
+                        title="Close"
+                        variant="bare"
+                        size="large"
+                        class="slds-modal__close map-close"
+                        onclick={closeMap}
+                    ></lightning-button-icon>
+                    <h1 id="map-modal-heading" class="slds-modal__title slds-hyphenate">
+                        Location &amp; Nearest Stores
+                    </h1>
+                </header>
+                <div class="slds-modal__content slds-p-around_none">
+                    <div class="modal-map">
+                        <lightning-map
+                            map-markers={mapMarkers}
+                            center={centerLocation}
+                            zoom-level="11"
+                            markers-title="Current Location & Nearest Stores"
+                            list-view="visible"
+                        ></lightning-map>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Close"
+                        onclick={closeMap}
+                    ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,53 @@
+.timeline-container {
+    padding: 4px 16px 16px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+    gap: 12px;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    background: #2B7A7F;
+    border-radius: 50%;
+    margin-top: 4px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px #e6f5f5;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.activity-subject {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+}
+
+.activity-description {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.activity-date {
+    font-size: 11px;
+    color: #2B7A7F;
+    font-weight: 500;
+}

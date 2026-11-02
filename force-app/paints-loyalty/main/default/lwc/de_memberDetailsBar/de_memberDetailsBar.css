@@ -1,0 +1,105 @@
+/* Card container */
+.details-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Grid layout - 5 columns */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem 2rem;
+}
+
+/* Each field */
+.detail-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.4rem 0;
+}
+
+.field-label {
+    font-size: 0.65rem;
+    color: #706e6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    line-height: 1.3;
+}
+
+.field-value {
+    font-size: 0.85rem;
+    color: #181818;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    line-height: 1.4;
+}
+
+/* Links */
+.value-link {
+    color: #0176d3;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.value-link:hover {
+    text-decoration: underline;
+}
+
+.link-icon {
+    --sds-c-icon-color-foreground-default: #0176d3;
+    flex-shrink: 0;
+}
+
+/* Fields with icons */
+.field-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.field-icon {
+    --sds-c-icon-color-foreground-default: #706e6b;
+    flex-shrink: 0;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-warning {
+    background-color: #fff3e0;
+    color: #d84315;
+    border: 1px solid #ffcc80;
+}
+
+.warning-icon {
+    --sds-c-icon-color-foreground-default: #d84315;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .details-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

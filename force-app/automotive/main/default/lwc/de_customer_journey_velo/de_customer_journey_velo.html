@@ -1,0 +1,50 @@
+<template>
+    <div class="journey-wrap">
+        <div class="top-filters">
+            <div class="left-filters">
+                <p>Recent First</p>
+                <span class="toggle"></span>
+                <p class="journey-for">View Journey for :</p>
+                <template for:each={carOptions} for:item="car">
+                    <button key={car.id} class={car.pillClass}>{car.label}</button>
+                </template>
+            </div>
+            <div class="right-filters">
+                <button class="year-btn">All Years <lightning-icon icon-name="utility:chevrondown" size="xx-small"></lightning-icon></button>
+                <button class="new-event">New Event</button>
+            </div>
+        </div>
+
+        <div class="timeline-wrap">
+            <div class="line"></div>
+            <span class="milestone m1"></span>
+            <span class="milestone m2"></span>
+            <span class="milestone m3"></span>
+            <span class="milestone m4"></span>
+            <span class="branch left b1"></span>
+            <span class="branch right b2"></span>
+            <span class="branch left b3"></span>
+            <span class="branch right b4"></span>
+
+            <div class="event left step1">
+                <p class="event-title">Subscription of Velo Adventure</p>
+                <p class="event-date">15 Nov, 2022 <span>View More</span></p>
+            </div>
+
+            <div class="event right step2">
+                <p class="event-title">Subscription to Adrenox</p>
+                <p class="event-date">21 Jan, 2022 <span>View More</span></p>
+            </div>
+
+            <div class="event left step3">
+                <p class="event-title">Delivery of VX700</p>
+                <p class="event-date">21 Jan, 2022 <span>View More</span></p>
+            </div>
+
+            <div class="event right step4">
+                <p class="event-title">Booked VX700</p>
+                <p class="event-date">11 Sep, 2021 <span>View More</span></p>
+            </div>
+        </div>
+    </div>
+</template>

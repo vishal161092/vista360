@@ -1,0 +1,44 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <div class="header-left">
+                <div class="icon-box">
+                    <lightning-icon icon-name="utility:custom_apps" size="xx-small"></lightning-icon>
+                </div>
+                <h2>Warranties</h2>
+            </div>
+            <button class="collapse-btn" title="Collapse">
+                <lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon>
+            </button>
+        </div>
+
+        <div class="content">
+            <div class="brand-strip">
+                <span class="brand-badge">Rubix Inspired Theme</span>
+                <span class="warranty-badge">Warranty Active</span>
+            </div>
+
+            <div class="hero-block">
+                <div class="image-wrap">
+                    <img src={tyreImageUrl} alt="Tyre image" class="tyre-image" />
+                </div>
+                <div class="feature-wrap">
+                    <p class="section-title">Product Features</p>
+                    <template for:each={productFeatures} for:item="feature">
+                        <p class="feature-item" key={feature.id}>{feature.text}</p>
+                    </template>
+                </div>
+            </div>
+
+            <p class="section-title">Product Specifications</p>
+            <div class="spec-grid">
+                <template for:each={productSpecs} for:item="spec">
+                    <div class="detail-row" key={spec.id}>
+                        <p class="label">{spec.label}</p>
+                        <p class="value">{spec.value}</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

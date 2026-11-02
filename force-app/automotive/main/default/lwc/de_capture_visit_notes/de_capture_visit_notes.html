@@ -1,0 +1,77 @@
+<template>
+    <div class="cvn-card">
+        <!-- <header class="cvn-header">
+            <h2 class="cvn-title">
+                <lightning-icon icon-name="utility:visit" size="small" class="cvn-title-icon" alternative-text=""></lightning-icon>
+                Capture Visit Notes
+            </h2>
+        </header> -->
+        <div class="cvn-body">
+            <!-- <div class="cvn-icon-wrap">
+                <lightning-icon icon-name="utility:record" size="medium" alternative-text=""></lightning-icon>
+            </div>
+            <p class="cvn-hint">Type your notes below, or use the mic to record — audio is transcribed into the box. Save writes to Visit Notes on the Visit.</p> -->
+
+            <div class="cvn-notes-field">
+                <div class="cvn-notes-label-row">
+                    <span class="cvn-notes-field-label">Visit notes</span>
+                    <div class="cvn-notes-label-actions">
+                        <span
+                            role="button"
+                            tabindex={voiceControlTabindex}
+                            class={voiceControlClass}
+                            title={recordVoiceTitle}
+                            aria-disabled={recordVoiceDisabled}
+                            onclick={handleVoiceControlClick}
+                            onkeydown={handleVoiceControlKeydown}
+                        >
+                            <template lwc:if={isRecording}>
+                                <lightning-icon
+                                    icon-name="utility:muted"
+                                    size="x-small"
+                                    alternative-text="Stop recording"
+                                ></lightning-icon>
+                            </template>
+                            <template lwc:else>
+                                <lightning-icon
+                                    icon-name="utility:unmuted"
+                                    size="x-small"
+                                    alternative-text="Record voice"
+                                ></lightning-icon>
+                            </template>
+                        </span>
+                        <template lwc:if={isRecording}>
+                            <span class="cvn-recording-badge" role="status">Recording…</span>
+                        </template>
+                        <template lwc:if={notesAsrLoading}>
+                            <span class="cvn-transcribing-badge" role="status">Transcribing…</span>
+                        </template>
+                    </div>
+                </div>
+                <lightning-textarea
+                    name="visitNotes"
+                    label="Visit notes"
+                    variant="label-hidden"
+                    value={notesValue}
+                    onchange={handleNotesChange}
+                    max-length="32768"
+                    class="cvn-textarea"
+                ></lightning-textarea>
+            </div>
+
+            <div class="cvn-actions">
+                <lightning-button
+                    variant="brand"
+                    label="Save"
+                    onclick={handleSave}
+                    disabled={saveDisabled}
+                    class="cvn-save-btn"
+                ></lightning-button>
+            </div>
+
+            <template lwc:if={showVisitIdWarning}>
+                <p class="cvn-warning">Set <strong>Visit Id</strong> on this screen (from your Flow) to enable Save.</p>
+            </template>
+        </div>
+    </div>
+</template>

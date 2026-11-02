@@ -1,0 +1,77 @@
+<template>
+    <div class="loyalty-shell">
+
+        <!-- HEADER -->
+        <div class="loyalty-header">
+            <div class="loyalty-header-left">
+                <span class="loyalty-icon">&#9733;</span>
+                <span class="loyalty-title">Loyalty &amp; Savings</span>
+            </div>
+            <template lwc:if={hasTier}>
+                <span class="loyalty-tier-pill">{loyaltyTier}</span>
+            </template>
+        </div>
+
+        <!-- LOYALTY STATS -->
+        <div class="loyalty-stats">
+            <div class="loyalty-stat">
+                <div class="loyalty-stat-label">Loyalty Points</div>
+                <div class="loyalty-stat-value">{loyaltyPoints}</div>
+                <template lwc:if={hasPointsExpiry}>
+                    <div class="loyalty-stat-sub loyalty-warn">Expires {pointsExpiry}</div>
+                </template>
+            </div>
+            <div class="loyalty-stat">
+                <div class="loyalty-stat-label">Lifetime Value</div>
+                <div class="loyalty-stat-value">{lifetimeValue}</div>
+            </div>
+            <div class="loyalty-stat">
+                <div class="loyalty-stat-label">Diamond Affinity</div>
+                <div class="loyalty-stat-value">{diamondAffinity}</div>
+            </div>
+        </div>
+
+        <!-- SAVINGS SCHEME -->
+        <template lwc:if={hasScheme}>
+            <div class="loyalty-scheme">
+                <div class="loyalty-scheme-header">
+                    <span class="loyalty-scheme-title">{schemeName}</span>
+                    <span class="loyalty-scheme-badge">Active</span>
+                </div>
+
+                <div class="loyalty-scheme-fields">
+                    <div class="loyalty-scheme-field">
+                        <span class="loyalty-scheme-label">Corpus</span>
+                        <span class="loyalty-scheme-value">{schemeCorpus}</span>
+                    </div>
+                    <div class="loyalty-scheme-field">
+                        <span class="loyalty-scheme-label">Bonus</span>
+                        <span class="loyalty-scheme-value">{schemeBonus}</span>
+                    </div>
+                    <div class="loyalty-scheme-field">
+                        <span class="loyalty-scheme-label">Maturity</span>
+                        <span class="loyalty-scheme-value">{schemeMaturity}</span>
+                    </div>
+                    <div class="loyalty-scheme-field">
+                        <span class="loyalty-scheme-label">Progress</span>
+                        <span class="loyalty-scheme-value">{schemeProgressLabel}</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="loyalty-progress-wrap">
+                    <div class="loyalty-progress-track">
+                        <div class="loyalty-progress-fill" style={schemeProgressWidth}></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- FOOTER -->
+        <div class="loyalty-footer">
+            <span class="loyalty-footer-label">VISTA Circle member since</span>
+            <span class="loyalty-footer-value">{customerSince}</span>
+        </div>
+
+    </div>
+</template>

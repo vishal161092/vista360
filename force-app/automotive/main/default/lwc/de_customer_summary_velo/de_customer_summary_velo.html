@@ -1,0 +1,200 @@
+<template>
+    <div class="summary-wrap">
+        <div class="title-row">
+            <div class="title-left">
+                <div class="icon-box">
+                    <lightning-icon icon-name="utility:snippet" size="xx-small"></lightning-icon>
+                </div>
+                <div>
+                    <p class="title">Customer Summary</p>
+                    <p class="sub-title">
+                        Velo Motors Customer Since:
+                        <span class="highlight" style="padding-left:4px;">{customerSinceText}</span>
+                    </p>
+                </div>
+            </div>
+            <button class="collapse-btn" title="Collapse">
+                <lightning-icon icon-name="utility:chevronup" size="x-small"></lightning-icon>
+            </button>
+        </div>
+
+        <div class="ai-box">
+            <p class="ai-title">
+                <lightning-icon icon-name="utility:magicwand" size="xx-small"></lightning-icon>
+                AI Summary
+            </p>
+            <p class="ai-text">{aiSummaryText}</p>
+        </div>
+
+        <template if:true={showMaintenanceAlert}>
+            <div class="maintenance-alert">
+                <lightning-icon icon-name="utility:warning" size="x-small"></lightning-icon>
+                <span>Alert - System predicted maintenance of braking is needed!!!!</span>
+            </div>
+        </template>
+
+        <template for:each={interactions} for:item="item">
+            <div class="interaction-card" key={item.id}>
+                <div class="row-between">
+                    <p class="card-title">{item.cardTitle}</p>
+                    <p class="channel">
+                        <template if:true={item.hasChannel}>Channel : <span>{item.channel}</span></template>
+                        <!-- <template if:true={item.hasDate}><b>{item.date}</b></template> -->
+                    </p>
+                </div>
+                <template if:true={item.hasHeadline}>
+                    <p class="bold-line">{item.headline}</p>
+                </template>
+                <template if:true={item.hasFeedback}>
+                    <p class="feedback"><span class="feedback-label">FEEDBACK :</span> {item.feedback}</p>
+                </template>
+                <template if:true={item.hasDealerDetails}>
+                    <p class="dealer-title">DEALER DETAILS :</p>
+                    <p class="dealer-line">{item.dealerDetails}</p>
+                </template>
+                <div class="detail-grid">
+                    <template if:true={item.hasSalesConsultant}>
+                        <p>Sales Consultant: <b>{item.salesConsultant}</b></p>
+                    </template>
+                    <template if:true={item.hasSalesContactDate}>
+                        <p>Last Contacted: <b>{item.salesContactDate}</b></p>
+                    </template>
+                    <template if:true={item.hasServiceAdvisor}>
+                        <p>Service Advisor: <b>{item.serviceAdvisor}</b></p>
+                    </template>
+                    <template if:true={item.hasServiceContactDate}>
+                        <p>Last Contacted: <b>{item.serviceContactDate}</b></p>
+                    </template>
+                </div>
+                <template if:true={item.hasLastInteraction}>
+                    <p class="last">{item.lastInteraction}</p>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={showConnectedVehicleExperience}>
+            <div class="connected-vehicle-panel">
+                <div class="connected-content-row">
+                    <div class="connected-left">
+                        <div class="connected-header">
+                            <div>
+                                <p class="connected-title">Connected Vehicle Experience</p>
+                                <p class="connected-subtitle">VX7X | Adrenox Insights</p>
+                            </div>
+                            <div class="connected-status">
+                                <span class="telemetry-beacon" aria-hidden="true"></span>
+                                <span class="connected-badge">Live Telemetry</span>
+                            </div>
+                        </div>
+                        <div class="connected-pointers-grid">
+                            <template for:each={connectedVehiclePointers} for:item="pointer">
+                                <div class="pointer-card" key={pointer.id}>
+                                    <p class="pointer-label">{pointer.label}</p>
+                                    <p class={pointer.valueClass}>{pointer.value}</p>
+                                </div>
+                            </template>
+                        </div>
+                        <template if:true={showConnectedGraph}>
+                            <div class="trend-card">
+                                <div class="trend-head">
+                                    <p class="trend-title">Vehicle Trend Insights (Last 6 Months)</p>
+                                    <span class="trend-chip trend-chip-mixed">2 Positive | 1 Critical</span>
+                                </div>
+                                <div class="trend-grid-wrap">
+
+                                    <div class="trend-mini">
+                                        <div class="trend-mini-head">
+                                            <p class="trend-mini-title">Vehicle Score</p>
+                                            <span class="trend-mini-state positive">Positive</span>
+                                        </div>
+                                        <div class="trend-line-chart" aria-label="Connected drive score improving line marker chart">
+                                            <svg viewBox="0 0 300 140" class="trend-svg" role="img" aria-label="Connected drive score improves from 64 to 84 from Dec to May">
+                                                <line x1="34" y1="20" x2="34" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="112" x2="286" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="42" x2="286" y2="42" class="trend-grid"></line>
+                                                <line x1="34" y1="68" x2="286" y2="68" class="trend-grid"></line>
+                                                <line x1="34" y1="90" x2="286" y2="90" class="trend-grid"></line>
+                                                <path d="M34 86 L84 78 L134 68 L184 58 L234 46 L284 40 L284 112 L34 112 Z" class="trend-area"></path>
+                                                <polyline points="34,86 84,78 134,68 184,58 234,46 284,40" class="trend-line"></polyline>
+                                                <circle cx="34" cy="86" r="4.5" class="trend-point"></circle>
+                                                <circle cx="84" cy="78" r="4.5" class="trend-point"></circle>
+                                                <circle cx="134" cy="68" r="4.5" class="trend-point"></circle>
+                                                <circle cx="184" cy="58" r="4.5" class="trend-point"></circle>
+                                                <circle cx="234" cy="46" r="4.5" class="trend-point"></circle>
+                                                <circle cx="284" cy="40" r="5.5" class="trend-point"></circle>
+                                            </svg>
+                                            <div class="trend-label-row">
+                                                <span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-mini">
+                                        <div class="trend-mini-head">
+                                            <p class="trend-mini-title">Battery Health</p>
+                                            <span class="trend-mini-state positive">Positive</span>
+                                        </div>
+                                        <div class="trend-line-chart" aria-label="Battery health improving line marker chart">
+                                            <svg viewBox="0 0 300 140" class="trend-svg" role="img" aria-label="Battery health improves from 71 to 86 from Dec to May">
+                                                <line x1="34" y1="20" x2="34" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="112" x2="286" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="42" x2="286" y2="42" class="trend-grid"></line>
+                                                <line x1="34" y1="68" x2="286" y2="68" class="trend-grid"></line>
+                                                <line x1="34" y1="90" x2="286" y2="90" class="trend-grid"></line>
+                                                <path d="M34 78 L84 70 L134 62 L184 54 L234 46 L284 38 L284 112 L34 112 Z" class="trend-area"></path>
+                                                <polyline points="34,78 84,70 134,62 184,54 234,46 284,38" class="trend-line"></polyline>
+                                                <circle cx="34" cy="78" r="4.5" class="trend-point"></circle>
+                                                <circle cx="84" cy="70" r="4.5" class="trend-point"></circle>
+                                                <circle cx="134" cy="62" r="4.5" class="trend-point"></circle>
+                                                <circle cx="184" cy="54" r="4.5" class="trend-point"></circle>
+                                                <circle cx="234" cy="46" r="4.5" class="trend-point"></circle>
+                                                <circle cx="284" cy="38" r="5.5" class="trend-point"></circle>
+                                            </svg>
+                                            <div class="trend-label-row">
+                                                <span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="trend-mini">
+                                        <div class="trend-mini-head">
+                                            <p class="trend-mini-title">Brake Health</p>
+                                            <span class="trend-mini-state critical">Negative</span>
+                                        </div>
+                                        <div class="trend-line-chart" aria-label="Brake health line marker chart">
+                                            <svg viewBox="0 0 300 140" class="trend-svg" role="img" aria-label="Brake health decreases from 82 to 62 from Dec to May">
+                                                <line x1="34" y1="20" x2="34" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="112" x2="286" y2="112" class="trend-axis"></line>
+                                                <line x1="34" y1="42" x2="286" y2="42" class="trend-grid"></line>
+                                                <line x1="34" y1="68" x2="286" y2="68" class="trend-grid"></line>
+                                                <line x1="34" y1="90" x2="286" y2="90" class="trend-grid"></line>
+                                                <line x1="34" y1="78" x2="286" y2="78" class="trend-threshold"></line>
+                                                <path d="M34 34 L84 42 L134 50 L184 58 L234 66 L284 74 L284 112 L34 112 Z" class="trend-area critical"></path>
+                                                <polyline points="34,34 84,42 134,50 184,58 234,66 284,74" class="trend-line critical"></polyline>
+                                                <circle cx="34" cy="34" r="4.5" class="trend-point critical"></circle>
+                                                <circle cx="84" cy="42" r="4.5" class="trend-point critical"></circle>
+                                                <circle cx="134" cy="50" r="4.5" class="trend-point critical"></circle>
+                                                <circle cx="184" cy="58" r="4.5" class="trend-point critical"></circle>
+                                                <circle cx="234" cy="66" r="4.5" class="trend-point critical"></circle>
+                                                <circle cx="284" cy="74" r="5.5" class="trend-point trend-point-critical"></circle>
+                                            </svg>
+                                            <div class="trend-label-row">
+                                                <span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="connected-right">
+                        <div class="connected-image-wrap">
+                            <img src={connectedVehicleImageUrl} alt="Connected vehicle braking maintenance insight for VX7X" class="connected-vehicle-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

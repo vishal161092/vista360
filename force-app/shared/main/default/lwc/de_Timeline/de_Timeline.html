@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Timeline" icon-name="standard:task">
+        <div class="timeline-container">
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+            <template if:false={loading}>
+                <template if:true={hasActivities}>
+                    <template for:each={displayActivities} for:item="activity">
+                        <div key={activity.Id} class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="activity-subject">{activity.Subject}</div>
+                                <div class="activity-description">{activity.Description}</div>
+                                <div class="activity-date">
+                                    <lightning-formatted-date-time value={activity.ActivityDate} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

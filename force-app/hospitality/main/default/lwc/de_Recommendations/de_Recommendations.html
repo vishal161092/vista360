@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Next Best Recommendations" icon-name="standard:entitlement">
+        <div class="recommendations-container">
+            <template for:each={recommendations} for:item="rec">
+                <div key={rec.id} class="rec-card">
+                    <div class="rec-icon-container">
+                        <lightning-icon icon-name={rec.icon} size="small" class="rec-icon"></lightning-icon>
+                    </div>
+                    <div class="rec-content">
+                        <span class="rec-title">{rec.title}</span>
+                        <span class="rec-description">{rec.description}</span>
+                    </div>
+                    <lightning-button-icon icon-name="utility:chevronright" variant="bare" size="small" class="rec-action"></lightning-button-icon>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

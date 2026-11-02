@@ -1,0 +1,109 @@
+<template>
+    <div class="card">
+        <h2 class="card-title">Predictive &amp; ML Scores</h2>
+
+        <div class="scores-grid">
+            <!-- Propensity to Book -->
+            <div class="score-item">
+                <div class="gauge-wrapper">
+                    <svg width="75" height="75" viewBox="0 0 72 72" class="circular-gauge">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#e8e8e8" stroke-width="6"></circle>
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#2e7d32" stroke-width="6"
+                                stroke-dasharray="177.2 188.5" stroke-linecap="round"
+                                transform="rotate(-90 36 36)"></circle>
+                        <text x="36" y="41" text-anchor="middle" class="gauge-text">94%</text>
+                    </svg>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Propensity to Book</div>
+                    <div class="score-badge score-high">High</div>
+                    <div class="score-subtext">Web behavior + priority triage</div>
+                </div>
+            </div>
+
+            <!-- Propensity for Premium -->
+            <div class="score-item">
+                <div class="gauge-wrapper">
+                    <svg width="75" height="75" viewBox="0 0 72 72" class="circular-gauge">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#e8e8e8" stroke-width="6"></circle>
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#5867e8" stroke-width="6"
+                                stroke-dasharray="160.2 188.5" stroke-linecap="round"
+                                transform="rotate(-90 36 36)"></circle>
+                        <text x="36" y="41" text-anchor="middle" class="gauge-text">85%</text>
+                    </svg>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Propensity for Premium</div>
+                    <div class="score-badge score-high">High</div>
+                    <div class="score-subtext">Selected Gold over Classic quote</div>
+                </div>
+            </div>
+
+            <!-- Engagement Score -->
+            <div class="score-item">
+                <div class="gauge-wrapper">
+                    <svg width="75" height="75" viewBox="0 0 72 72" class="circular-gauge">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#e8e8e8" stroke-width="6"></circle>
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#ff8f00" stroke-width="6"
+                                stroke-dasharray="165.9 188.5" stroke-linecap="round"
+                                transform="rotate(-90 36 36)"></circle>
+                        <text x="36" y="41" text-anchor="middle" class="gauge-text">88</text>
+                    </svg>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Engagement Score</div>
+                    <div class="score-badge score-medium">88/100</div>
+                    <div class="score-subtext">Chat + PDF + WhatsApp reads</div>
+                </div>
+            </div>
+
+            <!-- Churn Risk -->
+            <div class="score-item">
+                <div class="gauge-wrapper">
+                    <svg width="75" height="75" viewBox="0 0 72 72" class="circular-gauge">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#e8e8e8" stroke-width="6"></circle>
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#2e7d32" stroke-width="6"
+                                stroke-dasharray="22.6 188.5" stroke-linecap="round"
+                                transform="rotate(-90 36 36)"></circle>
+                        <text x="36" y="41" text-anchor="middle" class="gauge-text">12%</text>
+                    </svg>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Churn Risk</div>
+                    <div class="score-badge score-low">Low</div>
+                    <div class="score-subtext">Strong repeat + referral signals</div>
+                </div>
+            </div>
+
+            <!-- Satisfaction Score -->
+            <div class="score-item">
+                <div class="gauge-wrapper">
+                    <svg width="75" height="75" viewBox="0 0 72 72" class="circular-gauge">
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#e8e8e8" stroke-width="6"></circle>
+                        <circle cx="36" cy="36" r="30" fill="none" stroke="#5867e8" stroke-width="6"
+                                stroke-dasharray="173.4 188.5" stroke-linecap="round"
+                                transform="rotate(-90 36 36)"></circle>
+                        <text x="36" y="41" text-anchor="middle" class="gauge-text">92</text>
+                    </svg>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Satisfaction (NPS)</div>
+                    <div class="score-badge score-high">Promoter</div>
+                    <div class="score-subtext">Post-job survey + Happy Code</div>
+                </div>
+            </div>
+
+            <!-- Cross-Sell Affinity -->
+            <div class="score-item">
+                <div class="affinity-icon">
+                    <lightning-icon icon-name="utility:water" size="small" alternative-text="Waterproofing"></lightning-icon>
+                </div>
+                <div class="score-detail">
+                    <div class="score-label">Cross-Sell Affinity</div>
+                    <div class="affinity-badge">Waterproofing</div>
+                    <div class="score-subtext">Dampness + cracks detected on site</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

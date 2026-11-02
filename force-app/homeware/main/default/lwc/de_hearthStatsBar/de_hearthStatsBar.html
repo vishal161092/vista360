@@ -1,0 +1,47 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-row">
+                <!-- Avatar -->
+                <div class="avatar-wrap">
+                    <div class="avatar">
+                        <template if:true={photoUrl}>
+                            <img src={photoUrl} class="avatar-img" alt={name} />
+                        </template>
+                        <template if:false={photoUrl}>
+                            <span class="avatar-initials">{initials}</span>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="name">{name}</div>
+                    <div class="meta">
+                        <span class="meta-text">
+                            <lightning-icon icon-name="utility:socialshare" size="xx-small" class="meta-icon"></lightning-icon>
+                            {customerTypeLabel}
+                        </span>
+                        <span class="meta-sep"></span>
+                        <span class="meta-text meta-loc">
+                            <lightning-icon icon-name="utility:location" size="xx-small" class="meta-icon"></lightning-icon>
+                            {location}
+                        </span>
+                    </div>
+                    <div class="badges">
+                        <template if:true={hasTier}>
+                            <span class={tierClass}>
+                                <lightning-icon icon-name="utility:favorite" size="xx-small" class="badge-icon"></lightning-icon>
+                                {tier} Member
+                            </span>
+                        </template>
+                        <template if:true={hasSegment}>
+                            <span class="badge badge-outline">{segment}</span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

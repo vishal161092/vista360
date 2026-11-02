@@ -1,0 +1,27 @@
+<template>
+    <div class="panel">
+        <div class="panel-title">
+            <lightning-icon icon-name="standard:product_item" size="small"></lightning-icon>
+            <h2>Metal Affinity</h2>
+        </div>
+
+        <div class="top-chip">
+            <span class="chip-label">Preferred</span>
+            <span class="chip-value">{topMetal}</span>
+        </div>
+
+        <div class="bars">
+            <template for:each={bars} for:item="m">
+                <div key={m.key} class="bar-row">
+                    <div class="bar-head">
+                        <span class="bar-label">{m.label}</span>
+                        <span class="bar-spend">{m.spend}</span>
+                    </div>
+                    <div class="track">
+                        <div class={m.cls} style={m.style}></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,116 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+}
+
+.card-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.scores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem 0.75rem;
+    background: #f9fafb;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.gauge-wrapper {
+    flex-shrink: 0;
+}
+
+.gauge-text {
+    font-size: 15px;
+    font-weight: 700;
+    fill: #181818;
+}
+
+.score-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.score-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #181818;
+}
+
+.score-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 8px;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.score-high {
+    background: #d4edda;
+    color: #0f7336;
+}
+
+.score-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.score-low {
+    background: #d4edda;
+    color: #2e7d32;
+}
+
+.score-subtext {
+    font-size: 0.65rem;
+    color: #999;
+}
+
+/* Cross-sell affinity */
+.affinity-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #e3f2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.affinity-icon lightning-icon {
+    --slds-c-icon-color-foreground-default: #1565c0;
+}
+
+.affinity-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    background: #e3f2fd;
+    color: #1565c0;
+    width: fit-content;
+}

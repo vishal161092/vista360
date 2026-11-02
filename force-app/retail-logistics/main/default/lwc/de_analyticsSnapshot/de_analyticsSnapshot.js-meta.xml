@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>DE Analytics Snapshot</masterLabel>
+    <description>Customer 360 — logistics analytics: metrics, top corridors, service mix, recommendations.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+                <object>Account</object>
+            </objects>
+            <property name="industry" type="String" datasource="Logistics,Eyecare" default="Logistics" label="Industry Context" description="Switch analytics data between Logistics and Eyecare"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

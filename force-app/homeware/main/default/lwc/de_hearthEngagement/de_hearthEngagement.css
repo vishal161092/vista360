@@ -1,0 +1,439 @@
+:host {
+    --ink: #000000;
+    --text-2: #3f3f46;
+    --muted: #6b7280;
+    --surf: #fafafb;
+    --border: #eceef1;
+    --red: #CB2228;
+    display: block;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ── HEADER ── */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 18px 22px;
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 40%, rgba(255, 255, 255, 0.35) 60%, transparent);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.header-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hicon {
+    --slds-c-icon-color-foreground-default: #fff;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.period-chip {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.period-icon {
+    --slds-c-icon-color-foreground-default: rgba(255, 255, 255, 0.85);
+}
+
+/* ── BODY ── */
+.body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sec-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding-left: 2px;
+}
+
+/* ── HERO ROW ── */
+.hero-row {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.donut-wrap {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.donut-wrap svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.donut-sub {
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 3px;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-heading {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-2);
+    margin-bottom: 10px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--text-2);
+    transition: background 0.15s;
+}
+
+.legend-item:hover {
+    background: #f4f4f5;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-pct {
+    font-size: 10px;
+    font-weight: 800;
+    opacity: 0.55;
+}
+
+/* ── DIVIDER ── */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border) 15%, var(--border) 85%, transparent);
+}
+
+/* ── TREND CHART ── */
+.trend-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.sec-label--flush {
+    margin-bottom: 0;
+}
+
+.trend-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 9px;
+    flex-shrink: 0;
+}
+
+.trend-chart {
+    width: 100%;
+}
+
+.trend-chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+.axis-label {
+    font-size: 9px;
+    font-weight: 700;
+    fill: var(--muted);
+    font-family: inherit;
+}
+
+.trend-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+/* ── SPARKLINE (channel rows) — hidden in compact 2×2 grid ── */
+.ch-spark {
+    display: none;
+}
+
+.ch-spark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* ── CHANNEL ROWS (2×2 grid) ── */
+.channels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.ch-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background: var(--surf);
+    border: 1px solid var(--border);
+    transition: background 0.15s, box-shadow 0.15s;
+    min-width: 0;
+}
+
+.ch-row:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.ch-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: #f4f4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.15s;
+}
+
+.ch-row:hover .ch-icon {
+    transform: scale(1.08);
+}
+
+.ch-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ch-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    gap: 8px;
+}
+
+.ch-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+}
+
+.ch-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.ch-pct {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.ch-count {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink);
+    min-width: 24px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.bar-track {
+    height: 4px;
+    background: #e4e4e7;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* ── LEADER BANNER ── */
+.leader-banner {
+    background: rgba(203, 34, 40, 0.05);
+    border: 1px solid rgba(203, 34, 40, 0.2);
+    border-radius: 12px;
+    padding: 11px 14px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.leader-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.licon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+.leader-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
+    line-height: 1.45;
+}
+
+.leader-text strong {
+    font-weight: 800;
+    color: var(--ink);
+}
+
+/* ── EMPTY ── */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.empty-icon {
+    --slds-c-icon-color-foreground-default: #c7c7cc;
+}

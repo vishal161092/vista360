@@ -1,0 +1,236 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:calculated_insights" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Insights</span>
+            </div>
+            <template if:true={hasSegment}>
+                <span class="segment-badge">
+                    <lightning-icon icon-name="utility:favorite" size="xx-small" class="seg-icon"></lightning-icon>
+                    {segment}
+                </span>
+            </template>
+        </div>
+
+        <div class="body">
+
+            <!-- ══ KNOWN CUSTOMER ══ -->
+            <template if:true={isKnown}>
+
+                <!-- PERFORMANCE -->
+                <template if:true={hasPerformance}>
+                    <div>
+                        <div class="sec-label">Performance</div>
+
+                        <!-- CLTV HERO -->
+                        <template if:true={hasCltv}>
+                            <div class="pf-cltv">
+                                <div class="pf-cltv-left">
+                                    <div class="pf-cltv-label">Customer Lifetime Value</div>
+                                    <div class="pf-cltv-amount"><span class="pf-cltv-cur">₹</span>{cltvValue}</div>
+                                </div>
+                                <span class="pf-trend-chip">
+                                    <lightning-icon icon-name="utility:trending" size="xx-small" class="pf-trend-icon"></lightning-icon>
+                                    High Value
+                                </span>
+                            </div>
+                        </template>
+
+                        <!-- ENGAGEMENT + RFM -->
+                        <div class="pf-grid-2">
+                            <template if:true={hasEngagement}>
+                                <div class="pf-metric">
+                                    <div class="pf-m-label">Engagement</div>
+                                    <div class="pf-m-val-row">
+                                        <div class="pf-m-val">{engagement}</div>
+                                        <div class="pf-m-unit">/ 100</div>
+                                    </div>
+                                    <div class="pf-track">
+                                        <div class="pf-fill" style={engagementBarStyle}></div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <template if:true={hasRfm}>
+                                <div class="pf-metric">
+                                    <div class="pf-m-label">RFM Score</div>
+                                    <div class="pf-m-val-row">
+                                        <div class="pf-m-val">{rfm}</div>
+                                        <div class="pf-m-unit">/ 10</div>
+                                    </div>
+                                    <div class="pf-pip-row">
+                                        <template for:each={rfmPips} for:item="p">
+                                            <div key={p.id} class={p.cls}></div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- PROPENSITY + ORDERS — one line -->
+                        <div class="pf-row-2">
+                            <!-- PROPENSITY — SIGNATURE ELEMENT -->
+                            <template if:true={hasPropensity}>
+                                <div class="pf-prop">
+                                    <div class="pf-ring-wrap">
+                                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="32" cy="32" r="26" stroke="#e4e4e7" stroke-width="5" fill="none" />
+                                            <circle cx="32" cy="32" r="26" stroke="#CB2228" stroke-width="5" fill="none"
+                                                stroke-linecap="round" style={propensityRingStyle} />
+                                        </svg>
+                                        <div class="pf-ring-center">
+                                            <span class="pf-ring-pct">{propensity}<span class="pf-ring-sym">%</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="pf-prop-text">
+                                        <div class="pf-prop-label">Propensity to Buy</div>
+                                        <div class="pf-prop-headline">{propensityHeadline}</div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <!-- ORDERS YTD -->
+                            <template if:true={hasOrders}>
+                                <div class="pf-metric pf-orders">
+                                    <div class="pf-m-label">Orders — YTD</div>
+                                    <div class="pf-m-val-row">
+                                        <div class="pf-m-val">{orders}</div>
+                                        <div class="pf-m-unit">orders</div>
+                                    </div>
+                                    <div class="pf-dot-row">
+                                        <template for:each={orderDots} for:item="d">
+                                            <div key={d.id} class={d.cls}></div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- PREFERENCES -->
+                <template if:true={hasPreferences}>
+                    <template if:true={hasPerformance}>
+                        <div class="divider"></div>
+                    </template>
+                    <div>
+                        <div class="sec-label">Preferences</div>
+                        <div class="grid-row">
+                            <template for:each={prefTiles} for:item="t">
+                                <div key={t.id} class={t.tileClass}>
+                                    <div class="s-icon">
+                                        <lightning-icon icon-name={t.icon} size="x-small" class="sicon"></lightning-icon>
+                                    </div>
+                                    <div class="s-meta">
+                                        <div class="s-label">{t.label}</div>
+                                        <div class={t.valClass}>{t.value}</div>
+                                        <template if:true={t.caption}>
+                                            <div class="s-caption">{t.caption}</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- SERVICE NOTE ALERT -->
+                <template if:true={hasServiceNote}>
+                    <div class="svc-note">
+                        <div class="svc-note-glow"></div>
+                        <div class="svc-note-icon">
+                            <lightning-icon icon-name="utility:warning" size="small" class="svc-note-ic"></lightning-icon>
+                        </div>
+                        <div class="svc-note-body">
+                            <div class="svc-note-eyebrow">
+                                <span class="svc-note-pulse"></span>
+                                Service Note
+                            </div>
+                            <div class="svc-note-product">{serviceNote.product}</div>
+                            <div class="svc-note-text">{serviceNote.note}</div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- SATISFACTION & SERVICE -->
+                <template if:true={hasSatisfaction}>
+                    <div class="divider"></div>
+                    <div>
+                        <div class="sec-label">Satisfaction &amp; Service</div>
+                        <div class="quad-row">
+                            <template if:true={hasCsat}>
+                                <div class="q-tile">
+                                    <div class="s-icon">
+                                        <lightning-icon icon-name="utility:success" size="x-small" class="sicon"></lightning-icon>
+                                    </div>
+                                    <div class="s-meta">
+                                        <div class="s-label">CSAT</div>
+                                        <div class="s-val big">{csat} <span class="unit">/ 10</span></div>
+                                        <div class={csatSubClass}>{csatSub}</div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <template for:each={serviceTiles} for:item="t">
+                                <div key={t.id} class={t.quadClass}>
+                                    <div class="s-icon">
+                                        <lightning-icon icon-name={t.icon} size="x-small" class="sicon"></lightning-icon>
+                                    </div>
+                                    <div class="s-meta">
+                                        <div class="s-label">{t.label}</div>
+                                        <div class={t.valClass}>{t.value}</div>
+                                        <template if:true={t.caption}>
+                                            <div class="s-caption">{t.caption}</div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- UPSELL -->
+                <template if:true={hasUpsell}>
+                    <div class="divider"></div>
+                    <div class="upsell-card">
+                        <div class="upsell-left">
+                            <div class="upsell-eyebrow">AI Upsell Recommendation</div>
+                            <div class="upsell-product">{upsell}</div>
+                            <div class="upsell-sub">{upsellSub}</div>
+                        </div>
+                        <button class="upsell-cta" onclick={handleRecommend}>
+                            <lightning-icon icon-name="utility:check" size="xx-small" class="cta-icon"></lightning-icon>
+                            Recommend Now
+                        </button>
+                    </div>
+                </template>
+            </template>
+
+            <!-- ══ ANONYMOUS ══ -->
+            <template if:false={isKnown}>
+                <div>
+                    <div class="sec-label">Browsing Activity</div>
+                    <div class="grid-2">
+                        <template for:each={anonTiles} for:item="t">
+                            <div key={t.id} class={t.tileClass}>
+                                <div class="s-icon">
+                                    <lightning-icon icon-name={t.icon} size="x-small" class="sicon"></lightning-icon>
+                                </div>
+                                <div class="s-meta">
+                                    <div class="s-label">{t.label}</div>
+                                    <div class={t.valClass}>{t.value}</div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</template>

@@ -1,0 +1,128 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.products-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 1rem;
+}
+
+.content-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.chart-section {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donut-chart {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+
+.donut-segment {
+    transition: opacity 0.3s ease;
+}
+
+.donut-segment:hover {
+    opacity: 0.75;
+}
+
+.center-label {
+    font-size: 11px;
+    fill: #706e6b;
+    font-weight: 400;
+}
+
+.center-value {
+    font-size: 28px;
+    fill: #181818;
+    font-weight: 700;
+}
+
+.center-unit {
+    font-size: 11px;
+    fill: #706e6b;
+    font-weight: 400;
+}
+
+.legend-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-eco {
+    background-color: #4CAF50;
+}
+
+.dot-mid {
+    background-color: #3BA5C9;
+}
+
+.dot-pre {
+    background-color: #1B5FAB;
+}
+
+.legend-label {
+    font-size: 0.8rem;
+    color: #181818;
+    font-weight: 500;
+    flex: 1;
+}
+
+.legend-value {
+    font-size: 0.8rem;
+    color: #706e6b;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.footer-section {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-link {
+    color: #0176d3;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}

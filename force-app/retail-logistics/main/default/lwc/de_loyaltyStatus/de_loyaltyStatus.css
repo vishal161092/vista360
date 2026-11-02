@@ -1,0 +1,119 @@
+:host {
+    --de-border: #e5e5e5;
+    --de-text: #181818;
+    --de-text-muted: #5c5c5c;
+    --de-gold: #b8860b;
+    --de-gold-soft: #fbf3df;
+    display: block;
+}
+
+.de-card {
+    background: #ffffff;
+    border: 1px solid var(--de-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: var(--de-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.de-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(120deg, #b8860b 0%, #d4af37 100%);
+    border-radius: 0.5rem;
+    padding: 0.85rem 1rem;
+    color: #ffffff;
+}
+
+.de-banner-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.de-banner-eyebrow {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.9;
+}
+
+.de-banner-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.de-tier-chip {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 1rem;
+    padding: 0.15rem 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.de-stats {
+    display: flex;
+    margin: 1rem 0;
+    border: 1px solid var(--de-border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.de-stat {
+    flex: 1;
+    padding: 0.65rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-right: 1px solid var(--de-border);
+}
+
+.de-stat:last-child {
+    border-right: none;
+}
+
+.de-stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--de-text-muted);
+}
+
+.de-stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.de-section-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.de-benefits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.de-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--de-text-muted);
+}
+
+.de-benefit-icon {
+    margin-top: 0.1rem;
+    --slds-c-icon-color-foreground-default: var(--de-gold);
+}

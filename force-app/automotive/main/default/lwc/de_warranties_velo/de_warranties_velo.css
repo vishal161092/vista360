@@ -1,0 +1,191 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    padding: 14px;
+    width: 100%;
+    max-width: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f2f5;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: #1b96ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box lightning-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111827;
+}
+
+.collapse-btn {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #8b8f96;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collapse-btn lightning-icon {
+    --slds-c-icon-color-foreground-default: #6f7278;
+}
+
+.content {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+.brand-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-badge,
+.warranty-badge {
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 3px 8px;
+    white-space: nowrap;
+}
+
+.brand-badge {
+    color: #136f3a;
+    background: #e5f5eb;
+    border: 1px solid #bfe4cc;
+}
+
+.warranty-badge {
+    color: #956400;
+    background: #fff4d9;
+    border: 1px solid #f2dfad;
+}
+
+.hero-block {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 10px;
+}
+
+.image-wrap {
+    border: 1px solid #eceff4;
+    border-radius: 10px;
+    padding: 8px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tyre-image {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+.feature-wrap {
+    border: 1px solid #eceff4;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fbfcff;
+}
+
+.section-title {
+    margin: 0 0 8px;
+    font-size: 11px;
+    color: #4b5563;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.feature-item {
+    margin: 0 0 6px;
+    font-size: 12px;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.spec-grid .detail-row:last-child {
+    grid-column: 1 / -1;
+}
+
+.detail-row {
+    border: 1px solid #eceff4;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fbfcff;
+}
+
+.label {
+    margin: 0;
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 700;
+}
+
+.value {
+    margin: 4px 0 0;
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+@media (max-width: 420px) {
+    .hero-block {
+        grid-template-columns: 1fr;
+    }
+
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spec-grid .detail-row:last-child {
+        grid-column: auto;
+    }
+}

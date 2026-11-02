@@ -1,0 +1,77 @@
+<template>
+    <div class="card">
+        <h2 class="card-title">Actionable Intelligence</h2>
+
+        <!-- NBA Compact -->
+        <div class="nba-row">
+            <div class="nba-left">
+                <div class="nba-label">Next Best Action</div>
+                <div class="nba-value">Referral Cultivation</div>
+            </div>
+            <lightning-button label="Execute" variant="brand" onclick={handleExecuteNba}></lightning-button>
+        </div>
+        <div class="nba-trigger">Triggered by: Site completion via Happy Code</div>
+
+        <div class="section-divider"></div>
+
+        <!-- Details as 2-col grid -->
+        <div class="details-grid">
+            <div class="detail-field">
+                <div class="field-label">Acquisition Channel</div>
+                <div class="field-value">Web Chat</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Referring Partner</div>
+                <div class="field-value">Greenfield Paints (D-4471)</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Lead Source</div>
+                <div class="field-value">Referral (Mrs. Priya)</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Lead-to-Conversion</div>
+                <div class="field-value velocity-value">2 Days</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Site Visit</div>
+                <div class="field-value">12 Jun 2026</div>
+                <div class="field-subtext">By Murugan S</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Job Completion</div>
+                <div class="field-value">
+                    <span class="status-badge status-done">100%</span>
+                    <span class="field-subtext">28 Jun</span>
+                </div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Repaint Countdown</div>
+                <div class="field-value">5 Yrs (Int) / 7 Yrs (Ext)</div>
+            </div>
+
+            <div class="detail-field">
+                <div class="field-label">Warranty</div>
+                <div class="field-value warranty-id">NP-WTY-CHN-2026-00074</div>
+                <div class="field-subtext warranty-exp">Exp: Jul 2033</div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Qualification Cues -->
+        <div class="cues-section">
+            <div class="field-label">Qualification Cues</div>
+            <div class="cues-list">
+                <span class="cue-tag">Family</span>
+                <span class="cue-tag">Festival</span>
+                <span class="cue-tag">Housewarming</span>
+            </div>
+        </div>
+    </div>
+</template>

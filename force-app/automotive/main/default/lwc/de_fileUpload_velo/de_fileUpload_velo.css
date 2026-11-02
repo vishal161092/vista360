@@ -1,0 +1,205 @@
+:host {
+    --color-primary: #0070d2;
+    --color-primary-hover: #005bb5;
+    --color-error: #c23934;
+    --color-success: #2e844a;
+    --color-bg: #f4f6f9;
+    --color-card: #ffffff;
+    --color-border: #e5e5e5;
+    --color-text: #181818;
+    --color-text-muted: #706e6b;
+    --radius: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background: var(--color-bg);
+    font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.card {
+    background: var(--color-card);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    width: 100%;
+    max-width: 520px;
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0.25rem 0 0;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.alert-error {
+    background: #fef1f1;
+    color: var(--color-error);
+    border: 1px solid #f5c6c6;
+}
+
+.alert-success {
+    background: #ecfdf0;
+    color: var(--color-success);
+    border: 1px solid #b8e6c8;
+}
+
+.alert-icon {
+    font-size: 1.1rem;
+}
+
+.info-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1rem;
+}
+
+.file-input-wrapper {
+    margin-bottom: 1rem;
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.file-label:hover {
+    border-color: var(--color-primary);
+    background: #f0f7ff;
+}
+
+.upload-icon {
+    font-size: 1.2rem;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    background: #fafbfc;
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    overflow: hidden;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-size {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--color-error);
+    cursor: pointer;
+    padding: 0 0.3rem;
+    line-height: 1;
+}
+
+.btn-remove:hover {
+    opacity: 0.7;
+}
+
+.btn-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-primary);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-upload:hover:not([disabled]) {
+    background: var(--color-primary-hover);
+}
+
+.btn-upload[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

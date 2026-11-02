@@ -1,0 +1,49 @@
+<template>
+    <div class="transactions-card">
+        <!-- Card Header -->
+        <div class="card-header">
+            <h2 class="card-title">Recent Transactions</h2>
+            <a href="#" class="view-all-link" onclick={handleViewAll}>View All</a>
+        </div>
+
+        <!-- Error display -->
+        <template if:true={error}>
+            <p class="error-msg">Error loading data</p>
+        </template>
+
+        <!-- Transactions Table -->
+        <div class="table-container">
+            <table class="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Invoice / Ref No.</th>
+                        <th>Product</th>
+                        <th>Qty (Boxes)</th>
+                        <th>Points Earned</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr for:each={transactions} for:item="transaction" key={transaction.id}>
+                        <td>{transaction.date}</td>
+                        <td>
+                            <a href="#" class="invoice-link" data-id={transaction.id} onclick={handleInvoiceClick}>
+                                {transaction.invoiceNo}
+                            </a>
+                        </td>
+                        <td>{transaction.product}</td>
+                        <td>{transaction.quantity}</td>
+                        <td>{transaction.points}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+            <a href="#" class="view-all-transactions-link" onclick={handleViewAllTransactions}>
+                View All Transactions
+            </a>
+        </div>
+    </div>
+</template>

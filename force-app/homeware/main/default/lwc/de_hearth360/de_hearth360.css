@@ -1,0 +1,45 @@
+.hearth-360 {
+    background: #f3f4f6;
+    padding: 16px;
+    min-height: 100%;
+    font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.hero-region {
+    margin-bottom: 0;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    align-items: start;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* StatsBar header + ProfileCard read as one continuous card */
+.merged {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+@media (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}

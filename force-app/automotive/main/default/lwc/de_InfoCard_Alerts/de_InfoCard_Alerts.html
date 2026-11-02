@@ -1,0 +1,98 @@
+<template>
+<template if:true={extraPV}> 
+<template if:true={showInsight}>
+    <template if:true={showComp}>
+    <div class="alerts-card">
+        <div class="card-header">
+            <div class="header-title">
+                <div class="header-icon">!</div>
+                <div>
+                    <h1 class="slds-text-heading_medium">Alerts</h1>
+                    <p class="sub-title">Important actions for your fleet</p>
+                </div>
+            </div>
+            <span class="alert-count">4 New</span>
+        </div>
+
+        <div class="alerts-body">
+            <div class="alert-item high">
+                <lightning-icon icon-name="utility:warning" size="x-small" class="alert-icon"></lightning-icon>
+                <div class="alert-content">
+                    <p class="alert-label">Critical alert</p>
+                    <p class="alert-text">Vehicle MH01QH2930 in breakdown for 5 days</p>
+                </div>
+                <span class="alert-pill">High</span>
+            </div>
+
+            <div class="alert-item medium">
+                <lightning-icon icon-name="utility:notification" size="x-small" class="alert-icon"></lightning-icon>
+                <div class="alert-content">
+                    <p class="alert-label">Insurance</p>
+                    <p class="alert-text">Insurance renewal for MH04RF1823 in 2 days</p>
+                </div>
+                <span class="alert-pill">Medium</span>
+            </div>
+
+            <div class="alert-item medium">
+                <lightning-icon icon-name="utility:service_appointment" size="x-small" class="alert-icon"></lightning-icon>
+                <div class="alert-content">
+                    <p class="alert-label">Service</p>
+                    <p class="alert-text">Service due for MH12GH2839 in 10 days</p>
+                </div>
+                <span class="alert-pill">Medium</span>
+            </div>
+
+            <div class="alert-item low">
+                <lightning-icon icon-name="utility:info" size="x-small" class="alert-icon"></lightning-icon>
+                <div class="alert-content">
+                    <p class="alert-label">Maintenance</p>
+                    <p class="alert-text">Tyre replacement needed for MH23HR2382</p>
+                </div>
+                <span class="alert-pill">Low</span>
+            </div>
+        </div>
+    </div>
+
+    </template>
+</template>
+
+<template if:true={showCustomer}>
+
+    <div class="alerts-card">
+        <div class="card-header">
+            <div class="header-title">
+                <div class="header-icon">!</div>
+                <div>
+                    <h1 class="slds-text-heading_medium">Alerts</h1>
+                    <p class="sub-title">Important actions for your vehicle</p>
+                </div>
+            </div>
+            <span class="alert-count">Action Needed</span>
+        </div>
+
+    <div class="alerts-body">
+<template if:true={cust1}>
+    <div class="alert-item medium">
+        <lightning-icon icon-name="utility:service_appointment" size="x-small" class="alert-icon"></lightning-icon>
+        <div class="alert-content">
+            <p class="alert-label">Service</p>
+            <p class="alert-text">{customerServiceAlertText}</p>
+        </div>
+        <span class="alert-pill">Medium</span>
+    </div>
+</template>
+<template if:true={cust2}>
+    <div class="alert-item high">
+        <lightning-icon icon-name="utility:notification" size="x-small" class="alert-icon"></lightning-icon>
+        <div class="alert-content">
+            <p class="alert-label">Insurance</p>
+            <p class="alert-text">Insurance due for renewal in 2 days</p>
+        </div>
+        <span class="alert-pill">High</span>
+    </div>
+</template>
+    </div>
+    </div>
+</template>
+</template>
+</template>

@@ -1,0 +1,132 @@
+:host {
+    --de-border: #e5e5e5;
+    --de-text: #181818;
+    --de-text-muted: #5c5c5c;
+    --de-surface-soft: #f4f6f9;
+    --de-danger: #ba0517;
+    --de-accent: #0176d3;
+    display: block;
+}
+
+.de-card {
+    background: #ffffff;
+    border: 1px solid var(--de-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: var(--de-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.de-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.de-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.de-cases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.de-case {
+    background: var(--de-surface-soft);
+    border-radius: 0.5rem;
+    padding: 0.8rem 0.85rem;
+}
+
+.de-case-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.de-case-id-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.de-case-id {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.de-case-type {
+    font-size: 0.74rem;
+    color: var(--de-text-muted);
+}
+
+.de-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 1rem;
+    padding: 0.15rem 0.6rem;
+    white-space: nowrap;
+}
+
+.de-badge-open {
+    background: #fde9e9;
+    color: var(--de-danger);
+}
+
+.de-badge-closed {
+    background: #e7f4ec;
+    color: #1b7f4b;
+}
+
+.de-case-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem 1rem;
+}
+
+.de-case-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.de-label {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--de-text-muted);
+}
+
+.de-value {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.de-high {
+    color: var(--de-danger);
+}
+
+.de-view-all {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--de-accent);
+    text-decoration: none;
+}
+
+.de-view-all:hover {
+    text-decoration: underline;
+}

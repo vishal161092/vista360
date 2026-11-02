@@ -1,0 +1,35 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:announcement"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                Marketing Preferences
+            </span>
+            <a class="edit-link" onclick={handleEdit}>Edit</a>
+        </div>
+
+        <div class="channel-grid">
+            <template for:each={decoratedChannels} for:item="c">
+                <div key={c.key} class="channel-item">
+                    <span class="channel-left">
+                        <lightning-icon
+                            icon-name={c.icon}
+                            size="x-small"
+                            class="channel-icon"
+                        ></lightning-icon>
+                        <span class="channel-label">{c.label}</span>
+                    </span>
+                    <lightning-icon
+                        icon-name={c.statusIcon}
+                        size="xx-small"
+                        class={c.statusClass}
+                    ></lightning-icon>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

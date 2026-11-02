@@ -1,0 +1,18 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.content-wrapper {
+    width: 100%;
+}
+
+/* Grid Item Styling */
+.grid-item {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    height: 100%;
+}

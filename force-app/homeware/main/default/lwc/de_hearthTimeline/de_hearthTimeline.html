@@ -1,0 +1,71 @@
+<template>
+    <div class="card">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">
+                    <lightning-icon icon-name="utility:date_time" size="x-small" class="hicon"></lightning-icon>
+                </div>
+                <span class="header-title">Recent Activity</span>
+            </div>
+            <span class="count-badge">{countLabel}</span>
+        </div>
+
+        <!-- BODY -->
+        <div class="body">
+            <template if:true={hasItems}>
+                <template for:each={groups} for:item="g">
+                    <div key={g.year}>
+                        <!-- year group -->
+                        <div class="group-row">
+                            <span class="group-yr">{g.year}</span>
+                            <div class="group-rule"></div>
+                        </div>
+
+                        <div class="timeline">
+                            <template for:each={g.items} for:item="a">
+                                <div key={a.id} class={a.rowClass}>
+                                    <div class={a.nodeClass}>
+                                        <lightning-icon icon-name={a.icon} size="xx-small" class="nicon"></lightning-icon>
+                                    </div>
+                                    <div class="t-content">
+                                        <div class="t-top">
+                                            <span class="t-name">{a.label}</span>
+                                            <span class={a.chipClass}>{a.cat}</span>
+                                        </div>
+                                        <div class="t-date">
+                                            <span>{a.dateLabel}</span>
+                                            <template if:true={a.relLabel}>
+                                                <span class="t-dot">·</span>
+                                                <span class="t-rel">{a.relLabel}</span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <template if:false={hasItems}>
+                <div class="empty-state">
+                    <lightning-icon icon-name="utility:date_time" size="small" class="empty-icon"></lightning-icon>
+                    <span>No recent activity</span>
+                </div>
+            </template>
+        </div>
+
+        <!-- FOOTER -->
+        <template if:true={hasItems}>
+            <div class="footer">
+                <button class="view-all">
+                    <lightning-icon icon-name="utility:forward" size="xx-small" class="va-icon"></lightning-icon>
+                    View Full History
+                </button>
+            </div>
+        </template>
+
+    </div>
+</template>

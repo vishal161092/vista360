@@ -1,0 +1,337 @@
+<template>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dash-header">
+            <div class="header-left">
+                <div class="logo-area">
+                    <div class="sf-logo">
+                        <svg width="22" height="16" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5C11.3 0.5 13 0 14.7 0c3.5 0 6.4 2.5 7.1 5.8 2.8 0.3 5 2.7 5 5.5 0 3-2.5 5.5-5.5 5.5H5.5C2.5 16.8 0 14.3 0 11.3c0-2.5 1.8-4.7 4.2-5.3C5 3.7 7.3 2 10 1.5z" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">Velo Motors</span>
+                        <span class="brand-sub">Sales Performance Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-tabs">
+                    <span class="tab active">Summary</span>
+                    <span class="tab">Trend</span>
+                    <span class="tab">Model</span>
+                    <span class="tab">Zone</span>
+                    <span class="tab">Dealer</span>
+                </div>
+                <div class="last-update">Data updated: {lastUpdated}</div>
+            </div>
+        </header>
+
+        <!-- KPI Row -->
+        <section class="kpi-row">
+            <template for:each={kpiCards} for:item="kpi">
+                <div key={kpi.id} class="kpi-card">
+                    <p class="kpi-label">{kpi.label}</p>
+                    <div class="kpi-value-row">
+                        <span class="kpi-value">{kpi.value}</span>
+                        <span class={kpi.trend}>{kpi.change}</span>
+                    </div>
+                    <p class="kpi-period">{kpi.period}</p>
+                </div>
+            </template>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Left: ETBR Funnel -->
+            <section class="panel funnel-panel">
+                <h3 class="panel-title">ETBR Funnel (Enquiry → Test Drive → Booking → Retail)</h3>
+                <div class="funnel-chart">
+                    <template for:each={etbrData} for:item="stage">
+                        <div key={stage.label} class="funnel-stage">
+                            <span class="funnel-label">{stage.label}</span>
+                            <div class="funnel-bar-wrap">
+                                <div class="funnel-bar"></div>
+                            </div>
+                            <span class="funnel-value">{stage.value}</span>
+                        </div>
+                    </template>
+                </div>
+            </section>
+
+            <!-- Right: Conversion Gauges -->
+            <section class="panel gauge-panel">
+                <h3 class="panel-title">Stage Conversion Rates</h3>
+                <div class="gauge-grid">
+                    <!-- Enquiry to TD: 42% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="65.9 157"/>
+                            </svg>
+                            <span class="gauge-pct">42%</span>
+                        </div>
+                        <p class="gauge-title">Enquiry to Test Drive</p>
+                    </div>
+                    <!-- Enquiry to Booking: 21% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="33 157"/>
+                            </svg>
+                            <span class="gauge-pct">21%</span>
+                        </div>
+                        <p class="gauge-title">Enquiry to Booking</p>
+                    </div>
+                    <!-- Enquiry to Retail: 13% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="20.4 157"/>
+                            </svg>
+                            <span class="gauge-pct">13%</span>
+                        </div>
+                        <p class="gauge-title">Enquiry to Retail</p>
+                    </div>
+                    <!-- TD to Booking: 51% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="80.1 157"/>
+                            </svg>
+                            <span class="gauge-pct">51%</span>
+                        </div>
+                        <p class="gauge-title">TD to Booking</p>
+                    </div>
+                    <!-- TD to Retail: 30% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="47.1 157"/>
+                            </svg>
+                            <span class="gauge-pct">30%</span>
+                        </div>
+                        <p class="gauge-title">TD to Retail</p>
+                    </div>
+                    <!-- Booking to Retail: 59% -->
+                    <div class="gauge-card">
+                        <div class="gauge-visual">
+                            <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="10" stroke-linecap="round"/>
+                                <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#0176d3" stroke-width="10" stroke-linecap="round" stroke-dasharray="92.6 157"/>
+                            </svg>
+                            <span class="gauge-pct">59%</span>
+                        </div>
+                        <p class="gauge-title">Booking to Retail</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Channel Contribution Section -->
+        <section class="panel channel-section">
+            <h3 class="panel-title">Enquiry Source Contribution</h3>
+            <div class="channel-grid">
+                <template for:each={channelData} for:item="ch">
+                    <div key={ch.id} class="channel-card">
+                        <div class="channel-header">
+                            <span class="channel-name">{ch.channel}</span>
+                            <span class="channel-total">{ch.total}</span>
+                        </div>
+                        <div class="channel-bars">
+                            <template for:each={ch.items} for:item="item">
+                                <div key={item.source} class="channel-item">
+                                    <span class="ch-source">{item.source}</span>
+                                    <div class="ch-bar-wrap">
+                                        <div class="ch-bar"></div>
+                                    </div>
+                                    <span class="ch-count">{item.count}</span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <!-- Quick Enquiry Conversion -->
+        <section class="panel qe-section">
+            <h3 class="panel-title">Quick Enquiry Conversion</h3>
+            <div class="qe-grid">
+                <!-- QE to Enquiry: 39.7% -->
+                <div class="qe-card">
+                    <div class="qe-gauge-visual">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#5b9bd5" stroke-width="8" stroke-linecap="round" stroke-dasharray="62.3 157"/>
+                        </svg>
+                        <span class="qe-pct">39.7%</span>
+                    </div>
+                    <p class="qe-title">QE to Enquiry</p>
+                    <div class="qe-meta">
+                        <span class="qe-total">QE: 1,718,094</span>
+                        <span class="qe-converted">682,150</span>
+                    </div>
+                </div>
+                <!-- QE to TD: 4.01% -->
+                <div class="qe-card">
+                    <div class="qe-gauge-visual">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#5b9bd5" stroke-width="8" stroke-linecap="round" stroke-dasharray="6.3 157"/>
+                        </svg>
+                        <span class="qe-pct">4.01%</span>
+                    </div>
+                    <p class="qe-title">QE to Test Drive</p>
+                    <div class="qe-meta">
+                        <span class="qe-total">QE: 1,718,094</span>
+                        <span class="qe-converted">68,811</span>
+                    </div>
+                </div>
+                <!-- QE to Booking: 6.18% -->
+                <div class="qe-card">
+                    <div class="qe-gauge-visual">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#5b9bd5" stroke-width="8" stroke-linecap="round" stroke-dasharray="9.7 157"/>
+                        </svg>
+                        <span class="qe-pct">6.18%</span>
+                    </div>
+                    <p class="qe-title">QE to Booking</p>
+                    <div class="qe-meta">
+                        <span class="qe-total">QE: 1,718,094</span>
+                        <span class="qe-converted">106,158</span>
+                    </div>
+                </div>
+                <!-- QE to Retail: 3.52% -->
+                <div class="qe-card">
+                    <div class="qe-gauge-visual">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#5b9bd5" stroke-width="8" stroke-linecap="round" stroke-dasharray="5.5 157"/>
+                        </svg>
+                        <span class="qe-pct">3.52%</span>
+                    </div>
+                    <p class="qe-title">QE to Retail</p>
+                    <div class="qe-meta">
+                        <span class="qe-total">QE: 1,718,094</span>
+                        <span class="qe-converted">60,402</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Summary -->
+        <section class="panel digital-section">
+            <h3 class="panel-title">Digital Quick Enquiry Summary</h3>
+            <div class="digital-header-row">
+                <div class="digital-big-number">774,312</div>
+                <div class="digital-comparisons">
+                    <div class="comparison-item">
+                        <span class="comp-label">MTD</span>
+                        <span class="comp-value">7</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comp-label">LMTD</span>
+                        <span class="comp-value">7</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comp-label">YTD</span>
+                        <span class="comp-value">7</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comp-label">LYTD</span>
+                        <span class="comp-value">142</span>
+                    </div>
+                    <div class="comparison-item negative">
+                        <span class="comp-label">YoY</span>
+                        <span class="comp-value">-95.1%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="digital-metrics-row">
+                <div class="digital-metric-card">
+                    <div class="dm-gauge">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#5b9bd5" stroke-width="8" stroke-linecap="round" stroke-dasharray="16.4 157"/>
+                        </svg>
+                        <span class="dm-pct">10.45%</span>
+                    </div>
+                    <p class="dm-title">Digital Retail Contribution%</p>
+                </div>
+                <div class="digital-metric-card">
+                    <div class="dm-gauge">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#4caf50" stroke-width="8" stroke-linecap="round" stroke-dasharray="64.7 157"/>
+                        </svg>
+                        <span class="dm-pct">41.2%</span>
+                    </div>
+                    <p class="dm-title">Digital QE Contribution%</p>
+                </div>
+                <div class="digital-metric-card">
+                    <div class="dm-gauge">
+                        <svg viewBox="0 0 120 70" class="gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#e8ecf2" stroke-width="8" stroke-linecap="round"/>
+                            <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#1b5e20" stroke-width="8" stroke-linecap="round" stroke-dasharray="134.2 157"/>
+                        </svg>
+                        <span class="dm-pct">85.51%</span>
+                    </div>
+                    <p class="dm-title">Dealer Digital QE Contribution%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Avg Followup Section -->
+        <section class="panel followup-section">
+            <h3 class="panel-title">Average Followup by Zone</h3>
+            <div class="followup-grid">
+                <div class="followup-item">
+                    <span class="fu-zone">West Zone</span>
+                    <div class="fu-bar-wrap">
+                        <div class="fu-bar fu-bar-west"></div>
+                    </div>
+                    <span class="fu-val">0.00022</span>
+                </div>
+                <div class="followup-item">
+                    <span class="fu-zone">East Zone</span>
+                    <div class="fu-bar-wrap">
+                        <div class="fu-bar fu-bar-zero"></div>
+                    </div>
+                    <span class="fu-val">0</span>
+                </div>
+                <div class="followup-item">
+                    <span class="fu-zone">North 1 AS</span>
+                    <div class="fu-bar-wrap">
+                        <div class="fu-bar fu-bar-zero"></div>
+                    </div>
+                    <span class="fu-val">0</span>
+                </div>
+                <div class="followup-item">
+                    <span class="fu-zone">North 2 AS</span>
+                    <div class="fu-bar-wrap">
+                        <div class="fu-bar fu-bar-zero"></div>
+                    </div>
+                    <span class="fu-val">0</span>
+                </div>
+                <div class="followup-item">
+                    <span class="fu-zone">South Zone</span>
+                    <div class="fu-bar-wrap">
+                        <div class="fu-bar fu-bar-zero"></div>
+                    </div>
+                    <span class="fu-val">0</span>
+                </div>
+            </div>
+            <div class="followup-total">
+                <span class="fu-total-label">Total Followup</span>
+                <span class="fu-total-value">45</span>
+            </div>
+        </section>
+    </div>
+</template>

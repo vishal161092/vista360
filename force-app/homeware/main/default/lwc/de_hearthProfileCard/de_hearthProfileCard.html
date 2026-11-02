@@ -1,0 +1,69 @@
+<template>
+    <div class="card">
+        <!-- BODY -->
+        <div class="body">
+            <template for:each={sections} for:item="sec">
+                <div key={sec.id} class="section">
+                    <div class="section-label">{sec.label}</div>
+                    <template for:each={sec.rows} for:item="row">
+                        <div key={row.id} class={row.rowClass}>
+                            <div class="row-icon">
+                                <lightning-icon icon-name={row.icon} size="x-small" class="ricon"></lightning-icon>
+                            </div>
+                            <div class="row-content">
+                                <span class="row-label">{row.label}</span>
+
+                                <!-- Address (multi-line) -->
+                                <template if:true={row.isAddress}>
+                                    <div class="address-val">
+                                        {row.value}
+                                        <template if:true={row.sub}>
+                                            <div class="address-sub">{row.sub}</div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Age chip on DOB -->
+                                <template if:true={row.isAge}>
+                                    <div class="value-group">
+                                        <span class="age-chip">{row.chipText}</span>
+                                        <span class="row-value">{row.value}</span>
+                                    </div>
+                                </template>
+
+                                <!-- Device chip -->
+                                <template if:true={row.isDevice}>
+                                    <span class="chip chip-device">
+                                        <lightning-icon icon-name="utility:phone_portrait" size="xx-small" class="chip-icon"></lightning-icon>
+                                        {row.value}
+                                    </span>
+                                </template>
+
+                                <!-- Status chip -->
+                                <template if:true={row.isStatus}>
+                                    <span class="chip chip-status">
+                                        <lightning-icon icon-name="utility:heart" size="xx-small" class="chip-icon"></lightning-icon>
+                                        {row.value}
+                                    </span>
+                                </template>
+
+                                <!-- Copyable plain value -->
+                                <template if:true={row.copy}>
+                                    <div class="value-group">
+                                        <button class="copy-btn" data-copy={row.value} onclick={handleCopy}>COPY</button>
+                                        <span class="row-value">{row.value}</span>
+                                    </div>
+                                </template>
+
+                                <!-- Plain value -->
+                                <template if:true={row.isPlainValue}>
+                                    <span class="row-value">{row.value}</span>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

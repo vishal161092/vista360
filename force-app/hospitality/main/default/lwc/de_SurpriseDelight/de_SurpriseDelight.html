@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Surprise &amp; Delight" icon-name="standard:reward">
+        <div class="offers-container">
+            <template for:each={offers} for:item="offer">
+                <div key={offer.id} class="offer-card">
+                    <div class="offer-header">
+                        <lightning-icon icon-name={offer.icon} size="small" class="offer-icon"></lightning-icon>
+                        <span class="offer-badge">{offer.badge}</span>
+                    </div>
+                    <div class="offer-body">
+                        <span class="offer-title">{offer.title}</span>
+                        <span class="offer-desc">{offer.description}</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

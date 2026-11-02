@@ -1,0 +1,129 @@
+<template>
+    <div class="owned-wrap">
+        <!-- <div class="top-tabs">
+            <button class="top-tab active">Customer Journey</button>
+            <button class="top-tab">Vehicle Owned - M&amp;M</button>
+            <button class="top-tab">Vehicle Owned - Other OEM</button>
+        </div> -->
+
+        <template for:each={vehiclesWithExpansion} for:item="vehicle">
+            <div class="vehicle-card" key={vehicle.id}>
+                <div class="vehicle-header">
+                    <p class="vehicle-title">{vehicle.title}</p>
+                    <button class="collapse-btn"><lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon></button>
+                </div>
+                <div class="vehicle-body">
+                    <div class="car-image-placeholder">
+                        <img src={vehicle.imageUrl} alt={vehicle.title} class="car-image" />
+                    </div>
+                    <div class="vehicle-details">
+                        <div class="vehicle-grid">
+                            <div class="metric">
+                                <p class="metric-label"><lightning-icon icon-name="utility:identity" size="xx-small"></lightning-icon> VIN No.</p>
+                                <p class="metric-value">{vehicle.vin}</p>
+                            </div>
+                            <div class="metric">
+                                <p class="metric-label"><lightning-icon icon-name="utility:location" size="xx-small"></lightning-icon> Registration No.</p>
+                                <p class="metric-value">{vehicle.reg}</p>
+                            </div>
+                            <div class="metric">
+                                <p class="metric-label"><lightning-icon icon-name="utility:clock" size="xx-small"></lightning-icon> Odometer Reading</p>
+                                <p class="metric-value">{vehicle.odo}</p>
+                            </div>
+                            <div class="metric">
+                                <p class="metric-label"><lightning-icon icon-name="utility:event" size="xx-small"></lightning-icon> Date of Sale</p>
+                                <p class="metric-value">{vehicle.saleDate}</p>
+                            </div>
+                            <div class="metric dealer-field">
+                                <p class="metric-label"><lightning-icon icon-name="utility:world" size="xx-small"></lightning-icon> Dealer</p>
+                                <p class="metric-value">{vehicle.dealer}</p>
+                            </div>
+                        </div>
+                        <div class="owner-meta">
+                            <p><span>Customer Name :</span> <b>{vehicle.customerName}</b></p>
+                            <p><span>Account Type :</span> <b>{vehicle.accountType}</b></p>
+                        </div>
+                    </div>
+                </div>
+                <button class="vehicle-360" data-id={vehicle.id} onclick={handleToggle}>Vehicle 360</button>
+                <template if:true={vehicle.isExpanded}>
+                    <div class="expanded-panel">
+                        <div class="offers">
+                            <p class="offer-title">Promotional Offers &amp; Discounts:</p>
+                            <div class="offer-actions">
+                                <template for:each={offerButtons} for:item="offer">
+                                    <button key={offer}>{offer}</button>
+                                </template>
+                            </div>
+                        </div>
+
+                        <div class="tab-row">
+                            <button class={tabClasses.complaints} data-tab="complaints" onclick={handleTabChange}>Complaints/Cases</button>
+                            <button class={tabClasses.feedback} data-tab="feedback" onclick={handleTabChange}>Customer Feedback</button>
+                            <button class={tabClasses.sentiment} data-tab="sentiment" onclick={handleTabChange}>Customer Sentiment</button>
+                        </div>
+
+                        <div class="tab-content">
+                            <template if:true={isComplaints}>
+                                <div class="timeline-list">
+                                    <template for:each={complaints} for:item="item">
+                                        <div class="case-item" key={item.id}>
+                                            <span class={item.iconClass}></span>
+                                            <div class="case-head">
+                                                <p><b>Area :</b> {item.area} <span class="status">| status : {item.status}</span></p>
+                                                <p class="date">{item.date}</p>
+                                            </div>
+                                            <p class="desc">{item.description}</p>
+                                            <div class="case-meta">
+                                                <p><span>Reference</span>{item.reference}</p>
+                                                <p><span>Dealer/Location</span>{item.dealer}</p>
+                                                <p><span>Source</span>{item.source}</p>
+                                                <p><span>Assigned To</span>{item.assignedTo}</p>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <template if:true={isFeedback}>
+                                <div class="timeline-list">
+                                    <template for:each={feedback} for:item="item">
+                                        <div class="case-item" key={item.id}>
+                                            <span class={item.iconClass}></span>
+                                            <div class="case-head">
+                                                <p><b>{item.area}</b> <span class="status">| Intello Rating: {item.rating}</span></p>
+                                                <p class="date">{item.date}</p>
+                                            </div>
+                                            <p class="desc">{item.text}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <template if:true={isSentiment}>
+                                <div class="legend">
+                                    <span class="pos">Positive (3.5-5)</span>
+                                    <span class="neu">Neutral (2.5-3.5)</span>
+                                    <span class="neg">Negative (0-2.5)</span>
+                                </div>
+                                <div class="chart">
+                                    <template for:each={sentiments} for:item="item">
+                                        <div class="bar-group" key={item.year}>
+                                            <p class="score">{item.score}</p>
+                                            <div class="bars">
+                                                <span class="bar negative" style={item.negativeStyle}></span>
+                                                <span class="bar neutral" style={item.neutralStyle}></span>
+                                                <span class="bar positive" style={item.positiveStyle}></span>
+                                            </div>
+                                            <p class="year">{item.year}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

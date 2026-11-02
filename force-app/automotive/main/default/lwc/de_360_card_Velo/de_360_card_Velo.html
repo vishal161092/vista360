@@ -1,0 +1,173 @@
+<template>
+    <div class="mah-card">
+        <div class="profile-header">
+            <div class="avatar-wrap">
+                <img src={personaImageUrl} alt="Persona" class="persona-image" />
+            </div>
+            <div class="profile-meta">
+                <p class="name">{customerName}</p>
+                <p class="location">{fullAddress}</p>
+            </div>
+            <!-- <lightning-icon icon-name="utility:close" size="x-small" class="close-icon"></lightning-icon> -->
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                <lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>
+                <span>Personal Information</span>
+            </div>
+            <div class="personal-grid">
+                <div>
+                    <label>Gender</label>
+                    <p>Male</p>
+                </div>
+                <div>
+                    <label>Age Group</label>
+                    <p>30-40</p>
+                </div>
+                <div>
+                    <label>Preferred Pronouns</label>
+                    <p>He/Him</p>
+                </div>
+                <div>
+                    <label>Location</label>
+                    <p>{fullAddress}</p>
+                </div>
+                <div class="full-row">
+                    <label>Email</label>
+                    <p>{email}</p>
+                </div>
+                <div class="full-row">
+                    <label>Primary Contact</label>
+                    <p>{phone}</p>
+                </div>
+                <div class="full-row">
+                    <label>Alternate Contact</label>
+                    <p>{mobile}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                <lightning-icon icon-name="utility:money" size="x-small"></lightning-icon>
+                <span>Customer Lifetime Value</span>
+            </div>
+            <div class="value-box">
+                <p class="value">{customerLifetimeValue}</p>
+                <p class="muted">This is priced value based on customer's past transactions with M&amp;M</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                <lightning-icon icon-name="utility:chart" size="x-small"></lightning-icon>
+                <span>Brand Engagement Score</span>
+            </div>
+            <div class="engagement-row">
+                <div class="engagement-circles">
+                    <div class={scoreCircleClass}>{engagementScore}%</div>
+                    <template if:true={showPropensityToBuy}>
+                        <div class="propensity-circle">High</div>
+                    </template>
+                </div>
+                <div class="engagement-content">
+                    <p class={engagementClass}>{engagementLabel}</p>
+                    <p class="muted">This person is actively engaged with your brand</p>
+                    <template if:true={showPropensityToBuy}>
+                        <p class="propensity-text">Propensity to Buy: <span>High</span></p>
+                        <div class="propensity-progress-track">
+                            <div class="propensity-progress-bar" style={propensityProgressStyle}></div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                <lightning-icon icon-name="utility:copay" size="x-small"></lightning-icon>
+                <span>Reward Points</span>
+                <span class="points-inline">{rewardPoints}</span>
+                <span class={tierBadgeClass}>{tierLabel}</span>
+            </div>
+            <p class="muted points-progress">{pointsToNextMilestone} Points to next milestone</p>
+            <div class="progress-track">
+                <div class="progress-bar" style={progressBarStyle}></div>
+            </div>
+            <div class="history-row">
+                <div>
+                    <p class="muted label">Last Redeemed on:</p>
+                    <p class="redeem-date">01 Jan 2024</p>
+                </div>
+                <a href="javascript:void(0);" class="history-link">View History</a>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">
+                <lightning-icon icon-name="utility:identity" size="x-small"></lightning-icon>
+                <span>Profile Attributes</span>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Drive Preferences</p>
+                <div class="tag-wrap">
+                    <span class="pill">Daily Commute</span>
+                    <span class="pill">Pleasure</span>
+                    <span class="pill">Adventure</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">In-drive Preferences</p>
+                <div class="tag-wrap">
+                    <span class="pill">Tech-Savvy</span>
+                    <span class="pill">Practical</span>
+                    <span class="pill">Performance-oriented</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Urbanweave</p>
+                <div class="tag-wrap">
+                    <span class="pill">Outdoor Activities</span>
+                    <span class="pill">Urban Exploration</span>
+                    <span class="pill">Family-Oriented</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Hobbies and Interests</p>
+                <div class="tag-wrap">
+                    <span class="pill">Motorsports</span>
+                    <span class="pill">Environmental Consciousness</span>
+                    <span class="pill">Luxury and Comfort</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Service Interaction</p>
+                <div class="tag-wrap">
+                    <span class="pill">Self-service</span>
+                    <span class="pill">Full-service</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Entertainment Preferences</p>
+                <div class="tag-wrap">
+                    <span class="pill">Audiophile</span>
+                    <span class="pill">Connectivity</span>
+                </div>
+            </div>
+
+            <div class="attribute-block">
+                <p class="attribute-title">Travel Habits</p>
+                <div class="tag-wrap">
+                    <span class="pill">Long-distance Traveler</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,97 @@
+<template>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-top">
+                <div class="header-title" style="--slds-g-color-success-1: white;">
+                    <lightning-icon icon-name="utility:sparkles" variant="success" size="small"></lightning-icon>
+                    <span style="padding-left: 12px;">Agentforce Interaction Summary</span>
+                </div>
+                <div class="confidence-badge">{confidenceLabel}</div>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="content">
+            <!-- EXECUTIVE SUMMARY -->
+            <div class="summary-section">
+                <div class="section-title">
+                    <span class="section-icon">📋</span>
+                    <span>EXECUTIVE SUMMARY</span>
+                </div>
+                <div class="summary-text">
+                    {formattedSummary}
+                </div>
+            </div>
+
+            <!-- INTERACTION + BUYER INTENT  -->
+            <div class="grid-2">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span class="section-icon">💬</span>
+                        <span class="card-title">LATEST INTERACTION</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date</span>
+                        <span class="info-value">{latestInteractionDate}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Direction</span>
+                        <span class="info-value"><span class="badge badge-outgoing">{latestInteractionDirection}</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Priority</span>
+                        <span class="info-value"><span class="badge badge-medium">{latestInteractionPriority}</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Subject</span>
+                        <span class="info-value">{latestInteractionSubject}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Tone</span>
+                        <span class="info-value">{latestInteractionTone}</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <span class="section-icon">🎯</span>
+                        <span class="card-title">BUYER INTENT</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Stage</span>
+                        <span class="info-value"><span class="badge badge-evaluation">{buyerIntentStage}</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Interest Level</span>
+                        <span class="info-value"><span class="badge badge-medium">{buyerIntentInterest}</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Urgency</span>
+                        <span class="info-value"><span class="badge badge-low">{buyerIntentUrgency}</span></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Decision Maker</span>
+                        <span class="info-value"><span class="badge badge-yes">{buyerIntentDecisionMaker}</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAIN POINTS -->
+            <div class="summary-section">
+                <div class="section-title">
+                    <span class="section-icon">⚠️</span>
+                    <span>PAIN POINTS</span>
+                </div>
+                <ul class="pain-points-list">
+                    <template for:each={painPoints} for:item="pp">
+                        <li key={pp} class="pain-point-item">
+                            <span class="pain-icon">📌</span>
+                            <span class="pain-text">{pp}</span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

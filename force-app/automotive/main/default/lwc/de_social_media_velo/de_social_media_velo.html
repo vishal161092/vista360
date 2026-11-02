@@ -1,0 +1,35 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <div class="header-left">
+                <div class="icon-box">
+                    <lightning-icon icon-name="utility:list" size="xx-small"></lightning-icon>
+                </div>
+                <h2>Active on Social Media</h2>
+            </div>
+            <button class="collapse-btn" title="Collapse">
+                <lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon>
+            </button>
+        </div>
+
+        <div class="icons-grid">
+            <div class="social-icon facebook">f</div>
+            <div class="social-icon linkedin">in</div>
+            <div class="social-icon youtube">▶</div>
+            <div class="social-icon social-icon-image instagram">
+                <img src={instagramIcon} alt="Instagram" class="social-image" style="width: 60px !important;height: 54px; max-width: none;"/>
+            </div>
+            <div class="social-icon social-icon-image xapp">
+                <img src={xIcon} alt="X" class="social-image" style="max-width: none;"/>
+            </div>
+            <div class="social-icon social-icon-image whatsapp">
+                <img src={whatsappIcon} alt="WhatsApp" class="social-image" style="height: 30px;width: 30px;"/>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-outline">View Recent Activity</button>
+            <button class="btn btn-filled">Start Campaign</button>
+        </div>
+    </div>
+</template>

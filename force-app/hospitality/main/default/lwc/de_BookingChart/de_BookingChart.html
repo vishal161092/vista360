@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Booking Analytics" icon-name="standard:report">
+        <div class="chart-container">
+            <div class="chart-header">
+                <template if:true={showBackButton}>
+                    <lightning-button-icon icon-name="utility:back" variant="bare" alternative-text="Back" onclick={handleBack} class="back-btn"></lightning-button-icon>
+                </template>
+                <h3 class="chart-title">{chartTitle}</h3>
+            </div>
+            <div class="chart-wrapper">
+                <canvas class="chart-canvas"></canvas>
+            </div>
+        </div>
+    </lightning-card>
+</template>

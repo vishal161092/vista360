@@ -1,0 +1,68 @@
+<template>
+    <div class="profile-card">
+        <!-- Avatar + Identity inline -->
+        <div class="header-row">
+            <img src={avatarUrl} alt="Profile" class="avatar-img" />
+            <div class="header-info">
+                <div class="name">{name}</div>
+                <div class="subtitle">{title}</div>
+                <div class="company">{company}</div>
+            </div>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-section">
+            <div class="contact-row">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">{email}</div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">{phone}</div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-label">Address</div>
+                <div class="contact-value">{address}</div>
+            </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="tags-section">
+            <span class="tag">Gold Tier</span>
+            <span class="tag">Referral</span>
+            <span class="tag">3-BHK Apartment</span>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-section">
+            <div class="stats-title">Quick Stats</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Lead Source</div>
+                    <div class="stat-value">{leadSource}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Status</div>
+                    <div class="stat-value">{status}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Language</div>
+                    <div class="stat-value">Tamil</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Customer Since</div>
+                    <div class="stat-value">{customerSince}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Total Jobs</div>
+                    <div class="stat-value">2</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Lifetime Value</div>
+                    <div class="stat-value">&#8377;1.83L</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

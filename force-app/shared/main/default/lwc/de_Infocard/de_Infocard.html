@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Profile Summary" icon-name="standard:individual">
+        <div class="info-container">
+            <template for:each={profileSummary} for:item="item">
+                <div key={item.id} class="info-item">
+                    <div class="item-row">
+                        <lightning-icon icon-name={item.icon} size="small" class="item-icon"></lightning-icon>
+                        <div class="item-text">
+                            <p class="item-label">{item.label}</p>
+                            <p class="item-value">{item.value}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

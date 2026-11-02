@@ -1,0 +1,70 @@
+.reservations-container {
+    padding: 8px 16px 16px;
+    margin-top: 12px;
+}
+
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reservations-table th {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2B7A7F;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #2B7A7F;
+    letter-spacing: 0.3px;
+}
+
+.reservations-table td {
+    font-size: 13px;
+    color: #1f2937;
+    padding: 12px 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.reservations-table tr:hover td {
+    background: #f8fdfb;
+}
+
+.hotel-name {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.booking-id {
+    font-family: 'SF Mono', 'Courier New', monospace;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-direct {
+    background: #e6f5f5;
+    color: #2B7A7F;
+}
+
+.badge-ota {
+    background: #fdf6e3;
+    color: #8B6914;
+}
+
+.badge-assisted {
+    background: #f0e6ff;
+    color: #5b21b6;
+}
+
+.view-all {
+    text-align: center;
+    padding-top: 12px;
+}

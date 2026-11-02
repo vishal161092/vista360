@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Upcoming Booking Summary" icon-name="standard:date_input">
+        <template if:true={hasUpcomingBooking}>
+            <div class="booking-container">
+                <!-- Stats Grid Row 1 -->
+                <div class="booking-grid">
+                    <div class="grid-item">
+                        <lightning-icon icon-name="utility:groups" size="small" class="grid-icon"></lightning-icon>
+                        <div class="grid-content">
+                            <span class="grid-label">PAX</span>
+                            <span class="grid-value">{booking.pax}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <lightning-icon icon-name="utility:event" size="small" class="grid-icon"></lightning-icon>
+                        <div class="grid-content">
+                            <span class="grid-label">Duration</span>
+                            <span class="grid-value">{booking.duration}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <lightning-icon icon-name="utility:moneybag" size="small" class="grid-icon"></lightning-icon>
+                        <div class="grid-content">
+                            <span class="grid-label">Payment Status</span>
+                            <span class="grid-value paid">{booking.paymentStatus}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid Row 2 -->
+                <div class="booking-grid row-two">
+                    <div class="grid-item">
+                        <lightning-icon icon-name="utility:location" size="small" class="grid-icon"></lightning-icon>
+                        <div class="grid-content">
+                            <span class="grid-label">Property</span>
+                            <span class="grid-value">{booking.property}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <lightning-icon icon-name="utility:favorite" size="small" class="grid-icon heart-icon"></lightning-icon>
+                        <div class="grid-content">
+                            <span class="grid-label">Occasion</span>
+                            <span class="grid-value">{booking.occasion}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="booking-actions">
+                    <lightning-button label={booking.taskLabel} variant="neutral" class="action-btn task-btn"></lightning-button>
+                    <lightning-button label="Create New Task" variant="neutral" class="action-btn"></lightning-button>
+                </div>
+
+                <!-- Reservation Notes -->
+                <div class="booking-notes">
+                    <span class="notes-title">Reservation Notes</span>
+                    <p class="notes-text">{booking.notes}</p>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

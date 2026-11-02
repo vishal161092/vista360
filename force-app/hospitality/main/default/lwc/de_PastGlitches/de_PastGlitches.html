@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Past Glitches" icon-name="standard:problem">
+        <div class="glitches-container">
+            <p class="glitch-meta">{glitchCount}</p>
+            <table class="glitches-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Glitch Type</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Resolved?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={formattedGlitches} for:item="glitch">
+                        <tr key={glitch.id}>
+                            <td>{glitch.index}</td>
+                            <td class="glitch-type">{glitch.type}</td>
+                            <td>{glitch.status}</td>
+                            <td>
+                                <lightning-formatted-date-time value={glitch.date} year="numeric" month="short" day="2-digit"></lightning-formatted-date-time>
+                            </td>
+                            <td><span class={glitch.resolvedClass}>{glitch.resolved}</span></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

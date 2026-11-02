@@ -1,0 +1,27 @@
+<template>
+    <div class="panel">
+        <div class="panel-title">
+            <lightning-icon icon-name="utility:event" size="small"></lightning-icon>
+            <h2>Festival Buying Pattern</h2>
+        </div>
+
+        <div class="insight">
+            <lightning-icon icon-name="utility:info" size="x-small" class="i-ico"></lightning-icon>
+            <span>{insight}</span>
+        </div>
+
+        <div class="chart">
+            <template for:each={bars} for:item="f">
+                <div key={f.key} class="col-wrap">
+                    <div class="col-track">
+                        <div class={f.barClass} style={f.style}>
+                            <span class="col-pct">{f.pct}%</span>
+                        </div>
+                    </div>
+                    <span class="col-name">{f.name}</span>
+                    <span class="col-month">{f.month}</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

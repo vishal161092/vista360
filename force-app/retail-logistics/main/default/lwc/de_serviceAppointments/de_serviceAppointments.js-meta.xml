@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>DE Service Appointments</masterLabel>
+    <description>Upcoming service appointments with toggle between demo data and live ServiceAppointment records.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+                <object>Account</object>
+            </objects>
+            <property name="useLiveData" type="Boolean" default="false" label="Use Live Data" description="When checked, pulls appointments from the ServiceAppointment object. When unchecked, shows demo data."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

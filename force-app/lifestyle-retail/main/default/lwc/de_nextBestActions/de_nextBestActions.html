@@ -1,0 +1,38 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">
+                <lightning-icon
+                    icon-name="utility:einstein"
+                    size="x-small"
+                    class="title-icon"
+                ></lightning-icon>
+                Suggested Next Best Actions
+            </span>
+        </div>
+
+        <ul class="action-list">
+            <template for:each={actions} for:item="a">
+                <li key={a.key} class="action-row">
+                    <div class="action-image-wrap">
+                        <img class="action-image" src={a.image} alt={a.title} />
+                    </div>
+                    <div class="action-body">
+                        <div class="action-text">
+                            <p class="action-title">{a.title}</p>
+                            <template lwc:if={a.subtitle}>
+                                <p class="action-subtitle">{a.subtitle}</p>
+                            </template>
+                        </div>
+                        <button
+                            type="button"
+                            data-key={a.key}
+                            onclick={handleAction}
+                            class="action-btn slds-button slds-button_brand"
+                        >{a.cta}</button>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

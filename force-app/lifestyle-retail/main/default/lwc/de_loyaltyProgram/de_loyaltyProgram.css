@@ -1,0 +1,94 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.title-icon {
+    --slds-c-icon-color-foreground-default: #d4a017;
+}
+
+.tier-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #fdf3d8;
+    color: #9a6a00;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 8px;
+}
+
+.points-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.points {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.star-icon {
+    --slds-c-icon-color-foreground-default: #f5a623;
+}
+
+.points-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.points-label {
+    color: #6b6d82;
+    font-size: 0.85rem;
+}
+
+.next-tier {
+    color: #9a9cb0;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0.85rem;
+}
+
+.benefits-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #16172b;
+    margin-bottom: 0.4rem;
+}
+
+.benefit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    color: #4a4b60;
+    font-size: 0.85rem;
+}
+
+.check-icon {
+    --slds-c-icon-color-foreground-default: #2e9e5b;
+}

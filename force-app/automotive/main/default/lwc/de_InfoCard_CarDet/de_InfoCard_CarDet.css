@@ -1,0 +1,743 @@
+.vehicle-card {
+    position: relative;
+    border-radius: 4px;
+    /* background: linear-gradient(180deg, #ffffff 0%, #f9fcff 100%); */
+    /* border: 1px solid #d8e4f8; */
+    /* box-shadow: 0 18px 34px rgba(22, 102, 183, 0.2); */
+    overflow: hidden;
+}
+
+.vehicle-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* border-radius: 18px; */
+    padding: 1px;
+    /* background: linear-gradient(135deg, #0f61b4 0%, #57a4f1 38%, #de1a2b 100%); */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.card-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: linear-gradient(112deg, #0a55a0 0%, #1f73c7 44%, #3c77af 82%, #3c77af 100%);
+    color: #ffffff;
+}
+
+.card-header::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: -35px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 72%);
+    pointer-events: none;
+}
+
+.card-header::before {
+    content: "";
+    position: absolute;
+    left: -20%;
+    top: 0;
+    width: 36%;
+    height: 100%;
+    transform: skewX(-24deg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    animation: headerShine 5s ease-in-out infinite;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+}
+
+.header-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+    --slds-c-icon-color-background: #de1a2b;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.sub-title {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 4px;
+}
+
+.status-pill {
+    padding: 9px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.16));
+    backdrop-filter: blur(2px);
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 14px rgba(9, 62, 120, 0.25);
+    z-index: 1;
+}
+
+.card-body {
+    padding: 20px;
+    background: #f9fbff;
+}
+
+.preview-card {
+    position: relative;
+    margin-bottom: 16px;
+    padding: 24px 24px 14px;
+    border-radius: 14px;
+    border: 2px solid #e1edff;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f9ff 100%);
+    box-shadow: 0 12px 22px rgba(25, 97, 177, 0.12);
+}
+
+.preview-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 7px;
+    /* background: linear-gradient(90deg, #0f61b4 0%, #59a5ef 60%, #7dbbf6 75%, #de1a2b 100%); */
+}
+
+.verified-pill {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #265142;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #e3f5ea;
+    border: 1px solid #b9e4c9;
+    box-shadow: 0 8px 14px rgba(44, 146, 85, 0.2);
+}
+
+.vehicle-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
+    padding: 8px 10px 0;
+    margin: -4rem 0rem -2rem 0rem;
+}
+
+.vehicle-image {
+    width: 100%;
+    height: 10rem;
+    /* max-width: 760px; */
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 12px 18px rgba(16, 52, 99, 0.2));
+    transition: transform 180ms ease;
+}
+
+.vehicle-image:hover {
+    transform: scale(1.02);
+}
+
+.vehicle-caption {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vehicle-chip {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #315788;
+    background: linear-gradient(180deg, #f4f9ff 0%, #e9f3ff 100%);
+    border: 1px solid #d6e7ff;
+    box-shadow: 0 4px 8px rgba(42, 105, 176, 0.08);
+}
+
+.km-chip {
+    color: #1f5c33;
+    background: linear-gradient(180deg, #f1fdf3 0%, #e6f8e9 100%);
+    border-color: #cfead5;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.metric-card {
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid #d2e2fb;
+    background: linear-gradient(180deg, #f3f8ff 0%, #edf5ff 100%);
+    box-shadow: 0 10px 18px rgba(43, 102, 173, 0.14);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.metric-card:nth-child(2) {
+    background: linear-gradient(180deg, #faf7ff 0%, #efebff 100%);
+}
+
+.metric-card:nth-child(3) {
+    background: linear-gradient(180deg, #f2fff4 0%, #e6f8e9 100%);
+}
+
+.metric-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 14px 22px rgba(43, 102, 173, 0.19);
+}
+
+.icon {
+    --slds-c-icon-color-foreground-default: #1d4f91;
+    margin-bottom: 0;
+}
+
+.metric-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.slds-text-title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #244b7d;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.02em;
+}
+
+.metric-value {
+    margin: 4px 0 0;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #123761;
+    text-align: center;
+}
+
+.service-panel {
+    margin-bottom: 14px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #d2e2fb;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    box-shadow: 0 10px 20px rgba(43, 102, 173, 0.08);
+}
+
+.recent-purchase-panel {
+    position: relative;
+    margin-bottom: 14px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 2px solid #f0c56a;
+    background: linear-gradient(135deg, #fff8e8 0%, #fff0cf 100%);
+    box-shadow: 0 12px 24px rgba(173, 120, 26, 0.18);
+}
+
+.recent-ribbon {
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #de1a2b;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.recent-purchase-content {
+    border: 1px solid #f3d69b;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 12px;
+}
+
+.recent-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 170px;
+}
+
+.recent-vehicle-image {
+    width: 100%;
+    height: 165px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 10px 16px rgba(10, 51, 100, 0.18));
+}
+
+.recent-meta {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.recent-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e8f8ed;
+    color: #1f6d41;
+    border: 1px solid #bfe4ca;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-header h2,
+.finance-title h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e3354;
+}
+
+.up-to-date {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #eefdde 0%, #e5f7d5 100%);
+    color: #365422;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #d2ebb8;
+    box-shadow: 0 4px 10px rgba(105, 164, 45, 0.16);
+}
+
+.service-grid,
+.finance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.finance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-item,
+.finance-item {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f3f7ff;
+    border: 1px solid #e5eefb;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.service-label {
+    margin: 0;
+    font-size: 12px;
+    color: #4f6485;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+}
+
+.service-value {
+    margin: 2px 0 0;
+    font-size: 13px;
+    font-weight: 800;
+    color: #1d2e49;
+}
+
+.issue-none {
+    color: #1f8f4b;
+    display: inline-block;
+    position: relative;
+}
+
+.issue-none::before {
+    content: "✓";
+    margin-right: 4px;
+    font-weight: 900;
+}
+
+.finance-panel {
+    margin-bottom: 14px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid #d8e5f7;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    box-shadow: 0 10px 20px rgba(43, 102, 173, 0.08);
+}
+
+.finance-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.recommendation-card {
+    /* margin-bottom: 16px; */
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 2px solid #e7a93a;
+    background: linear-gradient(135deg, #ffefcf 0%, #ffe7b2 100%);
+    box-shadow: 0 10px 18px rgba(173, 120, 26, 0.13);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recommendation-card::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: -42px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.maintenance-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #f0dcb0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 56px;
+    box-shadow: 0 4px 10px rgba(124, 83, 12, 0.1);
+    z-index: 1;
+}
+
+.maintenance-icon {
+    --slds-c-icon-color-foreground-default: #8c5a07;
+}
+
+.maintenance-content {
+    z-index: 1;
+}
+
+.recommendation-title {
+    margin: 0 0 4px;
+    font-weight: 700;
+    color: #734700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.recommendation-desc {
+    margin: 6px 0px 6px 0px;
+    color: #3f2800;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.recommendation-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #7a4f05;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.remaining-chip {
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #f0dcb0;
+    color: #885608;
+    font-size: 10px;
+}
+
+.meta-separator {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    margin-top: 4px;
+}
+
+.action-row lightning-button {
+    --slds-c-button-brand-color-background: #0070d2;
+    --slds-c-button-brand-color-border: #0070d2;
+    --slds-c-button-brand-color-background-hover: #005fb3;
+    --slds-c-button-brand-color-border-hover: #005fb3;
+    --slds-c-button-brand-shadow: 0 8px 14px rgba(0, 112, 210, 0.25);
+    --slds-c-button-radius-border: 0.55rem;
+    --slds-c-button-text-color: #0f4f93;
+    flex: 1 1 0;
+}
+
+.last-updated {
+    margin-top: 12px;
+    text-align: right;
+    font-size: 0.86rem;
+    color: #5f7495;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+}
+
+/* Dark premium branding overrides */
+.vehicle-card {
+    border-radius: 16px;
+    background: linear-gradient(180deg, #1f2225 0%, #171a1d 100%);
+    border: 1px solid #34383d;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+    background: linear-gradient(180deg, #2a2d30 0%, #232629 100%);
+    border-bottom: 1px solid #383d42;
+    color: #f6f7f9;
+}
+
+.card-header::after {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 72%);
+}
+
+.card-header::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+}
+
+.header-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+    --slds-c-icon-color-background: #f34b4b;
+    background: rgba(255, 112, 112, 0.2);
+    box-shadow: 0 6px 14px rgba(243, 75, 75, 0.35);
+}
+
+.sub-title {
+    color: #afb5bd;
+    opacity: 1;
+}
+
+.status-pill {
+    border: 1px solid #3c6946;
+    background: rgba(30, 215, 96, 0.16);
+    color: #9deab0;
+    box-shadow: 0 6px 14px rgba(30, 215, 96, 0.2);
+}
+
+.card-body {
+    background: linear-gradient(180deg, #1c1f22 0%, #171a1d 100%);
+}
+
+.recent-purchase-panel,
+.preview-card,
+.service-panel,
+.finance-panel {
+    border: 1px solid #343940;
+    background: linear-gradient(180deg, #25292e 0%, #1f2328 100%);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.recent-ribbon {
+    background: #f34b4b;
+    box-shadow: 0 8px 16px rgba(243, 75, 75, 0.35);
+}
+
+.service-header h2,
+.finance-title h2 {
+    color: #f1f3f6;
+}
+
+.recent-badge {
+    background: rgba(30, 215, 96, 0.18);
+    color: #9deab0;
+    border: 1px solid #3c6946;
+}
+
+.recent-purchase-content {
+    border: 1px solid #3a3f46;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.vehicle-chip {
+    color: #dbe1ea;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #474d56;
+    box-shadow: none;
+}
+
+.km-chip {
+    color: #9deab0;
+    background: rgba(30, 215, 96, 0.16);
+    border-color: #3c6946;
+}
+
+.metric-card,
+.service-item,
+.finance-item {
+    border: 1px solid #3a4048;
+    background: linear-gradient(180deg, #2a2e34 0%, #24282e 100%);
+    box-shadow: none;
+}
+
+.metric-card:nth-child(2),
+.metric-card:nth-child(3) {
+    background: linear-gradient(180deg, #2a2e34 0%, #24282e 100%);
+}
+
+.metric-card:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+    --slds-c-icon-color-foreground-default: #9fc5ff;
+}
+
+.slds-text-title,
+.service-label {
+    color: #b7c0cc;
+}
+
+.metric-value,
+.service-value {
+    color: #ffffff;
+}
+
+.issue-none {
+    color: #9deab0;
+}
+
+.up-to-date {
+    background: rgba(30, 215, 96, 0.16);
+    color: #9deab0;
+    border: 1px solid #3c6946;
+    box-shadow: none;
+}
+
+.recommendation-card {
+    border: 1px solid #5a4730;
+    background: linear-gradient(180deg, #30281f 0%, #282118 100%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
+}
+
+.recommendation-card::after {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.maintenance-icon-wrap {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #5a4730;
+    box-shadow: none;
+}
+
+.maintenance-icon {
+    --slds-c-icon-color-foreground-default: #f0b352;
+}
+
+.recommendation-title {
+    color: #ffd08a;
+}
+
+.recommendation-desc {
+    color: #fff6e6;
+}
+
+.recommendation-meta {
+    color: #e8c78f;
+}
+
+.remaining-chip {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #5a4730;
+    color: #ffd08a;
+}
+
+@keyframes headerShine {
+    0% {
+        left: -28%;
+    }
+    55% {
+        left: 78%;
+    }
+    100% {
+        left: 78%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header h1,
+    .service-header h2,
+    .finance-title h2,
+    .recommendation-desc {
+        font-size: 1.2rem;
+    }
+
+    .metric-value,
+    .service-value {
+        font-size: 1.45rem;
+    }
+
+    .recommendation-title,
+    .recommendation-meta {
+        font-size: 0.95rem;
+    }
+
+    .recommendation-card {
+        align-items: flex-start;
+    }
+
+    .maintenance-icon-wrap {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+
+    .action-row {
+        flex-wrap: wrap;
+    }
+
+    .metrics-grid,
+    .service-grid,
+    .finance-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

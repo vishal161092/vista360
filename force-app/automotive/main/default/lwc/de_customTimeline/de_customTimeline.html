@@ -1,0 +1,55 @@
+<template>
+    <div class="timeline-shell">
+        <div class="header-row">
+            <div class="title-wrap">
+                <div class="title-icon-wrap">
+                    <lightning-icon icon-name={titleIcon} size="x-small"></lightning-icon>
+                </div>
+                <span class="title-text">Recent Activity</span>
+            </div>
+            <div class="header-actions">
+                <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text="Refresh" onclick={refreshIConClick}></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:event" variant="border-filled" alternative-text="Event"></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:filterList" variant="border-filled" alternative-text="Filter"></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:slider" variant="border-filled" alternative-text="Settings"></lightning-button-icon>
+            </div>
+        </div>
+
+        <div class="subheader-row">
+            <p>All Events - Most Recent Event</p>
+            <span class="recent-chip">Recent</span>
+        </div>
+
+        <div class="feed" style={dynamicStyle}>
+            <template if:true={activities}>
+                <template if:true={loading}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <template if:false={loading}>
+                    <ul class="timeline-list">
+                        <template for:each={activities} for:item="activity">
+                            <li key={activity.Id} data-record-id={activity.Id} onclick={handleItemclick}>
+                                <div class="timeline-item slds-timeline__item_expandable slds-is-open" data-collapsible-section-id={activity.Id}>
+                                    <div class="timeline-rail"></div>
+                                    <div class="item-icon-wrap">
+                                        <lightning-icon icon-name={activity.additionalValue} size="x-small"></lightning-icon>
+                                    </div>
+                                    <div class="item-content">
+                                        <div class="item-top">
+                                            <h3>{activity.Subject}</h3>
+                                            <div class="item-top-right">
+                                                <p class="status-text">{activity.CallDisposition}</p>
+                                                <lightning-button-icon icon-name="utility:switch" data-button-id={activity.Id} class="toggle-btn" variant="bare" onclick={handleSectionToggle}></lightning-button-icon>
+                                            </div>
+                                        </div>
+                                        <p class="desc-text">{activity.Description}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,39 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <div class="header-left">
+                <div class="icon-box">
+                    <lightning-icon icon-name="utility:list" size="xx-small"></lightning-icon>
+                </div>
+                <h2>Active on Velo Apps</h2>
+            </div>
+            <button class="collapse-btn" title="Collapse">
+                <lightning-icon icon-name="utility:chevrondown" size="x-small"></lightning-icon>
+            </button>
+        </div>
+
+        <div class="content">
+            <h3>Recently Used:</h3>
+            <template if:true={isRecordThree}>
+                <p class="link-text">M4U App</p>
+                <p class="sub-text">last used: 1 days ago</p>
+            </template>
+            <p class="link-text">auto.velomotors.example</p>
+            <p class="sub-text">last used: 3 days ago</p>
+
+            <!-- <p class="link-text">Adrenox</p>
+            <p class="sub-text">last used: {lastUsedDateLabel}</p> -->
+
+            <h3 class="never-title">Never Used:</h3>
+            <template if:false={isRecordThree}>
+                <p class="normal-text">M4U App</p>
+            </template>
+            <p class="normal-text">veloadventure.example</p>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-outline">View Recent Activity</button>
+            <button class="btn btn-filled">Start Campaign</button>
+        </div>
+    </div>
+</template>

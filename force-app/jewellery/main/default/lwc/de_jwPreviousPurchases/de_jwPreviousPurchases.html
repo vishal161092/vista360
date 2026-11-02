@@ -1,0 +1,38 @@
+<template>
+    <div class="panel">
+        <div class="panel-hdr">
+            <div class="panel-title">
+                <lightning-icon icon-name="standard:orders" size="small"></lightning-icon>
+                <h2>Previous Purchases</h2>
+            </div>
+            <div class="panel-actions">
+                <button class="btn btn-neutral">Add Items</button>
+                <button class="btn btn-brand">Buy Selected Items</button>
+            </div>
+        </div>
+
+        <template for:each={purchases} for:item="p">
+            <div key={p.id} class="item">
+                <img src={p.image} alt={p.name} class="thumb" />
+                <div class="item-body">
+                    <a class="item-name">{p.name}</a>
+                    <span class="item-specs">{p.specs}</span>
+                    <span class="item-meta">
+                        {p.price} &nbsp;&middot;&nbsp; {p.meta} &nbsp;&middot;&nbsp; {p.id}
+                    </span>
+                </div>
+                <button
+                    class="add-btn"
+                    data-id={p.id}
+                    title="Add to cart"
+                    onclick={handleToggle}
+                >
+                    <lightning-icon
+                        icon-name="utility:add"
+                        size="x-small"
+                    ></lightning-icon>
+                </button>
+            </div>
+        </template>
+    </div>
+</template>

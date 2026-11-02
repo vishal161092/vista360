@@ -1,0 +1,73 @@
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #16172b;
+}
+
+.title-icon {
+    --slds-c-icon-color-foreground-default: #7a3ff2;
+}
+
+.edit-link {
+    color: #4b4ded;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.channel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e5e5ee;
+    border-radius: 8px;
+    padding: 0.55rem 0.7rem;
+    background: #fafafd;
+}
+
+.channel-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.channel-icon {
+    --slds-c-icon-color-foreground-default: #6b6d82;
+}
+
+.channel-label {
+    font-size: 0.85rem;
+    color: #16172b;
+}
+
+.status-icon.on {
+    --slds-c-icon-color-foreground-default: #2e9e5b;
+}
+
+.status-icon.off {
+    --slds-c-icon-color-foreground-default: #c23934;
+}

@@ -1,0 +1,63 @@
+.header-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    background: #ffffff;
+    border: 1px solid #e5e5ee;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 0.65rem 1.25rem;
+    margin-top: -1rem;
+}
+
+.divider {
+    color: #d5d6e0;
+    font-size: 0.9rem;
+}
+
+.member-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #fdf3d8;
+    color: #9a6a00;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.badge-icon {
+    --slds-c-icon-color-foreground-default: #d4a017;
+}
+
+.meta {
+    color: #6b6d82;
+    font-size: 0.85rem;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #4a4b60;
+    font-size: 0.85rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background: #2e9e5b;
+}
+
+.error {
+    color: #c23934;
+    padding: 0.5rem;
+}

@@ -1,0 +1,95 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.insights-container {
+    padding: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 0.75rem;
+}
+
+.insight-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+}
+
+.insight-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.75rem;
+}
+
+.icon-container {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-green {
+    background-color: #4caf50;
+}
+
+.icon-blue {
+    background-color: #5c6bc0;
+}
+
+.icon-red {
+    background-color: #ef5350;
+}
+
+.icon-container lightning-icon {
+    --slds-c-icon-color-foreground-default: white;
+}
+
+.insight-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.insight-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #181818;
+}
+
+.insight-subtitle {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.insight-action {
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+.divider {
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 0;
+}
+
+.gauge-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gauge-text {
+    font-size: 12px;
+    font-weight: 700;
+    fill: #181818;
+}

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Suggested Recommendations" icon-name="standard:coaching">
+        <div class="recommendations-container">
+            <template for:each={recommendations} for:item="rec">
+                <div key={rec.id} class="rec-row">
+                    <div class="rec-image-wrapper">
+                        <img src={rec.imageUrl} alt={rec.title} class="rec-image"/>
+                    </div>
+                    <div class="rec-content">
+                        <lightning-button label={rec.title} variant="neutral" class="rec-btn"></lightning-button>
+                        <p class="rec-description">{rec.description}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

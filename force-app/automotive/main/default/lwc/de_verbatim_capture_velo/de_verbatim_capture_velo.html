@@ -1,0 +1,226 @@
+<template>
+    <div class="verbatim-wrap">
+        <template if:true={isScreen1}>
+            <div class="mobile-shell">
+                <p class="main-title">Hi Kundan</p>
+                <p class="sub-title">Assigned to me</p>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-head">
+                        <div class="vehicle-left">
+                            <p class="veh-name">VX700</p>
+                            <img class="car-image" src={vx700ImageUrl} alt="VX700" />
+                        </div>
+                        <div class="vehicle-right" style="margin-top:1.4rem;">
+                            <p><span>Reg. No:</span> MH11DE2783</p>
+                            <p><span>Variant:</span> VX 700 AX5</p>
+                            <p><span>Customer:</span> Rahul Kannan</p>
+                            <span class="wap-chip">Eligible for WAP Enquiry</span>
+                        </div>
+                        <span class="status-pill vip">VIP</span>
+                    </div>
+
+                    <div class="vehicle-meta">
+                        <div>
+                            <p class="meta-label">Arrival Time</p>
+                            <p class="meta-value">9:25 AM</p>
+                        </div>
+                        <span class="status-pill ontime">On Time</span>
+                    </div>
+
+                    <button class="cta-main" onclick={navigateToScreen2}>New Repair Order</button>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-head">
+                        <div class="vehicle-left">
+                            <p class="veh-name">Trailhawk RX</p>
+                            <img class="car-image" src={trailhawkImageUrl} alt="Trailhawk RX" />
+                        </div>
+                        <div class="vehicle-right" style="margin-top:1.4rem;">
+                            <p><span>Reg. No:</span> MH12TR9090</p>
+                            <p><span>Variant:</span> Trailhawk RX AX7L</p>
+                            <p><span>Customer:</span> Kabir Patil</p>
+                        </div>
+                        <span class="status-pill revisit">Revisit</span>
+                    </div>
+
+                    <div class="vehicle-meta split">
+                        <div>
+                            <p class="meta-label">Arrival Time</p>
+                            <p class="meta-value">11:10 AM</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">Arrival Date</p>
+                            <p class="meta-value">14 May 2026</p>
+                        </div>
+                        <span class="status-pill ontime">On Time</span>
+                    </div>
+
+                    <button class="cta-main" onclick={navigateToScreen2}>New Repair Order</button>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={isScreen2}>
+            <div class="mobile-shell">
+                <div class="ro-header">
+                    <p class="ro-title">RO: HP63B2341</p>
+                </div>
+
+                <div class="progress-row">
+                    <span class="dot done"></span>
+                    <span class="line-segment"></span>
+                    <span class="dot done"></span>
+                    <span class="line-segment"></span>
+                    <span class="dot done"></span>
+                    <span class="line-segment"></span>
+                    <span class="dot current"></span>
+                    <span class="line-segment"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="ro-meta">
+                    <p><span>Reg. No:</span> MH11DE2783</p>
+                    <p><span>Model/Variant:</span> VX 700 AX5</p>
+                    <p><span>Owner:</span> Rahul Kannan</p>
+                    <span class="warranty-pill">In Warranty</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <p class="section-heading">Add Verbatims</p>
+
+                <div class="tab-head">
+                    <span>Demanded</span>
+                    <span class="active">Recommended</span>
+                </div>
+
+                <p class="section-subheading">Verbatim from Vehicle Health Checklist</p>
+
+                <div class="recommend-card">
+                    <p class="field-title">Verbatim Description</p>
+                    <p class="field-value">Handbrake - Vehicle stops at high notch - Remarks</p>
+                    <p class="warning-box">Customer has denied to include in the current repair order.</p>
+                    <button class="cta-main">Include in RO</button>
+                </div>
+
+                <div class="divider"></div>
+                <p class="section-subheading">Added Verbatims</p>
+
+                <div class="verbatim-block">
+                    <span class="tag">Service Action</span>
+                    <p class="field-title">Summary:</p>
+                    <p class="field-value">Service - Service Action - Brake disk replacement</p>
+                    <div class="actions-row">
+                        <button class="link-btn">Edit</button>
+                        <button class="link-btn danger">Remove</button>
+                    </div>
+                </div>
+
+                <!-- <div class="verbatim-block">
+                    <span class="tag">From Vehicle Health Checklist</span>
+                    <p class="field-title">Verbatim Description</p>
+                    <p class="field-value">Handbrake - Vehicle stops at high notch - Remarks</p>
+                    <p class="field-title">Summary:</p>
+                    <p class="field-value">Handbrake - Tail swing on braking - Intermittent - 100 km/Hr</p>
+                    <div class="actions-row">
+                        <button class="link-btn">Edit</button>
+                        <button class="link-btn danger">Remove</button>
+                    </div>
+                </div> -->
+
+                <div class="verbatim-block">
+                    <span class="tag">Manual Verbatim</span>
+                    <p class="field-title">Workshop Verbatim</p>
+                    <p class="field-value">Braking is not great</p>
+                    <p class="field-title">Summary:</p>
+                    <p class="field-value">Brake Pedal Sinking / spongy - Intermittent - 100 Km/Hr - Soft - Pedal Returning</p>
+                    <div class="actions-row">
+                        <button class="link-btn">Edit</button>
+                        <button class="link-btn danger">Remove</button>
+                    </div>
+                </div>
+
+                <button class="cta-outline" onclick={navigateToScreen3}>Add Another Verbatim</button>
+                <button class="cta-main">Continue</button>
+            </div>
+        </template>
+
+        <template if:true={isScreen3}>
+            <div class="mobile-shell">
+                <p class="center-title">New Verbatim</p>
+
+                <div class="form-card">
+                    <div class="field-title with-mic">
+                        <span>Customer Verbatim</span>
+                        <div class="mic-wrap">
+                            <button
+                                class="mic-icon-btn"
+                                onclick={handleMicClick}
+                                title={micButtonLabel}
+                                aria-label={micButtonLabel}
+                                disabled={notesAsrLoading}
+                            >
+                                <lightning-icon icon-name={micIconName} size="x-small" alternative-text={micButtonLabel}></lightning-icon>
+                            </button>
+                            <template if:true={isRecording}>
+                                <span class="mic-status">Recording...</span>
+                            </template>
+                            <template if:true={notesAsrLoading}>
+                                <span class="mic-status">Transcribing...</span>
+                            </template>
+                        </div>
+                    </div>
+                    <lightning-textarea class="text-area" value={customerVerbatim} variant="label-hidden" oninput={handleVerbatimChange}></lightning-textarea>
+                    <p class="char-count">255 Characters</p>
+
+                    <p class="helper-text">Link a Verbatim Group and Verbatim Code using GenAI enabled VoC Mapper or search manually.</p>
+
+                    <div class="dual-btn-row">
+                        <button class="cta-muted" onclick={handleVocMapperClick} disabled={vocMapperLoading}>VoC Mapper</button>
+                        <button class="cta-outline small">Manual Search</button>
+                    </div>
+
+                    <template if:true={vocMapperLoading}>
+                        <div class="ai-loading-card" role="status" aria-live="polite">
+                            <!-- <span class="ai-chip">AI</span> -->
+                            <p class="ai-loading-text">
+                                Fetching VoC mapping
+                                <span class="loading-dots" aria-hidden="true"></span>
+                            </p>
+                        </div>
+                    </template>
+
+                    <template if:true={showVocDetails}>
+                        <p class="field-title">Recommended Verbatim Group / Codes</p>
+                        <div class="select-box">BRAKES - Brake Pedal Sinking / Spongy</div>
+
+                        <p class="field-title">Verbatim Group</p>
+                        <p class="field-value">BRAKES</p>
+
+                        <p class="field-title">Verbatim Code</p>
+                        <p class="field-value">Brake Pedal Sinking / Spongy</p>
+
+                        <div class="divider"></div>
+
+                        <p class="field-title">Frequency</p>
+                        <div class="select-box">Intermittent</div>
+
+                        <p class="field-title">Vehicle Speed (Km/hr)</p>
+                        <div class="select-box">High (greater than 100 kmph)</div>
+
+                        <p class="field-title">Pedal feel</p>
+                        <div class="select-box">Soft</div>
+
+                        <p class="field-title">Pedal Returning</p>
+                        <div class="select-box">Yes</div>
+
+                        <p class="field-title">Summary:</p>
+                        <p class="field-value">Brake Pedal Sinking / spongy - Intermittent - 100 Km/Hr - Soft - Pedal Returning</p>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

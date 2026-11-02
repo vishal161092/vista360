@@ -1,0 +1,32 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:case" size="small"></lightning-icon>
+            <h2 class="de-title">Cases ({cases.length}+)</h2>
+        </div>
+
+        <ul class="de-cases">
+            <template for:each={cases} for:item="c">
+                <li key={c.key} class="de-case">
+                    <div class="de-case-top">
+                        <div class="de-case-id-group">
+                            <span class="de-case-id">{c.id}</span>
+                            <span class="de-case-type">{c.type}</span>
+                        </div>
+                        <span class={c.badgeClass}>{c.badge}</span>
+                    </div>
+                    <div class="de-case-meta">
+                        <template for:each={c.rows} for:item="row">
+                            <div key={row.key} class="de-case-row">
+                                <span class="de-label">{row.label}</span>
+                                <span class={row.valueClass}>{row.value}</span>
+                            </div>
+                        </template>
+                    </div>
+                </li>
+            </template>
+        </ul>
+
+        <a href="#" class="de-view-all">View All Cases</a>
+    </div>
+</template>

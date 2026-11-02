@@ -1,0 +1,59 @@
+<template>
+    <div class="panel">
+        <div class="hero">
+            <div class="hero-top">
+                <div>
+                    <span class="tier-label">Loyalty Program</span>
+                    <h2 class="tier-name">{tier} Tier</h2>
+                </div>
+                <div class="stars">
+                    <template for:each={stars} for:item="s">
+                        <lightning-icon
+                            key={s.key}
+                            icon-name="utility:favorite"
+                            size="x-small"
+                            class={s.filled}
+                            data-filled={s.filled}
+                        ></lightning-icon>
+                    </template>
+                </div>
+            </div>
+
+            <div class="points-row">
+                <span class="points-num">{points}</span>
+                <span class="points-lbl">points</span>
+            </div>
+
+            <div class="progress-block">
+                <div class="progress-labels">
+                    <span>{pointsToNext} pts to {nextTier}</span>
+                </div>
+                <div class="bar"><div class="fill" style={progressStyle}></div></div>
+            </div>
+        </div>
+
+        <div class="meta-rows">
+            <div class="meta">
+                <span class="m-label">Member ID</span>
+                <span class="m-value">{memberId}</span>
+            </div>
+            <div class="meta">
+                <span class="m-label">Member Since</span>
+                <span class="m-value">{memberSince}</span>
+            </div>
+        </div>
+
+        <div class="coupon">
+            <div class="coupon-info">
+                <lightning-icon icon-name="utility:tags" size="small"></lightning-icon>
+                <div>
+                    <span class="coupon-code">{coupon}</span>
+                    <span class="coupon-desc">{couponDesc}</span>
+                </div>
+            </div>
+            <button class="copy-btn" onclick={handleCopy} title="Copy code">
+                <lightning-icon icon-name="utility:copy" size="x-small"></lightning-icon>
+            </button>
+        </div>
+    </div>
+</template>

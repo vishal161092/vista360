@@ -1,0 +1,32 @@
+<template>
+    <div class="de-card">
+        <div class="de-banner">
+            <div class="de-banner-left">
+                <span class="de-banner-eyebrow">Loyalty Member</span>
+                <span class="de-banner-name">{memberName}</span>
+            </div>
+            <span class="de-tier-chip">{tier}</span>
+        </div>
+
+        <div class="de-stats">
+            <div class="de-stat">
+                <span class="de-stat-label">Loyalty Points</span>
+                <span class="de-stat-value">{points}</span>
+            </div>
+            <div class="de-stat">
+                <span class="de-stat-label">Membership</span>
+                <span class="de-stat-value">{tier}</span>
+            </div>
+        </div>
+
+        <h3 class="de-section-title">Current Benefits</h3>
+        <ul class="de-benefits">
+            <template for:each={benefits} for:item="benefit">
+                <li key={benefit.key} class="de-benefit">
+                    <lightning-icon icon-name="utility:check" size="xx-small" class="de-benefit-icon"></lightning-icon>
+                    <span>{benefit.text}</span>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>

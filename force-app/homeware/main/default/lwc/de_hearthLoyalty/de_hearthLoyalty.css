@@ -1,0 +1,517 @@
+:host {
+    --ink: #000000;
+    --text-2: #3f3f46;
+    --muted: #6b7280;
+    --surf: #fafafb;
+    --border: #eceef1;
+    display: block;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ── HEADER ── */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 18px 20px;
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35) 40%, rgba(255, 255, 255, 0.35) 60%, transparent);
+}
+
+.header-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hicon {
+    --slds-c-icon-color-foreground-default: #fff;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── TIER HERO ── */
+.hero-wrap {
+    padding: 16px 16px 0;
+}
+
+.tier-hero {
+    background: linear-gradient(77deg, #CC2228 0%, #CC2228 55%, #cc2228d1 100%);
+    border-radius: 16px;
+    padding: 18px 20px 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* scattered particle dots */
+.tier-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.11) 1px, transparent 1px);
+    background-size: 70px 70px, 50px 50px, 90px 90px;
+    background-position: 10px 15px, 40px 5px, 60px 40px;
+    pointer-events: none;
+}
+
+/* ── TIER THEMES (metallic) ── */
+.theme-bronze {
+    background: linear-gradient(135deg, #3a2415 0%, #6b4423 55%, #a9714b 100%);
+}
+
+.theme-silver {
+    background: linear-gradient(135deg, #3f4247 0%, #6f747c 55%, #b8bdc6 100%);
+}
+
+.theme-gold {
+    background: linear-gradient(135deg, #4a3410 0%, #977523 55%, #d8b45a 100%);
+}
+
+.theme-platinum {
+    background: linear-gradient(135deg, #23262b 0%, #565b64 55%, #9aa0ab 100%);
+}
+
+.tier-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+    gap: 12px;
+}
+
+.tier-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.tier-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tier-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.tier-name-icon {
+    --slds-c-icon-color-foreground-default: #fff;
+}
+
+.tier-stars {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.tstar {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.tstar.on {
+    background: #ffffff;
+}
+
+.tier-pts-block {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.pts-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.pts-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 4px;
+}
+
+/* tier progress */
+.tier-progress {
+    position: relative;
+    z-index: 1;
+}
+
+.tier-progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+}
+
+.tier-progress-from {
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.02em;
+}
+
+.tier-progress-to {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.tier-track {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.tier-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #9a9a9a, #ffffff);
+    border-radius: 3px;
+}
+
+.tier-next-label {
+    font-size: 9.5px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 6px;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.tier-next-label strong {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 800;
+}
+
+/* ── DETAIL ROWS ── */
+.details {
+    padding: 6px 18px 4px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.detail-row + .detail-row {
+    border-top: 1px solid var(--border);
+}
+
+.detail-row::before {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #CB2228;
+    border-radius: 0 2px 2px 0;
+    transform: scaleY(0);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detail-row:hover::before {
+    transform: scaleY(1);
+}
+
+.detail-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #f4f4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.dicon {
+    --slds-c-icon-color-foreground-default: #000000;
+}
+
+.detail-row:hover .detail-icon {
+    background: #000000;
+    transform: scale(1.06);
+}
+
+.detail-row:hover .dicon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+.detail-label {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    min-width: 0;
+}
+
+.detail-val {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-align: right;
+}
+
+/* expiry chip */
+.expiry-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(203, 34, 40, 0.08);
+    border: 1px solid rgba(203, 34, 40, 0.25);
+    border-radius: 20px;
+    padding: 3px 10px 3px 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #CB2228;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.expiry-icon {
+    --slds-c-icon-color-foreground-default: #CB2228;
+}
+
+/* ── DIVIDER ── */
+.divider {
+    height: 1px;
+    margin: 2px 18px 12px;
+    background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+}
+
+/* ── COUPON + PROMO ── */
+.section-group {
+    padding: 0 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* coupon — dashed ticket */
+.coupon-card {
+    position: relative;
+    background: #fafafb;
+    border: 1.5px dashed #000000;
+    border-radius: 13px;
+    padding: 13px 14px 13px 50px;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.coupon-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+}
+
+.coupon-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: #000000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cicon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+}
+
+.coupon-eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+}
+
+.coupon-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.coupon-code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 0.08em;
+}
+
+.coupon-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #CB2228;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 11px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background 0.15s, transform 0.1s;
+    flex-shrink: 0;
+    font-family: inherit;
+}
+
+.coupon-copy:hover {
+    background: #a91b20;
+    transform: scale(1.04);
+}
+
+.coupon-copy.copied {
+    background: #000000;
+}
+
+/* promo card */
+.promo-card {
+    background: var(--surf);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 12px 14px 12px 48px;
+    position: relative;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.promo-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+.promo-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: #f4f4f5;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picon {
+    --slds-c-icon-color-foreground-default: #000000;
+}
+
+.promo-eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+}
+
+.promo-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+}
+
+/* ── EMPTY ── */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.empty-icon {
+    --slds-c-icon-color-foreground-default: #c7c7cc;
+}

@@ -1,0 +1,40 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app/shared",
+      "default": true
+    },
+    {
+      "path": "force-app/hospitality",
+      "default": false
+    },
+    {
+      "path": "force-app/jewellery",
+      "default": false
+    },
+    {
+      "path": "force-app/homeware",
+      "default": false
+    },
+    {
+      "path": "force-app/paints-loyalty",
+      "default": false
+    },
+    {
+      "path": "force-app/lifestyle-retail",
+      "default": false
+    },
+    {
+      "path": "force-app/retail-logistics",
+      "default": false
+    },
+    {
+      "path": "force-app/automotive",
+      "default": false
+    }
+  ],
+  "name": "vista360",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "67.0"
+}

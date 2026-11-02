@@ -1,0 +1,38 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <span class="card-title">Loyalty Program</span>
+        </div>
+
+        <div class="points-row">
+            <div class="points">
+                <lightning-icon
+                    icon-name="utility:favorite"
+                    size="x-small"
+                    class="star-icon"
+                ></lightning-icon>
+                <span class="points-value">{formattedPoints}</span>
+                <span class="points-label">Style Points</span>
+            </div>
+            <span class="tier-badge">{tier}</span>
+        </div>
+
+        <p class="next-tier">{nextTierText}</p>
+
+        <div class="benefits">
+            <p class="benefits-title">Member Benefits:</p>
+            <ul class="benefit-list">
+                <template for:each={benefits} for:item="b">
+                    <li key={b.key} class="benefit-item">
+                        <lightning-icon
+                            icon-name="utility:success"
+                            size="xx-small"
+                            class="check-icon"
+                        ></lightning-icon>
+                        {b.label}
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

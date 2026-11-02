@@ -1,0 +1,17 @@
+<template>
+    <div class="de-card">
+        <div class="de-card-head">
+            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+            <h2 class="de-title">Account Details</h2>
+        </div>
+
+        <dl class="de-list">
+            <template for:each={rows} for:item="row">
+                <div key={row.key} class="de-row">
+                    <dt class="de-label">{row.label}</dt>
+                    <dd class="de-value">{row.value}</dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+</template>

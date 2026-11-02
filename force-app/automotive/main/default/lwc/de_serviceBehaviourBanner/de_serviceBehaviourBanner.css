@@ -1,0 +1,26 @@
+.summary-container {
+
+    border-radius: 0.25rem;
+    
+}
+
+.summary-item {
+    display: inline;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.slds-text-title {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+.txtClass-new{
+	   font-size: 14px;
+    font-weight: 700;
+    padding-left: 42px;
+    margin-top: -22px;
+}
+.txtClass{
+	    font-size: 14px;
+    font-weight: 700;
+}

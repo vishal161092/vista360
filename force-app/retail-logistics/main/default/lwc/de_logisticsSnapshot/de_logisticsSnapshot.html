@@ -1,0 +1,44 @@
+<template>
+    <div class="de-card">
+        <div class="de-header">
+            <div class="de-avatar">{initials}</div>
+            <div class="de-header-text">
+                <h2 class="de-account-name">{accountName}</h2>
+                <span class="de-pill"><span class="de-dot"></span>{segmentLabel}</span>
+            </div>
+        </div>
+
+        <div class="de-stats">
+            <template for:each={stats} for:item="stat">
+                <div key={stat.key} class="de-stat">
+                    <span class="de-stat-label">{stat.label}</span>
+                    <span class="de-stat-value">{stat.value}</span>
+                </div>
+            </template>
+        </div>
+
+        <h3 class="de-section-title">Logistics Snapshot</h3>
+        <p class="de-description">{description}</p>
+
+        <div class="de-details">
+            <template for:each={details} for:item="row">
+                <div key={row.key} class="de-detail-row">
+                    <lightning-icon icon-name={row.icon} size="x-small" class="de-detail-icon"></lightning-icon>
+                    <div class="de-detail-body">
+                        <span class="de-detail-label">{row.label}</span>
+                        <span class="de-detail-value">{row.value}</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <div class="de-signals">
+            <template for:each={signals} for:item="signal">
+                <div key={signal.key} class="de-signal">
+                    <span class="de-signal-label">{signal.label}:</span>
+                    <span class="de-signal-value">{signal.value}</span>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

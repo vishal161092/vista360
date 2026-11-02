@@ -1,0 +1,73 @@
+<template>
+    <div class="insights-container">
+        <h2 class="card-title">Predictive Insights</h2>
+
+        <!-- Row 1: Next Best Offer -->
+        <div class="insight-row">
+            <div class="insight-content">
+                <div class="icon-container icon-green">
+                    <lightning-icon icon-name="utility:target" alternative-text="Next Best Offer" size="x-small"></lightning-icon>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-title">Next Best Offer</div>
+                    <div class="insight-subtitle">Offer higher on Premium range to increase engagement.</div>
+                </div>
+            </div>
+            <div class="insight-action">
+                <lightning-button label="View Offer" variant="neutral"></lightning-button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Row 2: Purchase Propensity -->
+        <div class="insight-row">
+            <div class="insight-content">
+                <div class="icon-container icon-blue">
+                    <lightning-icon icon-name="utility:chart" alternative-text="Purchase Propensity" size="x-small"></lightning-icon>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-title">Purchase Propensity</div>
+                    <div class="insight-subtitle">High likelihood to purchase in next 15 days.</div>
+                </div>
+            </div>
+            <div class="insight-action">
+                <div class="gauge-container">
+                    <svg width="50" height="50" viewBox="0 0 60 60" class="circular-gauge">
+                        <circle cx="30" cy="30" r="24" fill="none" stroke="#e0e0e0" stroke-width="5"></circle>
+                        <circle cx="30" cy="30" r="24" fill="none" stroke="#4caf50" stroke-width="5"
+                                stroke-dasharray="128.18 150.796" stroke-dashoffset="0"
+                                stroke-linecap="round" transform="rotate(-90 30 30)"></circle>
+                        <text x="30" y="35" text-anchor="middle" class="gauge-text">85%</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Row 3: Churn Risk -->
+        <div class="insight-row">
+            <div class="insight-content">
+                <div class="icon-container icon-red">
+                    <lightning-icon icon-name="utility:warning" alternative-text="Churn Risk" size="x-small"></lightning-icon>
+                </div>
+                <div class="insight-text">
+                    <div class="insight-title">Churn Risk</div>
+                    <div class="insight-subtitle">Low</div>
+                </div>
+            </div>
+            <div class="insight-action">
+                <div class="gauge-container">
+                    <svg width="50" height="50" viewBox="0 0 60 60" class="circular-gauge">
+                        <circle cx="30" cy="30" r="24" fill="none" stroke="#e0e0e0" stroke-width="5"></circle>
+                        <circle cx="30" cy="30" r="24" fill="none" stroke="#4caf50" stroke-width="5"
+                                stroke-dasharray="15.08 150.796" stroke-dashoffset="0"
+                                stroke-linecap="round" transform="rotate(-90 30 30)"></circle>
+                        <text x="30" y="35" text-anchor="middle" class="gauge-text">10%</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

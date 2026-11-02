@@ -1,0 +1,64 @@
+<template>
+    <div class="products-container">
+        <h2 class="card-title">Top Products Purchased (Lifetime)</h2>
+
+        <div class="content-container">
+            <!-- Left Section: Donut Chart -->
+            <div class="chart-section">
+                <svg class="donut-chart" viewBox="0 0 200 200">
+                    <!-- Segment 1: ECO (45%) — 900 boxes -->
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="transparent"
+                            stroke="#4CAF50" stroke-width="28"
+                            stroke-dasharray="197.9 439.8"
+                            stroke-dashoffset="0"
+                            transform="rotate(-90 100 100)"></circle>
+
+                    <!-- Segment 2: MID (35%) — 700 boxes -->
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="transparent"
+                            stroke="#3BA5C9" stroke-width="28"
+                            stroke-dasharray="153.9 439.8"
+                            stroke-dashoffset="-197.9"
+                            transform="rotate(-90 100 100)"></circle>
+
+                    <!-- Segment 3: PRE (20%) — 400 boxes -->
+                    <circle class="donut-segment" cx="100" cy="100" r="70" fill="transparent"
+                            stroke="#1B5FAB" stroke-width="28"
+                            stroke-dasharray="88.0 439.8"
+                            stroke-dashoffset="-351.8"
+                            transform="rotate(-90 100 100)"></circle>
+
+                    <!-- Center text -->
+                    <text x="100" y="80" text-anchor="middle" class="center-label">Total</text>
+                    <text x="100" y="110" text-anchor="middle" class="center-value">2,000</text>
+                    <text x="100" y="126" text-anchor="middle" class="center-unit">Boxes</text>
+                </svg>
+            </div>
+
+            <!-- Right Section: Legend -->
+            <div class="legend-section">
+                <div class="legend-item">
+                    <span class="legend-dot dot-eco"></span>
+                    <span class="legend-label">ECO</span>
+                    <span class="legend-value">900 (45%)</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot dot-mid"></span>
+                    <span class="legend-label">MID</span>
+                    <span class="legend-value">700 (35%)</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-dot dot-pre"></span>
+                    <span class="legend-label">PRE</span>
+                    <span class="legend-value">400 (20%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Link -->
+        <div class="footer-section">
+            <a href="#" class="footer-link" onclick={handleViewPurchaseSummary}>View Purchase Summary</a>
+        </div>
+    </div>
+</template>

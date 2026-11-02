@@ -1,0 +1,44 @@
+<template>
+    <div class="hearth-360">
+
+        <!-- Anonymous visitor layout: Details | Insights | Wishlist + Engagement -->
+        <template if:true={isAnonymous}>
+            <div class="grid grid-3">
+                <div class="col merged">
+                    <c-de_hearth-stats-bar record-id={recordId}></c-de_hearth-stats-bar>
+                    <c-de_hearth-profile-card record-id={recordId}></c-de_hearth-profile-card>
+                </div>
+                <div class="col">
+                    <c-de_hearth-insights record-id={recordId}></c-de_hearth-insights>
+                </div>
+                <div class="col stack">
+                    <c-de_hearth-wishlist record-id={recordId}></c-de_hearth-wishlist>
+                    <c-de_hearth-engagement record-id={recordId}></c-de_hearth-engagement>
+                </div>
+            </div>
+        </template>
+
+        <!-- Known / Omnichannel layout -->
+        <template if:true={isKnown}>
+            <div class="grid grid-3">
+                <div class="col stack">
+                    <div class="merged">
+                        <c-de_hearth-stats-bar record-id={recordId}></c-de_hearth-stats-bar>
+                        <c-de_hearth-profile-card record-id={recordId}></c-de_hearth-profile-card>
+                    </div>
+                    <c-de_hearth-loyalty record-id={recordId}></c-de_hearth-loyalty>
+                </div>
+                <div class="col stack">
+                    <c-de_hearth-insights record-id={recordId}></c-de_hearth-insights>
+                    <c-de_hearth-engagement record-id={recordId}></c-de_hearth-engagement>
+                </div>
+                <div class="col stack">
+                    <c-de_hearth-past-orders record-id={recordId}></c-de_hearth-past-orders>
+                    <c-de_hearth-wishlist record-id={recordId}></c-de_hearth-wishlist>
+                    <c-de_hearth-recommendations record-id={recordId}></c-de_hearth-recommendations>
+                    <c-de_hearth-timeline record-id={recordId}></c-de_hearth-timeline>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>
